@@ -17,4 +17,7 @@
   .navClass {
     @apply text-[#172B4D] font-medium text-xl;
   }
+  .navbarBottom {
+    @apply text-[#52525B]  text-sm font-normal leading-[26px];
+  }
 }
