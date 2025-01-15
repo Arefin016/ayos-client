@@ -1,7 +1,9 @@
+import DownloadApp from "../../components/DownloadApp/DownloadApp";
+
 const OurServices = () => {
   return (
     <div>
-      <h2>This is the Our Services</h2>
+      <DownloadApp />
     </div>
   );
 };

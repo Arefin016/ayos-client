@@ -1,8 +1,8 @@
-import Container from "../../../components/Container/Container";
-import downloadPic from "../../../assets/images/downloadApp.png";
-import SignUpBtn from "../../../components/SignUpBtn/SignUpBtn";
-import playStorePic from "../../../assets/images/googlePlayPic.png";
-import appStorePic from "../../../assets/images/appleStorePic.png";
+import Container from "../Container/Container";
+import downloadPic from "../../assets/images/downloadApp.png";
+import SignUpBtn from "../SignUpBtn/SignUpBtn";
+import playStorePic from "../../assets/images/googlePlayPic.png";
+import appStorePic from "../../assets/images/appleStorePic.png";
 
 const DownloadApp = () => {
   return (

@@ -1,7 +1,9 @@
+import DownloadApp from "../../components/DownloadApp/DownloadApp";
+
 const AboutUs = () => {
   return (
     <div>
-      <h2>This is the About Us</h2>
+      <DownloadApp />
     </div>
   );
 };
