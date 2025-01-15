@@ -3,3 +3,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-poppins bg-white_transparent;
+  }
+}
+
+@layer components {
+  .navClassActive {
+    @apply text-[#083EC5] font-medium text-xl;
+  }
+  .navClass {
+    @apply text-[#172B4D] font-medium text-xl;
+  }
+}

@@ -1,7 +1,12 @@
-const Container = () => {
+const Container = ({ children, width = "100%" }) => {
   return (
-    <div>
-      <h2>This is the container</h2>
+    <div
+      className={`mx-auto`}
+      style={{
+        width: width,
+      }}
+    >
+      {children}
     </div>
   );
 };
