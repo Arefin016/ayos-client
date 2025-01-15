@@ -71,7 +71,7 @@ const Footer = () => {
         {/* This is the border section */}
         <div className="bg-[#201F22] h-[1px] opacity-[0.31] my-8"></div>
         {/* This is the copyright section */}
-        <div className="flex flex-row justify-between navbarBottom">
+        <div className="flex flex-row justify-between navbarBottom font-inter">
           <h1>© Copyright 2025, All Rights Reserved</h1>
           <div className="flex flex-row gap-10">
             <p>Privacy Policy</p>

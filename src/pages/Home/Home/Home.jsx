@@ -1,7 +1,9 @@
+import DownloadApp from "../DownloadApp/DownloadApp";
+
 const Home = () => {
   return (
     <div>
-      <h2>This is home</h2>
+      <DownloadApp />
     </div>
   );
 };

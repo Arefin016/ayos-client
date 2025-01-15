@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         jakarta: ["Plus Jakarta Sans", "sans-serif"],
+        inter: ["Inter", "serif"],
       },
       colors: {
         primaryColor: "#FFF",
