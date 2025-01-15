@@ -55,7 +55,7 @@ const Navbar = () => {
             </ul>
           </nav>
           {/* This is the Get to app section */}
-          <Link>
+          <Link to={"/signUp"}>
             <button className="text-xl bg-button text-[#FFF] px-[35px] py-[11px] rounded-[26px]">
               Get to app
             </button>

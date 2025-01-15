@@ -5,9 +5,12 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        jakarta: ["Plus Jakarta Sans", "sans-serif"],
       },
       colors: {
+        primaryColor: "#FFF",
         button: "#083EC5",
+        secondaryButton: "#1E1E1E",
       },
       backgroundColor: {
         white_transparent: "#FFF",

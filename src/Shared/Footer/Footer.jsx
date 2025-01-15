@@ -68,6 +68,8 @@ const Footer = () => {
             </a>
           </div>
         </div>
+        {/* This is the border section */}
+        <div className="bg-[#201F22] h-[1px] opacity-[0.31] my-8"></div>
         {/* This is the copyright section */}
         <div className="flex flex-row justify-between navbarBottom">
           <h1>© Copyright 2025, All Rights Reserved</h1>
