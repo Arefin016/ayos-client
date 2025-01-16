@@ -24,7 +24,7 @@ const SignUp = () => {
             </div>
             <UploadLogo />
             <div className="flex flex-col gap-y-[26px]">
-              <div className="flex flex-row  gap-x-[60px] ">
+              <div className="flex flex-row gap-x-[60px] ">
                 <SignUpBtn
                   imgSrc={playStorePic}
                   primaryText="Get it on"

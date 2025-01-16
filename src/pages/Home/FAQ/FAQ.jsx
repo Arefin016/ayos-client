@@ -4,7 +4,7 @@ import FaqPic from "../../../assets/images/faqDesign.png";
 
 const FAQ = () => {
   return (
-    <section>
+    <section className="relative">
       <div className="text-center py-20">
         <h1 className="text-[#101828] text-4xl font-jakarta font-semibold">
           Frequently asked questions
@@ -14,10 +14,10 @@ const FAQ = () => {
         </p>
         {/* This is the accordian */}
         <Container width="1336px">
-          <section className="mt-16 relative">
+          <section className="mt-16 ">
             <FaqAccordionCom />
           </section>
-          <div className="absolute top-[270px] left-[-5px]">
+          <div className="absolute top-[250px] left-0">
             <img src={FaqPic} alt="" />
           </div>
         </Container>
