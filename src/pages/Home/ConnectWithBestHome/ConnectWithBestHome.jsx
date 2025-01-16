@@ -48,7 +48,7 @@ const ConnectWithBestHome = () => {
             </Link>
           </div>
           {/* This is the bucket section */}
-          <div className="absolute top-[418px] right-[-259px]">
+          <div className="absolute top-[446px] right-[-259px]">
             <img src={bucketPic} alt="" />
           </div>
         </div>
