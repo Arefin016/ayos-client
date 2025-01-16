@@ -17,7 +17,7 @@ const FAQ = () => {
           <section className="mt-16 ">
             <FaqAccordionCom />
           </section>
-          <div className="absolute top-[250px] left-0">
+          <div className="absolute top-[235px] left-0">
             <img src={FaqPic} alt="" />
           </div>
         </Container>

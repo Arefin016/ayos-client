@@ -9,7 +9,7 @@ const FaqAccordionCom = () => {
   return (
     <FaqAccordion type="single" collapsible className="w-full space-y-6">
       <AccordionItem
-        className="p-6 border border-[#EAEAEA] rounded-[8px]"
+        className="p-3 border border-[#EAEAEA] rounded-[8px]"
         value="item-1"
       >
         <AccordionTrigger className="font-jakarta text-xl font-medium text-[#101828]">
@@ -22,7 +22,7 @@ const FaqAccordionCom = () => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem
-        className="p-6 border border-[#EAEAEA] rounded-[8px]"
+        className="p-3 border border-[#EAEAEA] rounded-[8px]"
         value="item-2"
       >
         <AccordionTrigger className="font-jakarta text-xl font-medium text-[#101828]">
@@ -35,7 +35,7 @@ const FaqAccordionCom = () => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem
-        className="p-6 border border-[#EAEAEA] rounded-[8px]"
+        className="p-3 border border-[#EAEAEA] rounded-[8px]"
         value="item-3"
       >
         <AccordionTrigger className="font-jakarta text-xl font-medium text-[#101828]">
@@ -48,7 +48,7 @@ const FaqAccordionCom = () => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem
-        className="p-6 border border-[#EAEAEA] rounded-[8px]"
+        className="p-3 border border-[#EAEAEA] rounded-[8px]"
         value="item-4"
       >
         <AccordionTrigger className="font-jakarta text-xl font-medium text-[#101828]">
@@ -61,7 +61,7 @@ const FaqAccordionCom = () => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem
-        className="p-6 border border-[#EAEAEA] rounded-[8px]"
+        className="p-3 border border-[#EAEAEA] rounded-[8px]"
         value="item-5"
       >
         <AccordionTrigger className="font-jakarta text-xl font-medium text-[#101828]">
@@ -74,7 +74,7 @@ const FaqAccordionCom = () => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem
-        className="p-6 border border-[#EAEAEA] rounded-[8px]"
+        className="p-3 border border-[#EAEAEA] rounded-[8px]"
         value="item-6"
       >
         <AccordionTrigger className="font-jakarta text-xl font-medium text-[#101828]">
