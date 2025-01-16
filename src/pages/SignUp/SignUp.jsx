@@ -3,7 +3,7 @@ import signUpPic from "../../assets/images/signupPic.png";
 import playStorePic from "../../assets/images/googlePlayPic.png";
 import appStorePic from "../../assets/images/appleStorePic.png";
 import SignUpBtn from "../../components/SignUpBtn/SignUpBtn";
-import { SiteLogo, UploadLogo } from "../../components/Svg/Svg";
+import { SiteLogo, UploadLogo } from "@/components/SVG/SVG";
 
 const SignUp = () => {
   return (

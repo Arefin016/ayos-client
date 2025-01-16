@@ -1,4 +1,4 @@
-export const SiteLogo = () => {
+const SiteLogo = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ export const SiteLogo = () => {
 
 //
 
-export const UploadLogo = () => {
+const UploadLogo = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -71,3 +71,5 @@ export const UploadLogo = () => {
     </svg>
   );
 };
+
+export { UploadLogo, SiteLogo };
