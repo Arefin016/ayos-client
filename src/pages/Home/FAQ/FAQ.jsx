@@ -1,5 +1,6 @@
 import Container from "@/components/Container/Container";
 import FaqAccordionCom from "@/components/FaqAccordionCom/FaqAccordionCom";
+import FaqPic from "../../../assets/images/faqDesign.png";
 
 const FAQ = () => {
   return (
@@ -13,9 +14,12 @@ const FAQ = () => {
         </p>
         {/* This is the accordian */}
         <Container width="1336px">
-          <section className="mt-16">
+          <section className="mt-16 relative">
             <FaqAccordionCom />
           </section>
+          <div className="absolute top-[270px] left-[-5px]">
+            <img src={FaqPic} alt="" />
+          </div>
         </Container>
       </div>
     </section>
