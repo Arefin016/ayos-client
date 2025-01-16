@@ -2,6 +2,7 @@ import DownloadApp from "../../../components/DownloadApp/DownloadApp";
 import Banner from "../../../components/Banner/Banner";
 import ConnectWithBestHome from "../ConnectWithBestHome/ConnectWithBestHome";
 import FAQ from "../FAQ/FAQ";
+import AyosPlatform from "../AyosPlatform/AyosPlatform";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
         backgroundImage="https://i.postimg.cc/MTvfGNm0/banner-Img.png"
         gradient="linear-gradient(90deg, rgba(9, 25, 64, 0.80) -0.85%, rgba(23, 64, 166, 0.00) 99.73%)"
       />
+      <AyosPlatform />
       <ConnectWithBestHome />
       <FAQ />
       <DownloadApp />
