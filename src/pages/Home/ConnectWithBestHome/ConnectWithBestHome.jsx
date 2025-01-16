@@ -1,6 +1,9 @@
 import React from "react";
 import device from "../../../assets/images/Device.png";
 import bucketPic from "../../../assets/images/bucket.png";
+import playStore from "../../../assets/images/playStorePic.png";
+import appStore from "../../../assets/images/appStorePic.png";
+import { Link } from "react-router-dom";
 
 const ConnectWithBestHome = () => {
   return (
@@ -37,8 +40,12 @@ const ConnectWithBestHome = () => {
           </div>
           {/* This is the button section */}
           <div className="flex flex-row gap-8">
-            <button>Google Play Store</button>
-            <button>App Store</button>
+            <Link to={"https://play.google.com/store/apps?hl=en&pli=1"}>
+              <img src={playStore} alt="" />
+            </Link>
+            <Link to={"https://www.apple.com/app-store/"}>
+              <img src={appStore} alt="" />
+            </Link>
           </div>
           {/* This is the bucket section */}
           <div className="absolute top-[418px] right-[-259px]">
