@@ -135,4 +135,19 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* custom faq icon:start */
+  .accordion-trigger .faq-plus {
+    @apply block;
+  }
+  .accordion-trigger .faq-minus {
+    @apply hidden;
+  }
+  .accordion-trigger[data-state="open"] .faq-plus {
+    @apply hidden;
+  }
+  .accordion-trigger[data-state="open"] .faq-minus {
+    @apply block;
+  }
+  /* custom faq icon:end */
 }
