@@ -3,6 +3,7 @@ import Banner from "../../../components/Banner/Banner";
 import ConnectWithBestHome from "../ConnectWithBestHome/ConnectWithBestHome";
 import FAQ from "../FAQ/FAQ";
 import AyosPlatform from "../AyosPlatform/AyosPlatform";
+import CardSection from "../CardSection/CardSection";
 
 const Home = () => {
   return (
@@ -27,6 +28,7 @@ const Home = () => {
       />
       <AyosPlatform />
       <ConnectWithBestHome />
+      <CardSection />
       <FAQ />
       <DownloadApp />
     </div>

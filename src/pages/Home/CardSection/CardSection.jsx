@@ -1,11 +1,9 @@
-import Banner from "@/components/Banner/Banner";
-import DownloadApp from "../../components/DownloadApp/DownloadApp";
-import cardSvg from "../../assets/images/cardSvg.png";
-import cardImage from "../../assets/images/cardImage.png";
 import Card from "@/components/Card/Card";
-import Container from "@/components/Container/Container";
+import cardSvg from "../../../assets/images/cardSvg.png";
+import cardImage from "../../../assets/images/cardImage.png";
+import { Link } from "react-router-dom";
 
-const OurServices = () => {
+const CardSection = () => {
   const cardDetails = [
     {
       title: "Plumbing",
@@ -66,41 +64,22 @@ const OurServices = () => {
   ];
 
   return (
-    <div>
-      <Banner
-        title={
-          <>
-            Ayos: Effective. Reliable. Enab <br />
-            ling.
-          </>
-        }
-        subtitle={
-          <>
-            Connect with trusted professionals for all your home needs—cleaning,
-            repairs,
-            <br />
-            maintenance, and beyond. Post your job today and experience fast,
-            reliable service <br /> with a hassle-free process!
-          </>
-        }
-        backgroundImage="https://i.postimg.cc/054swQp1/Rectangle-9.png"
-        gradient="linear-gradient(0deg, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.38) 100%)"
-      />
-      {/* This is the services section start */}
-      <Container width="1561px">
-        <div className="mt-[93px]">
-          <div className="flex flex-col space-y-8 justify-center text-center">
-            <h1 className="text-[#172B4D] font-poppins text-[40px] font-semibold">
-              Best Contractors service for Your <br /> Needs!
-            </h1>
-            <p className="text-[#585858] font-jakarta text-xl">
-              Take control of your wellness journey with personalized AI
-              insights. Track <br /> your progress, stay consistent
-            </p>
-          </div>
+    <section className="py-[100px] px-[180px]">
+      <div>
+        {/* This is the title section start */}
+        <div className="flex flex-col text-center space-y-8">
+          <h1 className="text-[#172B4D] font-poppins text-[40px] font-semibold">
+            Unlock the Best Contractors for Your <br /> Needs!
+          </h1>
+          <p className="text-[#585858] font-jakarta text-xl">
+            Take control of your wellness journey with personalized AI insights.
+            Track <br /> your progress, stay consistent
+          </p>
+          {/* This is the title section end */}
+
           {/* Card Section */}
-          <div className="flex flex-wrap gap-5 pt-[107px] justify-center text-center items-center">
-            {cardDetails.map((card, index) => (
+          <div className="grid grid-cols-3 gap-5 pt-[107px] justify-center text-center">
+            {cardDetails.slice(0, 6).map((card, index) => (
               <Card
                 key={index}
                 title={card.title}
@@ -111,12 +90,16 @@ const OurServices = () => {
             ))}
           </div>
         </div>
-      </Container>
-      {/* This is the services section end */}
-      {/*  */}
-      <DownloadApp />
-    </div>
+        <div className="flex justify-center mt-[60px]">
+          <Link to={"/services"}>
+            <button className="text-primaryColor text-[16px] font-medium bg-[#083EC5] py-[18px] px-[95px] rounded-xl">
+              All view
+            </button>
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default OurServices;
+export default CardSection;

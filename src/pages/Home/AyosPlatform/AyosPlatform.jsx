@@ -1,12 +1,13 @@
 import Contractor from "@/components/Contractor/Contractor";
 import Customer from "@/components/Customer/Customer";
 import { useState } from "react";
+import ayosPlatformPic from "../../../assets/images/ayosPlatformPic.png";
 
 const AyosPlatform = () => {
   const [isCustomer, setisCustomer] = useState(true);
   return (
     <section className="flex flex-row justify-center items-center mt-20">
-      <div>
+      <div className="relative">
         {/* This is the title section */}
         <div className="flex flex-col items-center justify-center text-center space-y-8 mb-10">
           <h1 className="font-poppins text-[40px] text-[#172B4D] font-semibold">
@@ -80,6 +81,9 @@ const AyosPlatform = () => {
         </div>
         <div className="mt-12">
           {isCustomer ? <Customer /> : <Contractor />}
+        </div>
+        <div className="absolute top-0 left-[-222px]">
+          <img src={ayosPlatformPic} alt="" />
         </div>
       </div>
     </section>
