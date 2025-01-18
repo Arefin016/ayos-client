@@ -40,23 +40,6 @@ const UnlockSection = () => {
     }
   };
 
-  console.log(shownService);
-
-  //   const handleVideoPlay = () => {
-  //     // Open the video in a new tab or handle custom logic (e.g., modal)
-  //     window.open("https://youtu.be/h_HvCWQVzaw?si=XewIkFsHY3suEevT", "_blank");
-  //   };
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
     <Container width="1560px">
       <section className="mt-5">
@@ -93,7 +76,7 @@ const UnlockSection = () => {
                   className="rounded-[48px]"
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/2z0rgRTTyjA?si=9tt4dMdzzbLFVlxl&autoplay=1&mute=1&loop=1&playlist=2z0rgRTTyjA"
+                  src="https://www.youtube.com/embed/LXb3EKWsInQ?si=n2j1FQTB1RAymVtw"
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
