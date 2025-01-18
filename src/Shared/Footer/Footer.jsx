@@ -14,7 +14,9 @@ const Footer = () => {
       <footer>
         <div className="flex flex-row justify-between font-poppins items-center">
           {/* This is the logo Section */}
-          <img src={footerLogo} alt="" />
+          <Link to={"/"}>
+            <img src={footerLogo} alt="" />
+          </Link>
           {/* This is the Navigation Section */}
           <nav>
             <ul className="flex space-x-[55px]">

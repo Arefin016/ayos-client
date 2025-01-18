@@ -8,7 +8,9 @@ const Navbar = () => {
       <section className="container-[1720px] mt-5 py-4">
         <div className="flex flex-row justify-between font-poppins items-center">
           {/* This is the logo Section */}
-          <img src={logo} alt="" />
+          <Link to={"/"}>
+            <img src={logo} alt="" />
+          </Link>
           {/* This is the Navigation Section */}
           <nav>
             <ul className="flex space-x-20">
