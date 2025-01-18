@@ -29,14 +29,14 @@ const SignUp = () => {
                   imgSrc={playStorePic}
                   primaryText="Get it on"
                   secondaryText="Google Play"
-                  link="/"
+                  link="https://play.google.com/store/apps?hl=en&pli=1"
                 ></SignUpBtn>
                 {/* This is the App Store button  */}
                 <SignUpBtn
                   imgSrc={appStorePic}
                   primaryText="Download on the"
                   secondaryText="App Store"
-                  link="/"
+                  link="https://www.apple.com/app-store/"
                 ></SignUpBtn>
               </div>
               <p className=" text-[16px] font-normal leading-[180%] text-[#172B4D] text-center ">

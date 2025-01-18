@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const ConnectWithBestHome = () => {
   return (
-    <section className="bg-[#FAFAFA] py-[98px] px-[233px] mt-[125px] mb-[100px]">
+    <section className="bg-[#FAFAFA] py-[98px] px-[233px] mb-[100px]">
       <div className="flex flex-row gap-[138px] items-center">
         <div>
           <img

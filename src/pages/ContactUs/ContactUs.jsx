@@ -41,28 +41,76 @@ const ContactUs = () => {
 
         {/* This is the input section */}
         <div className="">
-          <div>
+          <div className="mb-[94px]">
             <h1 className="text-[#172B4D] font-inter text-[31.625px] font-medium">
               Send your message
             </h1>
             {/*  */}
             <form onSubmit={handleSubmit(onSubmit)}>
               {/* register your input into the hook by invoking the "register" function */}
-              <div className="flex flex-col">
-                <label>First Name</label>
+              <div className="flex flex-col mt-10 space-y-6">
+                {/* Your Name Field Start */}
+                <label className="flex gap-1 items-center text-[#152934] font-roboto font-medium">
+                  Your Name{" "}
+                  <span className="text-[#E83330] font-roboto font-medium">
+                    *
+                  </span>{" "}
+                </label>
                 <input
-                  className="border border-[#D0D3D6] rounded-[37px]"
+                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
+                  placeholder="Enter your name"
                   {...register("firstName")}
                 />
-                <label>First Name</label>
-                <input {...register("firstName")} />
-                <label>First Name</label>
-                <input {...register("firstName")} />
+                {/* Your Name Field end */}
+                {/* Your Email Address Field Start */}
+                <label className="flex gap-1 items-center text-[#152934] font-roboto font-medium mb-4">
+                  Email Address{" "}
+                  <span className="text-[#E83330] font-roboto font-medium">
+                    *
+                  </span>{" "}
+                </label>
+                <input
+                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
+                  placeholder="Enter your email address"
+                  {...register("firstName")}
+                />
+                {/* Your Email Address Field end */}
+                {/* Your Mobile Number Field Start */}
+                <label className="flex gap-1 items-center text-[#152934] font-roboto font-medium mb-4">
+                  Mobile Number{" "}
+                </label>
+                <input
+                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
+                  placeholder="01XXXXXXXXX"
+                  {...register("firstName")}
+                />
+                {/* Your Mobile Number Field end */}
+                {/* message Field Section Start */}
+                <label className="flex gap-1 items-center text-[#152934] font-roboto font-medium mb-4">
+                  Message{" "}
+                  <span className="text-[#E83330] font-roboto font-medium">
+                    *
+                  </span>{" "}
+                </label>
+                <textarea
+                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-[642px] h-[111px] text-[#D0D3D6] font-poppins text-[16px]"
+                  placeholder="Write your message"
+                  {...register("firstName")}
+                />
+                {/* message Field Section ends */}
+                <p className="w-[643px] text-[#5D6A72] font-poppins text-[14px]">
+                  <>
+                    We want your input: questions, bug reports, complaints,
+                    praise, feature <br /> requests — every little bit helps.
+                    Let us know what we can do to improve <br /> ayos.
+                  </>
+                </p>
               </div>
-
-              {errors.exampleRequired && <span>This field is required</span>}
-
-              <input type="submit" />
+              <input
+                className="mt-6 bg-[#083EC5] rounded-[37px] px-[108px] h-[57px] text-primaryColor font-poppins text-[16px] cursor-pointer"
+                type="submit"
+                value="Send Message"
+              />
             </form>
           </div>
         </div>

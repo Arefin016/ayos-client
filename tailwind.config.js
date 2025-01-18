@@ -12,6 +12,8 @@ export default {
       },
       colors: {
         primaryColor: "#FFF",
+        secondaryColor: "#000",
+        paragraphColor: "#646464",
         button: "#083EC5",
         secondaryButton: "#1E1E1E",
         background: "hsl(var(--background))",

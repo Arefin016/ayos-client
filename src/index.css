@@ -126,6 +126,12 @@
   .navbarBottom {
     @apply text-[#52525B]  text-sm font-normal leading-[26px];
   }
+  .aboutTitle {
+    @apply text-secondaryColor font-poppins text-2xl font-medium;
+  }
+  .aboutParagraph {
+    @apply text-paragraphColor font-poppins text-[18px];
+  }
 }
 
 @layer base {

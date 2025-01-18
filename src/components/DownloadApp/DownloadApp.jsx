@@ -25,13 +25,13 @@ const DownloadApp = () => {
                 imgSrc={appStorePic}
                 primaryText="Download on the"
                 secondaryText="App Store"
-                link="/"
+                link="https://www.apple.com/app-store/"
               />
               <SignUpBtn
                 imgSrc={playStorePic}
                 primaryText="Get it on"
                 secondaryText="Google Play"
-                link="/"
+                link="https://play.google.com/store/apps?hl=en&pli=1"
               />
             </div>
           </div>

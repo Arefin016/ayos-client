@@ -64,7 +64,7 @@ const CardSection = () => {
   ];
 
   return (
-    <section className="py-[100px] px-[180px]">
+    <section className="pb-[100px] px-[180px]">
       <div>
         {/* This is the title section start */}
         <div className="flex flex-col text-center space-y-8">

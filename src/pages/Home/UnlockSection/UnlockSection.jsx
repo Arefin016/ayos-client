@@ -42,6 +42,21 @@ const UnlockSection = () => {
 
   console.log(shownService);
 
+  //   const handleVideoPlay = () => {
+  //     // Open the video in a new tab or handle custom logic (e.g., modal)
+  //     window.open("https://youtu.be/h_HvCWQVzaw?si=XewIkFsHY3suEevT", "_blank");
+  //   };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <Container width="1560px">
       <section className="mt-5">
@@ -73,23 +88,18 @@ const UnlockSection = () => {
           {/* This is the content */}
           <div>
             <section className="flex items-center justify-center pt-20">
-              <div
-                className="h-[820px] rounded-[48px] w-[1720px]"
-                style={{
-                  backgroundImage: `linear-gradient(355deg, rgba(0, 0, 0, 0.00) 63.11%, rgba(0, 0, 0, 0.72) 98.69%), url(https://i.postimg.cc/66rb8Jmf/Rectangle-8.png)`,
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                }}
-              >
-                <div className="flex justify-center text-center mt-[76px]">
-                  <p className="text-primaryColor w-[1033px] font-poppins text-[24px] font-medium">
-                    {shownService?.subHeading}
-                  </p>
-                </div>
-                <div className="flex justify-center mt-[191px]">
-                  <VideoLogo></VideoLogo>
-                </div>
+              <div className="h-[820px] rounded-[48px] w-[1720px]">
+                <iframe
+                  className="rounded-[48px]"
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/2z0rgRTTyjA?si=9tt4dMdzzbLFVlxl&autoplay=1&mute=1&loop=1&playlist=2z0rgRTTyjA"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
               </div>
             </section>
           </div>
