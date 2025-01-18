@@ -132,6 +132,12 @@
   .aboutParagraph {
     @apply text-paragraphColor font-poppins text-[18px];
   }
+  .title {
+    @apply text-[#172B4D] font-poppins text-[40px] font-semibold;
+  }
+  .paragraph {
+    @apply text-[#172B4D] font-poppins text-xl text-left;
+  }
 }
 
 @layer base {

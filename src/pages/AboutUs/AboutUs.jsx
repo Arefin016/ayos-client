@@ -1,6 +1,7 @@
 import Banner from "@/components/Banner/Banner";
 import DownloadApp from "../../components/DownloadApp/DownloadApp";
 import humanPic from "../../assets/images/aboutUsPic.png";
+import Container from "@/components/Container/Container";
 
 const AboutUs = () => {
   return (
@@ -29,10 +30,8 @@ const AboutUs = () => {
         <div className="px-[183px]">
           {/* First Div */}
           <div className="text-center space-y-[35px]">
-            <h1 className="text-[#172B4D] font-poppins text-[40px] font-semibold">
-              Who we are
-            </h1>
-            <p className="text-[#172B4D] font-poppins text-xl text-left">
+            <h1 className="title">Who we are</h1>
+            <p className="paragraph">
               Ayos is a revolutionary platform that redefines how homeowners,
               property managers, and contractors connect and collaborate for
               home services. From cleaning and repairs to major renovations,
@@ -53,10 +52,8 @@ const AboutUs = () => {
           </div>
           {/* Second Div */}
           <div className="text-center space-y-[35px] mt-[88px]">
-            <h1 className="text-[#172B4D] font-poppins text-[40px] font-semibold">
-              Why Choose Us
-            </h1>
-            <p className="text-[#172B4D] font-poppins text-xl text-left">
+            <h1 className="title">Why Choose Us</h1>
+            <p className="paragraph">
               What truly distinguishes Ayos is our unwavering commitment to
               transparency, trust, and fostering meaningful relationships.
               Unlike traditional models that can often lead to misunderstandings
@@ -70,10 +67,8 @@ const AboutUs = () => {
           </div>
           {/* Third Div */}
           <div className="text-center space-y-[35px] mt-[88px]">
-            <h1 className="text-[#172B4D] font-poppins text-[40px] font-semibold">
-              What Users Need to Understand
-            </h1>
-            <p className="text-[#172B4D] font-poppins text-xl text-left">
+            <h1 className="title">What Users Need to Understand</h1>
+            <p className="paragraph">
               What truly distinguishes Ayos is our unwavering commitment to
               transparency, trust, and fostering meaningful relationships.
               Unlike traditional models that can often lead to misunderstandings
@@ -97,85 +92,82 @@ const AboutUs = () => {
           </div>
           {/* This is the content section */}
           <div>
-            <div>
-              <div className="space-y-[31px] mb-12">
-                <h1 className="text-[#172B4D] font-poppins text-[40px] font-semibold">
-                  Transform your home and Customer
-                </h1>
-                <p className="text-[#172B4D] font-poppins text-xl font-medium">
-                  Uncover the best characteristics that establish Ayos as the premier home enhancement 
-                  <br />
-                  option.
-                </p>
-              </div>
-              {/*  */}
-              <div className="flex gap-[81px]">
-                {/* This is the left side content */}
-                <div className="space-y-[27px]">
-                  {/* Seamless navigation */}
-                  <div className="space-y-4 w-[390px]">
-                    <h1 className="aboutTitle">Seamless Navigation</h1>
-                    <p className="aboutParagraph">
-                      Our intuitive interface ensures you can find the right
-                      contractor swiftly and effortlessly, making job management
-                      a breeze with just a few clicks.
-                    </p>
-                  </div>
-                  {/* Think Slow, Act Fast */}
-                  <div className="space-y-4 w-[399px]">
-                    <h1 className="aboutTitle">Think Slow, Act Fast.</h1>
-                    <p className="aboutParagraph">
-                      <>
-                        Effortful, controlled, and data-driven decisions are{" "}
-                        <br />
-                        better than a quick decision and sloppy execution.
-                      </>
-                    </p>
-                  </div>
-                  {/* Simple Job Scheduling */}
-                  <div className="space-y-4 w-[399px]">
-                    <h1 className="aboutTitle">Simple Job Scheduling</h1>
-                    <p className="aboutParagraph">
+            <div className="space-y-[31px] mb-12">
+              <h1 className="text-[#172B4D] font-poppins text-[40px] font-semibold">
+                Transform your home and Customer
+              </h1>
+              <p className="text-[#172B4D] font-poppins text-xl font-medium">
+                Uncover the best characteristics that establish Ayos as the premier home enhancement 
+                <br />
+                option.
+              </p>
+            </div>
+
+            <div className="flex gap-[81px]">
+              {/* This is the left side content */}
+              <div className="space-y-[27px]">
+                {/* Seamless navigation */}
+                <div className="space-y-4 w-[390px]">
+                  <h1 className="aboutTitle">Seamless Navigation</h1>
+                  <p className="aboutParagraph">
+                    Our intuitive interface ensures you can find the right
+                    contractor swiftly and effortlessly, making job management a
+                    breeze with just a few clicks.
+                  </p>
+                </div>
+                {/* Think Slow, Act Fast */}
+                <div className="space-y-4 w-[399px]">
+                  <h1 className="aboutTitle">Think Slow, Act Fast.</h1>
+                  <p className="aboutParagraph">
+                    <>
                       Effortful, controlled, and data-driven decisions are{" "}
                       <br />
                       better than a quick decision and sloppy execution.
-                    </p>
-                  </div>
+                    </>
+                  </p>
                 </div>
-                {/* This is the right side content */}
-                <div className="space-y-[27px]">
-                  {/* Streamlined Communication */}
-                  <div className="space-y-4 w-[395px]">
-                    <h1 className="aboutTitle">Streamlined Communication</h1>
-                    <p className="aboutParagraph">
-                      <>
-                        Nothing at Pathao is someone else’s problem. We <br />{" "}
-                        all work together on a shared mission.
-                      </>
-                    </p>
-                  </div>
-                  {/* Verified and Reliable Contractors */}
-                  <div className="space-y-4 w-[401px]">
-                    <h1 className="aboutTitle">
-                      Verified and Reliable Contractors
-                    </h1>
-                    <p className="aboutParagraph">
-                      <>
-                        Pathao exists to serve. Everything we do <br /> impacts{" "}
-                        <br />
-                        thousands of people.
-                      </>
-                    </p>
-                  </div>
-                  {/* 24/7 Customer Support */}
-                  <div className="space-y-4 w-[395px]">
-                    <h1 className="aboutTitle">24/7 Customer Support</h1>
-                    <p className="aboutParagraph">
-                      Our intuitive interface ensures you can find the right
-                      contractor swiftly and effortlessly, making job management
-                      a breeze with just a few clicks.
-                    </p>
-                  </div>
+                {/* Simple Job Scheduling */}
+                <div className="space-y-4 w-[399px]">
+                  <h1 className="aboutTitle">Simple Job Scheduling</h1>
+                  <p className="aboutParagraph">
+                    Effortful, controlled, and data-driven decisions are <br />
+                    better than a quick decision and sloppy execution.
+                  </p>
+                </div>
+              </div>
+              {/* This is the right side content */}
+              <div className="space-y-[55px]">
+                {/* Streamlined Communication */}
+                <div className="space-y-4 w-[395px]">
+                  <h1 className="aboutTitle">Streamlined Communication</h1>
+                  <p className="aboutParagraph">
+                    <>
+                      Nothing at Pathao is someone else’s problem. We <br /> all
+                      work together on a shared mission.
+                    </>
+                  </p>
+                </div>
+                {/* Verified and Reliable Contractors */}
+                <div className="space-y-4 w-[401px]">
+                  <h1 className="aboutTitle">
+                    Verified and Reliable Contractors
+                  </h1>
+                  <p className="aboutParagraph">
+                    <>
+                      Pathao exists to serve. Everything we do <br /> impacts{" "}
+                      <br />
+                      thousands of people.
+                    </>
+                  </p>
+                </div>
+                {/* 24/7 Customer Support */}
+                <div className="space-y-4 w-[395px]">
+                  <h1 className="aboutTitle">24/7 Customer Support</h1>
+                  <p className="aboutParagraph">
+                    Our intuitive interface ensures you can find the right
+                    contractor swiftly and effortlessly, making job management a
+                    breeze with just a few clicks.
+                  </p>
                 </div>
               </div>
             </div>
@@ -183,6 +175,150 @@ const AboutUs = () => {
         </div>
       </section>
       {/* This is the second section end*/}
+
+      {/* This is the third section start */}
+      <Container width="1560px">
+        <section className="mt-[120px]">
+          <div>
+            <div className="text-center space-y-[35px]">
+              <h1 className="title">What Users Need to Understand</h1>
+              <p className="paragraph leading-9">
+                At Ayos, we aim to revolutionize the way homeowners and
+                contractors connect, collaborate, and achieve success. Far
+                beyond a simple marketplace, Ayos is your ultimate tool for
+                empowerment and freedom. Whether you’re a homeowner seeking
+                exceptional services or a contractor pursuing fair
+                opportunities, our platform is purpose-built to meet your needs
+                and elevate your experience. We don’t just facilitate
+                connections—we provide an all-in-one solution complete with
+                project management features, secure payment channels, and a
+                robust feedback system to maintain the highest standards of
+                quality and trust. <br />
+                {/* Features */}
+                <div className="mt-10">
+                  <span className="text-[#172B4D] font-poppins text-2xl font-medium pt-2">
+                    Features
+                  </span>
+                  <ul className="space-y-3 mt-2 ml-3 leading-9 list-none">
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Seamless Connections: An intuitive interface that
+                      effortlessly links homeowners with the ideal contractor
+                      for their project.
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Verified Contractor Profiles: Access detailed profiles
+                      with authentic reviews and ratings to make informed
+                      decisions.
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Competitive Bidding System: Ensures fair and transparent
+                      pricing for all projects.
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Comprehensive Project Management: Scheduling, invoicing,
+                      and organizational tools tailored for contractors.
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      In-App Messaging: A secure and efficient way to
+                      communicate directly within the platform.
+                    </li>
+                  </ul>
+                </div>
+                {/* Benefits for Homeowners */}
+                <div className="mt-10">
+                  <span className="text-[#172B4D] font-poppins text-2xl font-medium pt-2">
+                    Benefits for Homeowners
+                  </span>
+                  <ul className="space-y-3 mt-2 ml-3 leading-9 list-none">
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Curated Network of Experts: Gain access to a vetted
+                      community of top-rated contractors.
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Budget-Friendly Options: Benefit from competitive pricing
+                      tailored to your financial needs.
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Project Oversight: Stay informed and in control at every
+                      stage with powerful management tools.
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Effortless Communication: Maintain clear, open lines of
+                      dialogue with your contractor throughout the process.
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Peace of Mind: Trust that your project is in capable hands
+                      from start to finish.
+                    </li>
+                  </ul>
+                </div>
+                {/* Benefits for Contractors */}
+                <div className="mt-10">
+                  <span className="text-[#172B4D] font-poppins text-2xl font-medium pt-2">
+                    Benefits for Contractors
+                  </span>
+                  <ul className="space-y-3 mt-2 ml-3 leading-9 list-none">
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      New Business Opportunities: Easily connect with homeowners
+                      actively searching for your expertise.
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Fair Competition: The bidding system rewards quality and
+                      ensures equitable pricing.
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Streamlined Operations: Use built-in tools to simplify
+                      scheduling, invoicing, and overall project management.
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Enhanced Client Communication: Strengthen relationships
+                      through seamless in-app messaging.
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
+                      Increased Visibility: Boost your professional reach and
+                      attract more clients.
+                    </li>
+                  </ul>
+                </div>
+                {/* Why Ayos? */}
+                <div className="mt-10">
+                  <h1 className="text-[#172B4D] font-poppins text-[32px] font-medium">
+                    Why Ayos?
+                  </h1>
+                  <p className="mt-2 leading-9">
+                    At Ayos, we are reshaping the traditional landscape of home
+                    improvement and construction services. Our platform is built
+                    on principles of fairness, efficiency, and inclusivity.
+                    Whether you’re looking to enhance your living space or grow
+                    your contracting business, Allbetter offers the tools,
+                    support, and trust you need to <br /> thrive. Our dedication
+                    to innovation and user success drives everything we do,
+                    making Allbetter a trusted partner in achieving your goals.
+                    Join us in transforming the way homeowners and contractors
+                    work together—experience the Allbetter difference today. 4o
+                  </p>
+                </div>
+              </p>
+            </div>
+          </div>
+        </section>
+      </Container>
+      {/* This is the third section end */}
       <DownloadApp />
     </div>
   );
