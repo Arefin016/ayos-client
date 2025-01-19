@@ -143,10 +143,16 @@ const ContactUs = () => {
                 <input
                   data-aos="fade-up"
                   type="name"
+                  name="name"
+                  {...register("name", { required: true })}
                   className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="Enter your name"
-                  {...register("name")}
                 />
+                {errors.name && (
+                  <span className="text-red-600 font-semibold">
+                    Name is required
+                  </span>
+                )}
                 {/* Your Name Field end */}
                 {/* Your Email Address Field Start */}
                 <label
@@ -162,11 +168,17 @@ const ContactUs = () => {
                 <input
                   data-aos="fade-up"
                   data-aos-delay="100"
-                  type="text"
+                  type="email"
+                  name="email"
+                  {...register("email", { required: true })}
                   className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="Enter your email address"
-                  {...register("text")}
                 />
+                {errors.email && (
+                  <span className="text-red-600 font-semibold">
+                    Email is required
+                  </span>
+                )}
                 {/* Your Email Address Field end */}
                 {/* Your Mobile Number Field Start */}
                 <label
@@ -177,10 +189,16 @@ const ContactUs = () => {
                 </label>
                 <input
                   type="number"
+                  name="number"
+                  {...register("number", { required: true })}
                   className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="01XXXXXXXXX"
-                  {...register("number")}
                 />
+                {errors.number && (
+                  <span className="text-red-600 font-semibold">
+                    Number is required
+                  </span>
+                )}
                 {/* Your Mobile Number Field end */}
                 {/* message Field Section Start */}
                 <label
@@ -194,6 +212,7 @@ const ContactUs = () => {
                 </label>
                 <textarea
                   data-aos="fade-up"
+                  name="message"
                   className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-[642px] h-[111px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="Write your message"
                   {...register("firstName")}
