@@ -60,6 +60,13 @@ const AyosPlatform = () => {
               </svg>{" "}
               Customer
             </div>
+            <div
+              className={`  ${
+                isCustomer
+                  ? "bg-[#083EC5] rounded-full mt-[5px] w-[157px] h-[3px] text-center"
+                  : "bg-primaryColor rounded-full mt-[5px] ml-2 w-[157px] h-[3px] text-center"
+              } `}
+            ></div>
           </button>
           <button
             onClick={() => {
@@ -89,6 +96,14 @@ const AyosPlatform = () => {
               </svg>
               Contractor
             </div>
+            {/* <div className="bg-[#083EC5] rounded-full mt-[5px] ml-2 w-[157px] h-[3px] text-center ${}"></div> */}
+            <div
+              className={`  ${
+                !isCustomer
+                  ? "bg-[#083EC5] rounded-full mt-[5px] ml-2 w-[157px] h-[3px] text-center"
+                  : "bg-primaryColor rounded-full mt-[5px] ml-2 w-[157px] h-[3px] text-center"
+              } `}
+            ></div>
           </button>
         </div>
         <div className="mt-12">
