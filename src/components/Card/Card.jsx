@@ -15,7 +15,7 @@ const Card = ({ title, description, image, index }) => {
             <h1 className="text-[#41405D] font-poppins text-[32px] font-semibold">
               {title}
             </h1>
-            <div className="flex items-center justify-center w-10 h-10 rounded-full border-[2px] border-solid border-[#083EC5]  transition-transform transform group-hover:rotate-[180deg] group-hover:duration-500   ">
+            <div className="flex items-center justify-center w-10 h-10 rounded-full border-[2px] border-solid border-[#083EC5] transition-transform transform group-hover:rotate-[180deg] group-hover:duration-700">
               <GoArrowUpRight className="text-[#083EC5] text-2xl font-bold" />
             </div>
           </div>
