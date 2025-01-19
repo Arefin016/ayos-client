@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import contactUs from "../../assets/images/contactUsPic.png";
+import { Helmet } from "react-helmet-async";
 
 const ContactUs = () => {
   const {
@@ -11,6 +12,9 @@ const ContactUs = () => {
 
   return (
     <section className="">
+      <Helmet>
+        <title>Ayos || Contact Us</title>
+      </Helmet>
       <div className="flex flex-row gap-[409px] items-center bg-[#F5F6F7] pl-[181px] ">
         {/* This is the content */}
         <div>

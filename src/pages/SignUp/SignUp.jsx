@@ -4,10 +4,14 @@ import playStorePic from "../../assets/images/googlePlayPic.png";
 import appStorePic from "../../assets/images/appleStorePic.png";
 import SignUpBtn from "../../components/SignUpBtn/SignUpBtn";
 import { SiteLogo, UploadLogo } from "@/components/SVG/SVG";
+import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
   return (
     <Container>
+      <Helmet>
+        <title>Ayos || Sign Up</title>
+      </Helmet>
       <section className="mt-[81px] mb-[74px]">
         <div className="flex gap-2">
           {/* This is the first div */}

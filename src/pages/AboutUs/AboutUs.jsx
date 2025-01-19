@@ -2,10 +2,14 @@ import Banner from "@/components/Banner/Banner";
 import DownloadApp from "../../components/DownloadApp/DownloadApp";
 import humanPic from "../../assets/images/aboutUsPic.png";
 import Container from "@/components/Container/Container";
+import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
   return (
     <div>
+      <Helmet>
+        <title>Ayos || About Us</title>
+      </Helmet>
       <Banner
         title={
           <>

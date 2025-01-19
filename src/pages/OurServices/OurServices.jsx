@@ -4,6 +4,7 @@ import cardSvg from "../../assets/images/cardSvg.png";
 import cardImage from "../../assets/images/cardImage.png";
 import Card from "@/components/Card/Card";
 import Container from "@/components/Container/Container";
+import { Helmet } from "react-helmet-async";
 
 const OurServices = () => {
   const cardDetails = [
@@ -67,6 +68,9 @@ const OurServices = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Ayos || Our Services</title>
+      </Helmet>
       <Banner
         title={
           <>

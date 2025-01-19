@@ -11,7 +11,7 @@ import {
 const Footer = () => {
   return (
     <Container width="1560px">
-      <footer>
+      <footer className="mb-[38px]">
         <div className="flex flex-row justify-between font-poppins items-center">
           {/* This is the logo Section */}
           <Link to={"/"}>
