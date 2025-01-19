@@ -94,10 +94,17 @@ const OurServices = () => {
       <Container width="1561px">
         <div className="mt-[93px]">
           <div className="flex flex-col space-y-8 justify-center text-center">
-            <h1 className="text-[#172B4D] font-poppins text-[40px] font-semibold">
+            <h1
+              data-aos="fade-up"
+              className="text-[#172B4D] font-poppins text-[40px] font-semibold"
+            >
               Best Contractors service for Your <br /> Needs!
             </h1>
-            <p className="text-[#585858] font-jakarta text-xl">
+            <p
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="text-[#585858] font-jakarta text-xl"
+            >
               Take control of your wellness journey with personalized AI
               insights. Track <br /> your progress, stay consistent
             </p>

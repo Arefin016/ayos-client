@@ -15,10 +15,19 @@ const SignUp = () => {
       <section className="mt-[81px] mb-[74px]">
         <div className="flex gap-2">
           {/* This is the first div */}
-          <img src={signUpPic} alt="" />
+          <img
+            data-aos="zoom-in-right"
+            data-aos-delay="100"
+            src={signUpPic}
+            alt=""
+          />
 
           {/* This is the second div */}
-          <div className="w-[603px] h-auto py-[35px] px-[52px] bg-white_transparent rounded-3xl shadow-[0px_0px_6px_0px_rgba(0,0,0,0.25)] flex flex-col gap-y-[74px] items-center ">
+          <div
+            data-aos="zoom-in-left"
+            data-aos-delay="100"
+            className="w-[603px] h-auto py-[35px] px-[52px] bg-white_transparent rounded-3xl shadow-[0px_0px_6px_0px_rgba(0,0,0,0.25)] flex flex-col gap-y-[74px] items-center "
+          >
             {/* This is the logo section start */}
             <div className="flex flex-col gap-y-[26px] items-center">
               <SiteLogo></SiteLogo>

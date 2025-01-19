@@ -1,11 +1,11 @@
 import React from "react";
 
-const Card = ({ title, description, icon, image }) => {
+const Card = ({ title, description, icon, image, index }) => {
   return (
     <section>
       <div
         data-aos="fade-up"
-        data-aos-delay="100"
+        data-aos-delay={index * 100}
         className="w-[507px] py-[10px] px-4 bg-[#F5F5F5] rounded-2xl"
       >
         {/* Card Header */}

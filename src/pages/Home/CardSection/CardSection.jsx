@@ -99,8 +99,8 @@ const CardSection = () => {
           </div>
         </div>
         <div className="flex justify-center mt-[60px]">
-          <Link to={"/services"}>
-            <button className="text-primaryColor text-[16px] font-medium bg-[#083EC5] py-[18px] px-[95px] rounded-xl">
+          <Link to={"/services"} data-aos="fade-up">
+            <button className="text-primaryColor border-[2px] border-solid border-transparent text-[16px] font-medium bg-[#083EC5] py-[18px] px-[95px] rounded-xl hover:border-button hover:bg-transparent hover:text-button">
               All view
             </button>
           </Link>

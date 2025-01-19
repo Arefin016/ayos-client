@@ -43,6 +43,8 @@ const FaqAccordionCom = () => {
       {faqItems?.map((item, index) => (
         <AccordionItem
           key={index}
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
           className="px-6 py-2 border border-[#EAEAEA] rounded-[8px]"
           value={`item-${index + 1}`}
         >
@@ -50,9 +52,6 @@ const FaqAccordionCom = () => {
             {item?.title}
           </AccordionTrigger>
           <AccordionContent className="text-xl font-jakarta font-medium text-[#667085] w-2/3">
-            {/* Yes, you can try us for free for 30 days. If you want, we’ll provide
-            you <br /> with a free, personalized 30-minute onboarding call to
-            get you up and <br /> running as soon as possible. */}
             {item?.description}
           </AccordionContent>
         </AccordionItem>

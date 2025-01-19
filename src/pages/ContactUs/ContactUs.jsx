@@ -18,16 +18,28 @@ const ContactUs = () => {
       <div className="flex flex-row gap-[409px] items-center bg-[#F5F6F7] pl-[181px] ">
         {/* This is the content */}
         <div>
-          <h1 className="text-[#172B4D] font-inter text-[45.82px] font-medium mb-[18px]">
+          <h1
+            data-aos="fade-up"
+            className="text-[#172B4D] font-inter text-[45.82px] font-medium mb-[18px]"
+          >
             Ayos Service
           </h1>
-          <p className="text-[#5D6467] text-xl font-roboto">
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-[#5D6467] text-xl font-roboto"
+          >
             Our press release, coverage and press kit
           </p>
         </div>
         {/* This is the content */}
         <div>
-          <img src={contactUs} alt="" />
+          <img
+            data-aos="zoom-out"
+            data-aos-delay="100"
+            src={contactUs}
+            alt=""
+          />
         </div>
       </div>
 
@@ -35,15 +47,26 @@ const ContactUs = () => {
       <div className="flex justify-center gap-[67px] mt-[73px]">
         {/* This is the content section */}
         <div className="w-[592px]">
-          <h1 className="text-[#172B4D] font-poppins text-[62px] font-semibold mb-6">
+          <h1
+            data-aos="fade-up"
+            className="text-[#172B4D] font-poppins text-[62px] font-semibold mb-6"
+          >
             Contact us
           </h1>
-          <p className="text-[#646A69] font-poppins font-normal">
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-[#646A69] font-poppins font-normal"
+          >
             We are here to help you make a first move to greener choice.
           </p>
           {/* this is the social login */}
           <div className="mt-[35px]">
-            <div className="flex gap-2 items-center">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="flex gap-2 items-center"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -69,7 +92,11 @@ const ContactUs = () => {
               <p>hello@flow.com</p>
             </div>
             {/*  */}
-            <div className="flex gap-2 mt-6 items-center">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="flex gap-2 mt-6 items-center"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -93,7 +120,10 @@ const ContactUs = () => {
         {/* This is the input section */}
         <div className="">
           <div className="mb-[94px]">
-            <h1 className="text-[#172B4D] font-inter text-[31.625px] font-medium">
+            <h1
+              data-aos="fade-up"
+              className="text-[#172B4D] font-inter text-[31.625px] font-medium"
+            >
               Send your message
             </h1>
             {/*  */}
@@ -101,13 +131,17 @@ const ContactUs = () => {
               {/* register your input into the hook by invoking the "register" function */}
               <div className="flex flex-col mt-10 space-y-6">
                 {/* Your Name Field Start */}
-                <label className="flex gap-1 items-center text-[#152934] font-roboto font-medium">
+                <label
+                  data-aos="fade-up"
+                  className="flex gap-1 items-center text-[#152934] font-roboto font-medium"
+                >
                   Your Name{" "}
                   <span className="text-[#E83330] font-roboto font-medium">
                     *
                   </span>{" "}
                 </label>
                 <input
+                  data-aos="fade-up"
                   type="name"
                   className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="Enter your name"
@@ -115,13 +149,19 @@ const ContactUs = () => {
                 />
                 {/* Your Name Field end */}
                 {/* Your Email Address Field Start */}
-                <label className="flex gap-1 items-center text-[#152934] font-roboto font-medium mb-4">
+                <label
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  className="flex gap-1 items-center text-[#152934] font-roboto font-medium mb-4"
+                >
                   Email Address{" "}
                   <span className="text-[#E83330] font-roboto font-medium">
                     *
                   </span>{" "}
                 </label>
                 <input
+                  data-aos="fade-up"
+                  data-aos-delay="100"
                   type="text"
                   className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="Enter your email address"
@@ -129,7 +169,10 @@ const ContactUs = () => {
                 />
                 {/* Your Email Address Field end */}
                 {/* Your Mobile Number Field Start */}
-                <label className="flex gap-1 items-center text-[#152934] font-roboto font-medium mb-4">
+                <label
+                  data-aos="fade-up"
+                  className="flex gap-1 items-center text-[#152934] font-roboto font-medium mb-4"
+                >
                   Mobile Number{" "}
                 </label>
                 <input
@@ -140,19 +183,26 @@ const ContactUs = () => {
                 />
                 {/* Your Mobile Number Field end */}
                 {/* message Field Section Start */}
-                <label className="flex gap-1 items-center text-[#152934] font-roboto font-medium mb-4">
+                <label
+                  data-aos="fade-up"
+                  className="flex gap-1 items-center text-[#152934] font-roboto font-medium mb-4"
+                >
                   Message{" "}
                   <span className="text-[#E83330] font-roboto font-medium">
                     *
                   </span>{" "}
                 </label>
                 <textarea
+                  data-aos="fade-up"
                   className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-[642px] h-[111px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="Write your message"
                   {...register("firstName")}
                 />
                 {/* message Field Section ends */}
-                <p className="w-[643px] text-[#5D6A72] font-poppins text-[14px]">
+                <p
+                  data-aos="fade-up"
+                  className="w-[643px] text-[#5D6A72] font-poppins text-[14px]"
+                >
                   <>
                     We want your input: questions, bug reports, complaints,
                     praise, feature <br /> requests — every little bit helps.
@@ -161,6 +211,7 @@ const ContactUs = () => {
                 </p>
               </div>
               <input
+                data-aos="fade-up"
                 className="mt-6 border-[2px] border-solid border-transparent bg-[#083EC5] rounded-[37px] px-[108px] h-[57px] text-primaryColor font-poppins text-[16px] cursor-pointer hover:bg-transparent hover:text-button hover:border-button ease-in-out duration-150"
                 type="submit"
                 value="Send Message"

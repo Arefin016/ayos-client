@@ -33,7 +33,11 @@ const AboutUs = () => {
       <section className="my-[115px]">
         <div className="px-[183px]">
           {/* First Div */}
-          <div className="text-center space-y-[35px]">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-center space-y-[35px]"
+          >
             <h1 className="title">Who we are</h1>
             <p className="paragraph">
               Ayos is a revolutionary platform that redefines how homeowners,
@@ -55,7 +59,11 @@ const AboutUs = () => {
             </p>
           </div>
           {/* Second Div */}
-          <div className="text-center space-y-[35px] mt-[88px]">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="text-center space-y-[35px] mt-[88px]"
+          >
             <h1 className="title">Why Choose Us</h1>
             <p className="paragraph">
               What truly distinguishes Ayos is our unwavering commitment to
@@ -70,7 +78,11 @@ const AboutUs = () => {
             </p>
           </div>
           {/* Third Div */}
-          <div className="text-center space-y-[35px] mt-[88px]">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            className="text-center space-y-[35px] mt-[88px]"
+          >
             <h1 className="title">What Users Need to Understand</h1>
             <p className="paragraph">
               What truly distinguishes Ayos is our unwavering commitment to
@@ -91,27 +103,42 @@ const AboutUs = () => {
       <section className="bg-[#EEF3FF] px-[79px]">
         <div className="flex gap-10 items-center">
           {/* This is the image section */}
-          <div>
+          <div data-aos="zoom-in">
             <img src={humanPic} alt="" />
           </div>
           {/* This is the content section */}
           <div>
             <div className="space-y-[31px] mb-12">
-              <h1 className="text-[#172B4D] font-poppins text-[40px] font-semibold">
+              <h1
+                data-aos="fade-up"
+                className="text-[#172B4D] font-poppins text-[40px] font-semibold"
+              >
                 Transform your home and Customer
               </h1>
-              <p className="text-[#172B4D] font-poppins text-xl font-medium">
+              <p
+                data-aos="fade-up"
+                data-aos-delay="100"
+                className="text-[#172B4D] font-poppins text-xl font-medium"
+              >
                 Uncover the best characteristics that establish Ayos as the premier home enhancement 
                 <br />
                 option.
               </p>
             </div>
 
-            <div className="flex gap-[81px]">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="flex gap-[81px]"
+            >
               {/* This is the left side content */}
               <div className="space-y-[27px]">
                 {/* Seamless navigation */}
-                <div className="space-y-4 w-[390px]">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  className="space-y-4 w-[390px]"
+                >
                   <h1 className="aboutTitle">Seamless Navigation</h1>
                   <p className="aboutParagraph">
                     Our intuitive interface ensures you can find the right
@@ -120,7 +147,11 @@ const AboutUs = () => {
                   </p>
                 </div>
                 {/* Think Slow, Act Fast */}
-                <div className="space-y-4 w-[399px]">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  className="space-y-4 w-[399px]"
+                >
                   <h1 className="aboutTitle">Think Slow, Act Fast.</h1>
                   <p className="aboutParagraph">
                     <>
@@ -131,7 +162,11 @@ const AboutUs = () => {
                   </p>
                 </div>
                 {/* Simple Job Scheduling */}
-                <div className="space-y-4 w-[399px]">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  className="space-y-4 w-[399px]"
+                >
                   <h1 className="aboutTitle">Simple Job Scheduling</h1>
                   <p className="aboutParagraph">
                     Effortful, controlled, and data-driven decisions are <br />
@@ -142,7 +177,11 @@ const AboutUs = () => {
               {/* This is the right side content */}
               <div className="space-y-[55px]">
                 {/* Streamlined Communication */}
-                <div className="space-y-4 w-[395px]">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  className="space-y-4 w-[395px]"
+                >
                   <h1 className="aboutTitle">Streamlined Communication</h1>
                   <p className="aboutParagraph">
                     <>
@@ -152,7 +191,11 @@ const AboutUs = () => {
                   </p>
                 </div>
                 {/* Verified and Reliable Contractors */}
-                <div className="space-y-4 w-[401px]">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  className="space-y-4 w-[401px]"
+                >
                   <h1 className="aboutTitle">
                     Verified and Reliable Contractors
                   </h1>
@@ -165,7 +208,11 @@ const AboutUs = () => {
                   </p>
                 </div>
                 {/* 24/7 Customer Support */}
-                <div className="space-y-4 w-[395px]">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  className="space-y-4 w-[395px]"
+                >
                   <h1 className="aboutTitle">24/7 Customer Support</h1>
                   <p className="aboutParagraph">
                     Our intuitive interface ensures you can find the right
@@ -185,8 +232,14 @@ const AboutUs = () => {
         <section className="mt-[120px]">
           <div>
             <div className="text-center space-y-[35px]">
-              <h1 className="title">What Users Need to Understand</h1>
-              <p className="paragraph leading-9">
+              <h1 data-aos="fade-up" className="title">
+                What Users Need to Understand
+              </h1>
+              <p
+                data-aos="fade-up"
+                data-aos-delay="100"
+                className="paragraph leading-9"
+              >
                 At Ayos, we aim to revolutionize the way homeowners and
                 contractors connect, collaborate, and achieve success. Far
                 beyond a simple marketplace, Ayos is your ultimate tool for
@@ -203,7 +256,10 @@ const AboutUs = () => {
                   <span className="text-[#172B4D] font-poppins text-2xl font-medium pt-2">
                     Features
                   </span>
-                  <ul className="space-y-3 mt-2 ml-3 leading-9 list-none">
+                  <ul
+                    data-aos="fade-up"
+                    className="space-y-3 mt-2 ml-3 leading-9 list-none"
+                  >
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
                       Seamless Connections: An intuitive interface that
@@ -235,10 +291,17 @@ const AboutUs = () => {
                 </div>
                 {/* Benefits for Homeowners */}
                 <div className="mt-10">
-                  <span className="text-[#172B4D] font-poppins text-2xl font-medium pt-2">
+                  <span
+                    data-aos="fade-up"
+                    className="text-[#172B4D] font-poppins text-2xl font-medium pt-2"
+                  >
                     Benefits for Homeowners
                   </span>
-                  <ul className="space-y-3 mt-2 ml-3 leading-9 list-none">
+                  <ul
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                    className="space-y-3 mt-2 ml-3 leading-9 list-none"
+                  >
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
                       Curated Network of Experts: Gain access to a vetted
@@ -268,10 +331,17 @@ const AboutUs = () => {
                 </div>
                 {/* Benefits for Contractors */}
                 <div className="mt-10">
-                  <span className="text-[#172B4D] font-poppins text-2xl font-medium pt-2">
+                  <span
+                    data-aos="fade-up"
+                    className="text-[#172B4D] font-poppins text-2xl font-medium pt-2"
+                  >
                     Benefits for Contractors
                   </span>
-                  <ul className="space-y-3 mt-2 ml-3 leading-9 list-none">
+                  <ul
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    className="space-y-3 mt-2 ml-3 leading-9 list-none"
+                  >
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
                       New Business Opportunities: Easily connect with homeowners
@@ -301,10 +371,17 @@ const AboutUs = () => {
                 </div>
                 {/* Why Ayos? */}
                 <div className="mt-10">
-                  <h1 className="text-[#172B4D] font-poppins text-[32px] font-medium">
+                  <h1
+                    data-aos="fade-up"
+                    className="text-[#172B4D] font-poppins text-[32px] font-medium"
+                  >
                     Why Ayos?
                   </h1>
-                  <p className="mt-2 leading-9">
+                  <p
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                    className="mt-2 leading-9"
+                  >
                     At Ayos, we are reshaping the traditional landscape of home
                     improvement and construction services. Our platform is built
                     on principles of fairness, efficiency, and inclusivity.

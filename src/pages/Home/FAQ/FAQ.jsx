@@ -6,10 +6,17 @@ const FAQ = () => {
   return (
     <section className="relative">
       <div className="text-center py-20">
-        <h1 className="text-[#101828] text-4xl font-jakarta font-semibold">
+        <h1
+          data-aos="fade-up"
+          className="text-[#101828] text-4xl font-jakarta font-semibold"
+        >
           Frequently asked questions
         </h1>
-        <p className="text-[#667085] mt-5 text-xl">
+        <p
+          data-aos="fade-up"
+          data-aos-delay=" 100"
+          className="text-[#667085] mt-5 text-xl"
+        >
           Everything you need to know about the product and billing.
         </p>
         {/* This is the accordian */}

@@ -44,11 +44,19 @@ const UnlockSection = () => {
     <Container width="1560px">
       <section className="mt-5">
         <div>
-          <h1 className="text-center text-[#172B4D] font-poppins text-[40px] font-semibold">
+          <h1
+            data-aos="fade-up"
+            data-aos-delay=" 100"
+            className="text-center text-[#172B4D] font-poppins text-[40px] font-semibold"
+          >
             Unlock the Best Servoce for <br /> Your Needs!
           </h1>
 
-          <div className="flex flex-row gap-x-[59px] justify-center mt-8">
+          <div
+            data-aos="fade-up"
+            data-aos-delay=" 100"
+            className="flex flex-row gap-x-[59px] justify-center mt-8"
+          >
             {buttonArr.map((item, index) => {
               return (
                 <button
