@@ -3,7 +3,11 @@ import React from "react";
 const Card = ({ title, description, icon, image }) => {
   return (
     <section>
-      <div className="w-[507px] py-[10px] px-4 bg-[#F5F5F5] rounded-2xl">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="100"
+        className="w-[507px] py-[10px] px-4 bg-[#F5F5F5] rounded-2xl"
+      >
         {/* Card Header */}
         <div>
           <div className="flex flex-row justify-between items-center py-4">

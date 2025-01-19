@@ -8,7 +8,7 @@ const Customer = () => {
         <div className="flex items-center justify-center">
           {/* This is the content */}
           <div className="flex flex-col space-y-10">
-            <div className="">
+            <div data-aos="fade-up" data-aos-delay="100">
               <h1 className="text-[#172B4D] font-poppins text-[32px] font-semibold mb-[18px]">
                 Contractor service provider, Save Time
               </h1>
@@ -17,7 +17,7 @@ const Customer = () => {
                 industry.
               </p>
             </div>
-            <div>
+            <div data-aos="fade-up" data-aos-delay="200">
               <h1 className="text-[#172B4D] font-poppins text-[32px] font-semibold mb-[18px]">
                 Contractor service provider, Save Time
               </h1>
@@ -26,7 +26,7 @@ const Customer = () => {
                 industry.
               </p>
             </div>
-            <div>
+            <div data-aos="fade-up" data-aos-delay="300">
               <h1 className="text-[#172B4D] font-poppins text-[32px] font-semibold mb-[18px]">
                 Contractor service provider, Save Time
               </h1>
@@ -37,7 +37,7 @@ const Customer = () => {
             </div>
           </div>
           {/* This is the image Content */}
-          <div className="w-[823px] h-[855px] object-cover">
+          <div data-aos="zoom-in" className="w-[823px] h-[855px] object-cover">
             <img src={ayosPic} alt="" />
           </div>
         </div>

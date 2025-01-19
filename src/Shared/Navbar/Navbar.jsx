@@ -8,13 +8,13 @@ const Navbar = () => {
       <section className="container-[1720px] mt-5 py-4">
         <div className="flex flex-row justify-between font-poppins items-center">
           {/* This is the logo Section */}
-          <Link to={"/"}>
+          <Link data-aos="fade-in" to={"/"}>
             <img src={logo} alt="" />
           </Link>
           {/* This is the Navigation Section */}
           <nav>
             <ul className="flex space-x-20">
-              <li>
+              <li data-aos="fade-in" data-aos-delay="100">
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
@@ -24,7 +24,7 @@ const Navbar = () => {
                   Home
                 </NavLink>
               </li>
-              <li>
+              <li data-aos="fade-in" data-aos-delay="200">
                 <NavLink
                   to="/about"
                   className={({ isActive }) =>
@@ -34,7 +34,7 @@ const Navbar = () => {
                   About Us
                 </NavLink>
               </li>
-              <li>
+              <li data-aos="fade-in" data-aos-delay="300">
                 <NavLink
                   to="/services"
                   className={({ isActive }) =>
@@ -44,7 +44,7 @@ const Navbar = () => {
                   Our Services
                 </NavLink>
               </li>
-              <li>
+              <li data-aos="fade-in" data-aos-delay="400">
                 <NavLink
                   to="/contact"
                   className={({ isActive }) =>
@@ -57,7 +57,7 @@ const Navbar = () => {
             </ul>
           </nav>
           {/* This is the Get to app section */}
-          <Link to={"/signUp"}>
+          <Link to={"/signUp"} data-aos="fade-in" data-aos-delay="300">
             <button className="text-xl border-[2px] border-solid border-transparent bg-button text-[#FFF] px-[35px] py-[11px] rounded-[26px] hover:bg-transparent hover:border-button hover:text-button ease-in-out duration-150">
               Get to app
             </button>

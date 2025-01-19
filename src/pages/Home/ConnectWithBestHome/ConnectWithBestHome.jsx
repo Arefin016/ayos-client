@@ -9,7 +9,7 @@ const ConnectWithBestHome = () => {
   return (
     <section className="bg-[#FAFAFA] py-[98px] px-[233px] mb-[100px]">
       <div className="flex flex-row gap-[138px] items-center">
-        <div>
+        <div data-aos="zoom-in">
           <img
             className="h-[858px] w-[411px] object-cover"
             src={device}
@@ -19,16 +19,27 @@ const ConnectWithBestHome = () => {
         {/*  */}
         {/* This is the second div  */}
         <div className="flex flex-col space-y-[60px] relative">
-          <h2 className="text-[#172B4D] text-[40px] font-semibold font-poppins">
+          <h2
+            data-aos="fade-up"
+            className="text-[#172B4D] text-[40px] font-semibold font-poppins"
+          >
             Connect with the Best Home Improvement <br /> Pros and Transform
             Your Space
           </h2>
           <div className="flex flex-col">
-            <h1 className="mb-8 text-[#172B4D] text-2xl font-medium">
+            <h1
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="mb-8 text-[#172B4D] text-2xl font-medium"
+            >
               Save Time and Money with Ayos: Your Partner for Effortless <br />
               Solutions
             </h1>
-            <p className="text-[#6F767E] text-[18px]">
+            <p
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className="text-[#6F767E] text-[18px]"
+            >
               With Ayos, discovering trusted home improvement professionals is
               effortless. We <br /> seamlessly connect homeowners and landlords
               with thoroughly vetted contractors <br /> for cleaning, repairs,
@@ -39,7 +50,11 @@ const ConnectWithBestHome = () => {
             </p>
           </div>
           {/* This is the button section */}
-          <div className="flex flex-row gap-8">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="flex flex-row gap-8"
+          >
             <Link to={"https://play.google.com/store/apps?hl=en&pli=1"}>
               <img src={playStore} alt="" />
             </Link>

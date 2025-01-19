@@ -10,16 +10,27 @@ const AyosPlatform = () => {
       <div className="relative">
         {/* This is the title section */}
         <div className="flex flex-col items-center justify-center text-center space-y-8 mb-10">
-          <h1 className="font-poppins text-[40px] text-[#172B4D] font-semibold">
+          <h1
+            data-aos="fade-up"
+            className="font-poppins text-[40px] text-[#172B4D] font-semibold"
+          >
             The Ayos Platform
           </h1>
-          <p className="font-poppins text-[#6F767E] text-[18px] font-normal">
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="font-poppins text-[#6F767E] text-[18px] font-normal"
+          >
             Lorem Ipsum is simply dummy text of the printing and <br />{" "}
             typesetting industry.
           </p>
         </div>
         {/* This is the customer and contractor tab */}
-        <div className="flex flex-row items-center justify-center text-center">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          className="flex flex-row items-center justify-center text-center"
+        >
           <button
             onClick={() => {
               setisCustomer(true);

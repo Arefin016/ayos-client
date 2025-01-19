@@ -68,10 +68,18 @@ const CardSection = () => {
       <div>
         {/* This is the title section start */}
         <div className="flex flex-col text-center space-y-8">
-          <h1 className="text-[#172B4D] font-poppins text-[40px] font-semibold">
+          <h1
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-[#172B4D] font-poppins text-[40px] font-semibold"
+          >
             Unlock the Best Contractors for Your <br /> Needs!
           </h1>
-          <p className="text-[#585858] font-jakarta text-xl">
+          <p
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="text-[#585858] font-jakarta text-xl"
+          >
             Take control of your wellness journey with personalized AI insights.
             Track <br /> your progress, stay consistent
           </p>
