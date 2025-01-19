@@ -11,21 +11,21 @@ const UnlockSection = () => {
       name: "Advertising",
       subHeading:
         "For someone responsible for planning, executing, and optimizing advertising campaigns.For someone responsible for planning, executing, and optimizing advertising campaigns.",
-      videoUrl: "http://google.com",
+      videoUrl: "https://www.youtube.com/embed/LXb3EKWsInQ?si=n2j1FQTB1RAymVtw",
     },
     {
       id: 2,
       name: "Client",
       subHeading:
         "For someone responsible for planning, executing, and optimizing advertising campaigns.For someone responsible for planning, executing, and optimizing advertising campaigns.",
-      videoUrl: "http://google.com",
+      videoUrl: "https://youtu.be/WOCUYdKakN8?si=YFIEaAnkdG46zpP7",
     },
     {
       id: 3,
       name: "Contractor",
       subHeading:
         "For someone responsible for planning, executing, and optimizing advertising campaigns.For someone responsible for planning, executing, and optimizing advertising campaigns.",
-      videoUrl: "http://google.com",
+      videoUrl: "https://youtu.be/CLUIL6XqeWQ?si=4hYiVHSd_J0vkE3X",
     },
   ];
 
@@ -39,6 +39,7 @@ const UnlockSection = () => {
       setshownService(selectedItem);
     }
   };
+  console.log(shownService);
 
   return (
     <Container width="1560px">
@@ -57,7 +58,7 @@ const UnlockSection = () => {
             data-aos-delay=" 100"
             className="flex flex-row gap-x-[59px] justify-center mt-8"
           >
-            {buttonArr.map((item, index) => {
+            {buttonArr.map((item) => {
               return (
                 <button
                   className={`${
@@ -84,7 +85,7 @@ const UnlockSection = () => {
                   className="rounded-[48px]"
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/LXb3EKWsInQ?si=n2j1FQTB1RAymVtw"
+                  src={shownService?.videoUrl}
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
