@@ -1,7 +1,6 @@
 "use client";
 import Banner from "@/components/Banner/Banner";
 import Container from "@/components/Container/Container";
-import { VideoLogo } from "@/components/SVG/SVG";
 import { useState } from "react";
 
 const UnlockSection = () => {
@@ -18,14 +17,14 @@ const UnlockSection = () => {
       name: "Client",
       subHeading:
         "For someone responsible for planning, executing, and optimizing advertising campaigns.For someone responsible for planning, executing, and optimizing advertising campaigns.",
-      videoUrl: "https://youtu.be/WOCUYdKakN8?si=YFIEaAnkdG46zpP7",
+      videoUrl: "https://www.youtube.com/embed/KvE92fCMbmc?si=ZO67XT4W3HE840-D",
     },
     {
       id: 3,
       name: "Contractor",
       subHeading:
         "For someone responsible for planning, executing, and optimizing advertising campaigns.For someone responsible for planning, executing, and optimizing advertising campaigns.",
-      videoUrl: "https://youtu.be/CLUIL6XqeWQ?si=4hYiVHSd_J0vkE3X",
+      videoUrl: "https://www.youtube.com/embed/uzLwg85XoBM?si=A0QpT-PmlXlp5h0l",
     },
   ];
 
@@ -81,17 +80,19 @@ const UnlockSection = () => {
           <div>
             <section className="flex items-center justify-center pt-20">
               <div className="h-[820px] rounded-[48px] w-[1720px]">
-                <iframe
-                  className="rounded-[48px]"
-                  width="100%"
-                  height="100%"
-                  src={shownService?.videoUrl}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
+                {shownService?.videoUrl && (
+                  <iframe
+                    className="rounded-[48px]"
+                    width="100%"
+                    height="100%"
+                    src={shownService.videoUrl}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></iframe>
+                )}
               </div>
             </section>
           </div>
