@@ -5,11 +5,14 @@ import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Router/Router.jsx";
 import { HelmetProvider } from "react-helmet-async";
+import AosProvider from "./Provider/AosProvider/AosProvider";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <HelmetProvider>
-      <RouterProvider router={router} />
-    </HelmetProvider>
+    <AosProvider>
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
+    </AosProvider>
   </StrictMode>
 );

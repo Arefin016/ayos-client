@@ -45,7 +45,7 @@ const Footer = () => {
           {/* This is the social icons section */}
           <div className="flex flex-row gap-[34px]">
             <a
-              href="https://twitter.com/yourprofile"
+              href="https://twitter.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-500 transition-colors duration-300"
@@ -53,7 +53,7 @@ const Footer = () => {
               <FaTwitter />
             </a>
             <a
-              href="https://facebook.com/yourprofile"
+              href="https://facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-600 transition-colors duration-300"
@@ -61,7 +61,7 @@ const Footer = () => {
               <FaFacebookF />
             </a>
             <a
-              href="https://facebook.com/yourprofile"
+              href="https://www.instagram.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-500 transition-colors duration-300"
@@ -74,7 +74,7 @@ const Footer = () => {
         <div className="bg-[#201F22] h-[1px] opacity-[0.31] my-8"></div>
         {/* This is the copyright section */}
         <div className="flex flex-row justify-between navbarBottom font-inter">
-          <h1>© Copyright 2025, All Rights Reserved</h1>
+          <h1 className="font-inter">© Copyright 2025, All Rights Reserved</h1>
           <div className="flex flex-row gap-10">
             <p>Privacy Policy</p>
             <p>Terms & Conditions</p>
