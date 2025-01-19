@@ -157,7 +157,7 @@ const ContactUs = () => {
                 </p>
               </div>
               <input
-                className="mt-6 bg-[#083EC5] rounded-[37px] px-[108px] h-[57px] text-primaryColor font-poppins text-[16px] cursor-pointer"
+                className="mt-6 border-[2px] border-solid border-transparent bg-[#083EC5] rounded-[37px] px-[108px] h-[57px] text-primaryColor font-poppins text-[16px] cursor-pointer hover:bg-transparent hover:text-button hover:border-button ease-in-out duration-150"
                 type="submit"
                 value="Send Message"
               />

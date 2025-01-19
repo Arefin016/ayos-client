@@ -58,7 +58,7 @@ const Navbar = () => {
           </nav>
           {/* This is the Get to app section */}
           <Link to={"/signUp"}>
-            <button className="text-xl bg-button text-[#FFF] px-[35px] py-[11px] rounded-[26px]">
+            <button className="text-xl border-[2px] border-solid border-transparent bg-button text-[#FFF] px-[35px] py-[11px] rounded-[26px] hover:bg-transparent hover:border-button hover:text-button ease-in-out duration-150">
               Get to app
             </button>
           </Link>
