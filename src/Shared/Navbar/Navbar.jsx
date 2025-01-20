@@ -18,7 +18,9 @@ const Navbar = () => {
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    isActive ? "navClassActive" : "navClass"
+                    isActive
+                      ? "navClassActive "
+                      : "navClass hover:text-[#083EC5]"
                   }
                 >
                   Home
@@ -28,7 +30,9 @@ const Navbar = () => {
                 <NavLink
                   to="/about"
                   className={({ isActive }) =>
-                    isActive ? "navClassActive" : "navClass"
+                    isActive
+                      ? "navClassActive"
+                      : "navClass hover:text-[#083EC5]"
                   }
                 >
                   About Us
@@ -38,7 +42,9 @@ const Navbar = () => {
                 <NavLink
                   to="/services"
                   className={({ isActive }) =>
-                    isActive ? "navClassActive" : "navClass"
+                    isActive
+                      ? "navClassActive"
+                      : "navClass hover:text-[#083EC5]"
                   }
                 >
                   Our Services
@@ -48,7 +54,9 @@ const Navbar = () => {
                 <NavLink
                   to="/contact"
                   className={({ isActive }) =>
-                    isActive ? "navClassActive" : "navClass"
+                    isActive
+                      ? "navClassActive"
+                      : "navClass hover:text-[#083EC5]"
                   }
                 >
                   Contact Us

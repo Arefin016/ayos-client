@@ -1,12 +1,7 @@
 import Container from "../../components/Container/Container";
 import footerLogo from "../../assets/images/logo.png";
 import { Link, NavLink } from "react-router-dom";
-import {
-  FaFacebook,
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -21,22 +16,31 @@ const Footer = () => {
           <nav>
             <ul className="flex space-x-[55px]">
               <li>
-                <NavLink to="/" className={"navClass"}>
+                <NavLink to="/" className={"navClass hover:text-[#083EC5]"}>
                   Home
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" className={"navClass"}>
+                <NavLink
+                  to="/about"
+                  className={"navClass hover:text-[#083EC5]"}
+                >
                   About Us
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/services" className={"navClass"}>
+                <NavLink
+                  to="/services"
+                  className={"navClass hover:text-[#083EC5]"}
+                >
                   Our Services
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/contact" className={"navClass"}>
+                <NavLink
+                  to="/contact"
+                  className={"navClass hover:text-[#083EC5]"}
+                >
                   Contact Us
                 </NavLink>
               </li>
