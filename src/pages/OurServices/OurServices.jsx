@@ -110,7 +110,7 @@ const OurServices = () => {
             </p>
           </div>
           {/* Card Section */}
-          <div className="flex flex-wrap gap-5 pt-[107px] justify-center text-center items-center">
+          <div className="flex lg:flex-wrap lg:flex-row flex-col gap-5 pt-[107px] justify-center text-center items-center">
             {cardDetails.map((card, index) => (
               <Card
                 key={index}

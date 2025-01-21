@@ -8,7 +8,7 @@ const DownloadApp = () => {
   return (
     <Container width="1560px">
       <section className="bg-[#EEF3FF] rounded-[32px] mb-[93px] mt-20">
-        <div className="flex flex-row gap-5 items-center">
+        <div className="flex lg:flex-row flex-col gap-5 items-center">
           <div className="ml-[51px]">
             <h2
               data-aos="fade-up"

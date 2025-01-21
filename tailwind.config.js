@@ -10,6 +10,16 @@ export default {
         inter: ["Inter", "serif"],
         roboto: ["Roboto", "serif"],
       },
+      screens: {
+        xs: "360px",
+        sm: "480px", // Small mobile devices
+        md: "576px", // Tablets and small mobile screens
+        lg: "768px", // Medium tablets and large phones
+        xl: "992px", // Laptops or larger tablets
+        "2xl": "1200px", // Standard desktop screens
+        "3xl": "1500px", // Larger desktop displays
+        "4xl": "1920px", // High-resolution or ultra-wide displays
+      },
       colors: {
         primaryColor: "#FFF",
         secondaryColor: "#000",

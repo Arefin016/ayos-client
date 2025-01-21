@@ -10,7 +10,7 @@ const Banner = ({ title, subtitle, backgroundImage, gradient }) => {
   return (
     <section className="flex items-center justify-center pt-8">
       <div
-        className="h-[820px] rounded-[48px] w-[1720px]"
+        className="lg:h-[820px] rounded-[48px] lg:w-[1720px]"
         style={{
           backgroundImage: `${gradient}, url(${backgroundImage})`,
           backgroundSize: "cover",

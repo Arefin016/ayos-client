@@ -31,7 +31,7 @@ const AboutUs = () => {
       />
       {/* This is the first section start */}
       <section className="my-[115px]">
-        <div className="px-[183px]">
+        <div className="lg:px-[183px]">
           {/* First Div */}
           <div
             data-aos="fade-up"
@@ -101,7 +101,7 @@ const AboutUs = () => {
       {/* This is the first section end */}
       {/* This is the second section start*/}
       <section className="bg-[#EEF3FF] px-[79px]">
-        <div className="flex gap-10 items-center">
+        <div className="flex lg:flex-row flex-col gap-10 items-center">
           {/* This is the image section */}
           <div data-aos="zoom-in">
             <img src={humanPic} alt="" />
@@ -129,7 +129,7 @@ const AboutUs = () => {
             <div
               data-aos="fade-up"
               data-aos-delay="100"
-              className="flex gap-[81px]"
+              className="flex lg:flex-row flex-col gap-[81px]"
             >
               {/* This is the left side content */}
               <div className="space-y-[27px]">
