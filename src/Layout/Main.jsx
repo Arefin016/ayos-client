@@ -6,9 +6,9 @@ const Main = () => {
   return (
     <div>
       <ScrollRestoration />
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <Outlet></Outlet>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 };

@@ -15,19 +15,19 @@ const ContactUs = () => {
       <Helmet>
         <title>Ayos || Contact Us</title>
       </Helmet>
-      <div className="flex flex-col lg:flex-row xl:gap-[409px] items-center bg-[#F5F6F7] pl-0 xl:pl-[181px] px-4 lg:px-0">
+      <div className="flex flex-col lg:flex-row xl:pl-[70px] gap-10 xs:gap-10 sm:gap-8 md:gap-12 xl:gap-12 2xl:gap-[100px] 2xl:pl-[100px] 3xl:gap-[409px] items-center bg-[#F5F6F7] pl-0 3xl:pl-[181px] px-4 lg:pl-[30px] 2xl:justify-between 3xl:justify-normal ">
         {/* This is the content */}
         <div className="text-center lg:text-left">
           <h1
             data-aos="fade-up"
-            className="text-[#172B4D] font-inter text-[16px] xs:text-2xl md:text-[28px] mt-2 lg:mt-0 lg:text-[45.82px] font-medium mb-[18px]"
+            className="text-[#172B4D] font-inter text-[16px] xs:text-2xl md:text-[28px] mt-2 lg:mt-0 lg:text-[35px] xl:text-[45.82px] font-medium"
           >
             Ayos Service
           </h1>
           <p
             data-aos="fade-up"
             data-aos-delay="100"
-            className="text-[#5D6467] text-lg lg:ml-0 ml-[15px] lg:text-xl font-roboto"
+            className="text-[#5D6467] xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl lg:ml-0 ml-[15px] font-roboto mt-2 sm:mt-3 md:mt-3 lg:mt-[18px] xl:mt-[18px] 2xl:mt-[18px] 3xl:mt-[18px]"
           >
             Our press release, coverage and press kit
           </p>
@@ -39,25 +39,25 @@ const ContactUs = () => {
             data-aos-delay="100"
             src={contactUs}
             alt="Contact Us"
-            className="w-full max-w-[500px] lg:max-w-none"
+            className="w-[639px] h-[245px] object-cover"
           />
         </div>
       </div>
 
       {/* This is the contact us */}
-      <div className="flex flex-col lg:flex-row justify-center gap-[40px] lg:gap-[67px] mt-[73px] px-4 lg:px-0">
+      <div className="flex flex-col lg:flex-col xl:flex-row 2xl:flex-row justify-center gap-[40px] lg:gap-[67px] mt-[30px] xs:mt-[40px] sm:mt-[50px] md:mt-[50px] lg:mt-[40px] xl:mt-[40px] 2xl:mt-[40px] 3xl:mt-[73px] px-4 lg:px-0">
         {/* This is the content section */}
         <div className="w-full lg:w-[592px] text-center lg:text-left">
           <h1
             data-aos="fade-up"
-            className="text-[#172B4D] font-poppins text-[40px] lg:text-[62px] font-semibold mb-6"
+            className="text-[#172B4D] font-poppins text-[30px] xs:text-[40px] sm:text-[48px] md:text-[52px] lg:text-[58px] xl:text-[62px] 2xl:text-[62px] 3xl:text-[62px] font-semibold mb-6"
           >
             Contact us
           </h1>
           <p
             data-aos="fade-up"
             data-aos-delay="100"
-            className="text-[#646A69] font-poppins font-normal text-[18px] lg:text-base"
+            className="text-[#646A69] font-poppins font-normal text-[16px] xs:text-[18px] sm:text-[18px] md:text-[18px] lg:text-[18px] xl:text-[18px] lg:text-base"
           >
             We are here to help you make a first move to greener choice.
           </p>
@@ -125,7 +125,7 @@ const ContactUs = () => {
           <div className="mb-[94px]">
             <h1
               data-aos="fade-up"
-              className="text-[#172B4D] font-inter text-[28px] lg:text-[31.625px] font-medium text-center lg:text-left"
+              className="text-[#172B4D] font-inter text-[31.625px] xs:text-[31.625px] sm:text-[31.625px] md:text-[31.625px] lg:text-[31.625px] font-medium text-center lg:text-left"
             >
               Send your message
             </h1>
