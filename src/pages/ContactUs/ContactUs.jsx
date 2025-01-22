@@ -20,7 +20,7 @@ const ContactUs = () => {
         <div className="text-center lg:text-left">
           <h1
             data-aos="fade-up"
-            className="text-[#172B4D] font-inter text-[16px] xs:text-2xl md:text-[28px] mt-2 lg:mt-0 lg:text-[35px] xl:text-[45.82px] font-medium"
+            className="text-[#172B4D] font-inter text-[28px] xs:text-[28px] sm:text-[30px] md:text-[35px] lg:text-[45.82px] xl:text-[45.82px] 2xl:text-[45.82px] 3xl:text-[45.82px] mt-2 lg:mt-0 font-medium"
           >
             Ayos Service
           </h1>
@@ -45,12 +45,12 @@ const ContactUs = () => {
       </div>
 
       {/* This is the contact us */}
-      <div className="flex flex-col lg:flex-col xl:flex-row 2xl:flex-row justify-center gap-[40px] lg:gap-[67px] mt-[30px] xs:mt-[40px] sm:mt-[50px] md:mt-[50px] lg:mt-[40px] xl:mt-[40px] 2xl:mt-[40px] 3xl:mt-[73px] px-4 lg:px-0">
+      <div className="flex flex-col lg:flex-col xl:flex-row 2xl:flex-row justify-center gap-[60px] lg:gap-[67px] mt-[30px] xs:mt-[40px] sm:mt-[50px] md:mt-[50px] lg:mt-[40px] xl:mt-[40px] 2xl:mt-[40px] 3xl:mt-[73px] px-4 lg:pl-[35px]">
         {/* This is the content section */}
         <div className="w-full lg:w-[592px] text-center lg:text-left">
           <h1
             data-aos="fade-up"
-            className="text-[#172B4D] font-poppins text-[30px] xs:text-[40px] sm:text-[48px] md:text-[52px] lg:text-[58px] xl:text-[62px] 2xl:text-[62px] 3xl:text-[62px] font-semibold mb-6"
+            className="text-[#172B4D] font-poppins text-[30px] xs:text-[28px] sm:text-[30px] md:text-[35px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px] 3xl:text-[62px] font-semibold mb-6"
           >
             Contact us
           </h1>
@@ -125,13 +125,13 @@ const ContactUs = () => {
           <div className="mb-[94px]">
             <h1
               data-aos="fade-up"
-              className="text-[#172B4D] font-inter text-[31.625px] xs:text-[31.625px] sm:text-[31.625px] md:text-[31.625px] lg:text-[31.625px] font-medium text-center lg:text-left"
+              className="text-[#172B4D] font-inter text-[30px] xs:text-[30px] sm:text-[30px] md:text-[31.625px] lg:text-[31.625px] font-medium text-center lg:text-left"
             >
               Send your message
             </h1>
             {/* Form */}
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="flex flex-col mt-10 space-y-6">
+              <div className="flex flex-col mt-3 xs:mt-7 sm:mt-6 md:mt-6 lg:mt-6 xl:mt-10 2xl:mt-10 3xl:mt-10 space-y-3 xs:space-y-4 sm:space-y-6 md:space-y-6 lg:space-y-6 xl:space-y-6 2xl:space-y-6 3xl:space-y-6">
                 {/* Your Name Field */}
                 <label
                   data-aos="fade-up"
@@ -147,7 +147,7 @@ const ContactUs = () => {
                   type="name"
                   name="name"
                   {...register("name", { required: true })}
-                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-full lg:w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
+                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4  h-12 xs:h-12 sm:h-12 md:h-12 lg:h-16 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="Enter your name"
                 />
                 {errors.name && (
@@ -173,7 +173,7 @@ const ContactUs = () => {
                   type="email"
                   name="email"
                   {...register("email", { required: true })}
-                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-full lg:w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
+                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 h-12 xs:h-12 sm:h-12 md:h-12 lg:h-16 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="Enter your email address"
                 />
                 {errors.email && (
@@ -193,7 +193,7 @@ const ContactUs = () => {
                   type="number"
                   name="number"
                   {...register("number", { required: true })}
-                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-full lg:w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
+                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 h-12 xs:h-12 sm:h-12 md:h-12 lg:h-16 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="01XXXXXXXXX"
                 />
                 {errors.number && (
@@ -215,14 +215,14 @@ const ContactUs = () => {
                 <textarea
                   data-aos="fade-up"
                   name="message"
-                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-full lg:w-[642px] h-[111px] text-[#D0D3D6] font-poppins text-[16px]"
+                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] h-[90px] xs:h-[90px] sm:h-[90px] md:h-[90px] lg:h-[118px] xl:h-[118px] 2xl:h-[118px] 3xl:h-[118px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="Write your message"
                   {...register("firstName")}
                 />
 
                 <p
                   data-aos="fade-up"
-                  className="w-full lg:w-[643px] text-[#5D6A72] font-poppins text-[14px] text-center lg:text-left"
+                  className="w-full lg:w-[505px] text-[#5D6A72] font-poppins text-[14px] text-left xs:text-left sm:text-left md:text-left lg:text-left xl:text-left 2xl:text-left 3xl:text-left"
                 >
                   We want your input: questions, bug reports, complaints,
                   praise, feature requests — every little bit helps. Let us know
@@ -231,7 +231,7 @@ const ContactUs = () => {
               </div>
               <input
                 data-aos="fade-up"
-                className="mt-6 border-[2px] border-solid border-transparent bg-[#083EC5] rounded-[37px] px-[40px] lg:px-[108px] h-[57px] text-primaryColor font-poppins text-[16px] cursor-pointer hover:bg-transparent hover:text-button hover:border-button ease-in-out duration-150"
+                className="mt-6 border-[2px] border-solid border-transparent bg-[#083EC5] rounded-[37px] px-[40px] lg:px-[108px] h-[40px] xs:h-[40px] sm:h-[45px] md:h-[45px] lg:h-[57px] xl:h-[57px] 2xl:h-[57px] 3xl:h-[57px] text-primaryColor font-poppins text-[16px] cursor-pointer hover:bg-transparent hover:text-button hover:border-button ease-in-out duration-150"
                 type="submit"
                 value="Send Message"
               />
