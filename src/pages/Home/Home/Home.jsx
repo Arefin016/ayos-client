@@ -19,7 +19,7 @@ const Home = () => {
       {/* <CardSection /> */}
       {/* <UnlockSection /> */}
       {/* <FAQ /> */}
-      {/* <DownloadApp /> */}
+      <DownloadApp />
     </div>
   );
 };
