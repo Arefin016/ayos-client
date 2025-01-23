@@ -1,6 +1,4 @@
 import Card from "@/components/Card/Card";
-import cardSvg from "../../../assets/images/cardSvg.png";
-import cardImage from "../../../assets/images/cardImage.png";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";

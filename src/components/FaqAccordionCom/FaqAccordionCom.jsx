@@ -37,10 +37,10 @@ const FaqAccordionCom = () => {
           className="px-6 py-2 border border-[#EAEAEA] rounded-[8px]"
           value={`item-${index + 1}`}
         >
-          <AccordionTrigger className="font-jakarta text-xl font-medium text-[#101828] py-3">
+          <AccordionTrigger className="font-jakarta text-[16px] xs:text-[16px] sm:text-[16px] md:text-xl lg:text-xl xl:text-xl 2xl:text-xl 3xl:text-xl font-medium text-[#101828] py-3">
             {item?.question}
           </AccordionTrigger>
-          <AccordionContent className="text-xl font-jakarta font-medium text-[#667085] w-2/3">
+          <AccordionContent className="text-[14px] xs:text-[14px] sm:text-[14px] md:text-xl lg:text-xl xl:text-xl 2xl:text-xl 3xl:text-xl font-jakarta font-medium text-[#667085] w-2/3">
             {item?.answer}
           </AccordionContent>
         </AccordionItem>
