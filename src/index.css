@@ -121,7 +121,7 @@
     @apply text-[#083EC5] font-medium text-xl;
   }
   .navClass {
-    @apply text-[#172B4D] font-medium text-xl;
+    @apply text-[#172B4D] font-medium text-base xs:text-base sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-2xl;
   }
   .navbarBottom {
     @apply text-[#52525B]  text-sm font-normal leading-[26px];

@@ -3,7 +3,7 @@ const Container = ({ children, width = "100%" }) => {
     <div
       className={`mx-auto`}
       style={{
-        width: width,
+        maxWidth: width,
       }}
     >
       {children}
