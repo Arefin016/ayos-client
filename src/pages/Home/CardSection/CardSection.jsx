@@ -2,66 +2,30 @@ import Card from "@/components/Card/Card";
 import cardSvg from "../../../assets/images/cardSvg.png";
 import cardImage from "../../../assets/images/cardImage.png";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import Spinner from "@/components/Spinner/Spinner";
 
 const CardSection = () => {
-  const cardDetails = [
-    {
-      title: "Plumbing",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["cardData"],
+    queryFn: async () => {
+      const res = await axios.get(
+        "https://ayosph.com/api/home-page/categories"
+      );
+      return res?.data;
     },
-    {
-      title: "Furniture",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-    {
-      title: "CCCTV",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-    {
-      title: "Painting",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-    {
-      title: "Roof Repairs",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-    {
-      title: "Handyman",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-    {
-      title: "AC Repair",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-    {
-      title: "Electrical",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-  ];
+  });
+
+  if (isLoading) return <Spinner />;
+
+  if (error) {
+    return <div>An error has occurred: {error?.message}</div>;
+  }
+
+  if (!data || !data?.data) {
+    return <div>No data found</div>;
+  }
 
   return (
     <section className="pb-[100px] px-[180px]">
@@ -87,13 +51,13 @@ const CardSection = () => {
 
           {/* Card Section */}
           <div className="grid grid-cols-3 gap-5 pt-[107px] justify-center text-center">
-            {cardDetails.slice(0, 6).map((card, index) => (
+            {data?.data.slice(0, 6).map((card, index) => (
               <Card
                 key={index}
-                title={card.title}
-                description={card.description}
+                title={card?.title}
+                description={card?.description}
                 icon={card.icon}
-                image={card.image}
+                image={card?.thumbnail}
               />
             ))}
           </div>

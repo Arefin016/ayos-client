@@ -27,7 +27,7 @@ const Card = ({ title, description, image, index }) => {
             <img
               src={image}
               alt={`${title}`}
-              className="w-[475px] h-[355px] object-cover transition-transform ease-out duration-300 transform group-hover:scale-95"
+              className="w-[475px] h-[355px] object-cover transition-transform ease-out duration-300 transform group-hover:scale-95 rounded-2xl"
             />
           </div>
         </div>

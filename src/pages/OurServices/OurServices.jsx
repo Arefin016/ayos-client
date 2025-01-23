@@ -5,66 +5,30 @@ import cardImage from "../../assets/images/cardImage.png";
 import Card from "@/components/Card/Card";
 import Container from "@/components/Container/Container";
 import { Helmet } from "react-helmet-async";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import Spinner from "@/components/Spinner/Spinner";
 
 const OurServices = () => {
-  const cardDetails = [
-    {
-      title: "Plumbing",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
+  const { isLoading, error, data } = useQuery({
+    queryKey: "serviceData",
+    queryFn: async () => {
+      const res = await axios.get(
+        "https://ayosph.com/api/home-page/categories"
+      );
+      return res?.data;
     },
-    {
-      title: "Furniture",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-    {
-      title: "CCCTV",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-    {
-      title: "Painting",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-    {
-      title: "Roof Repairs",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-    {
-      title: "Handyman",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-    {
-      title: "AC Repair",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-    {
-      title: "Electrical",
-      description:
-        "Declogging Work, Pipe leak repair, Pipe Replacement ,Faucet Replacement, Toilet Replacement, Water pressure repairs, Water heater installation, Water Filter Replacement",
-      icon: cardSvg,
-      image: cardImage,
-    },
-  ];
+  });
+
+  if (isLoading) return <Spinner />;
+
+  if (error) {
+    return <div>An error has occurred: {error?.message}</div>;
+  }
+
+  if (!data || !data?.data) {
+    return <div>No data found</div>;
+  }
 
   return (
     <div>
@@ -111,13 +75,13 @@ const OurServices = () => {
           </div>
           {/* Card Section */}
           <div className="flex lg:flex-wrap lg:flex-row flex-col gap-5 pt-[107px] justify-center text-center items-center">
-            {cardDetails.map((card, index) => (
+            {data?.data.map((card, index) => (
               <Card
                 key={index}
-                title={card.title}
-                description={card.description}
+                title={card?.title}
+                description={card?.description}
                 icon={card.icon}
-                image={card.image}
+                image={card?.thumbnail}
               />
             ))}
           </div>
