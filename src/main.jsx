@@ -7,12 +7,18 @@ import { router } from "./Router/Router.jsx";
 import { HelmetProvider } from "react-helmet-async";
 import AosProvider from "./Provider/AosProvider/AosProvider";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AosProvider>
-      <HelmetProvider>
-        <RouterProvider router={router} />
-      </HelmetProvider>
-    </AosProvider>
+    <QueryClientProvider client={queryClient}>
+      <AosProvider>
+        <HelmetProvider>
+          <RouterProvider router={router} />
+        </HelmetProvider>
+      </AosProvider>
+    </QueryClientProvider>
   </StrictMode>
 );

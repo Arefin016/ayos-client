@@ -12,18 +12,18 @@ const DownloadApp = () => {
           <div className="ml-4 xs:ml-4 sm:ml-4 md:ml-4 lg:ml-8 xl:ml-10 2xl:ml-[51px] 3xl:ml-[51px]">
             <h2
               data-aos="fade-up"
-              className="text-secondaryButton text-[30px] xs:text-[30px] sm:text-[30px] md:text-[56px] lg:text-[56px] xl:text-[56px] 2xl:text-[56px] 3xl:text-[56px] font-poppins w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[650px] 3xl:w-[650px] font-semibold"
+              className="text-secondaryButton text-[28px] xs:text-[28px] sm:text-[30px] md:text-[35px] lg:text-[45px] xl:text-[45px] 2xl:text-[56px] 3xl:text-[56px] font-poppins w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[650px] 3xl:w-[650px] font-semibold"
             >
               Download the App and Start Building Better Habits Today!
             </h2>
             <p
               data-aos="fade-up"
               data-aos-delay=" 100"
-              className="text-[#585858] text-xl mt-6"
+              className="text-[#585858] text-[16px] xs:text-[16px] sm:text-[16px] md:text-lg lg:text-xl xl:text-xl 2xl:text-xl 3xl:text-xl font-poppins font-normal mt-6 w-full xs:w-full sm:w-full md:w-full lg:w-[720px] xl:w-full 2xl:w-[720px] 3xl:w-[720px]"
             >
               Take control of your wellness journey with personalized AI
-              insights. Track <br /> your progress, stay consistent, and achieve
-              your goals — right from your <br /> device.
+              insights. Track your progress, stay consistent, and achieve your
+              goals — right from your device.
             </p>
             {/* This is the button section */}
             <div
@@ -46,8 +46,12 @@ const DownloadApp = () => {
             </div>
           </div>
           {/* This is the image section */}
-          <div data-aos="zoom-in">
-            <img src={downloadPic} alt="" />
+          <div data-aos="zoom-in ">
+            <img
+              className="w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full 3xl:w-[752px] h-full xs:h-full sm:h-full md:h-full lg:h-auto xl:h-full 2xl:h-full 3xl:h-[752px] object-cover"
+              src={downloadPic}
+              alt=""
+            />
           </div>
         </div>
       </section>

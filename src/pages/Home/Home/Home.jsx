@@ -14,11 +14,11 @@ const Home = () => {
         <title>Ayos || Home</title>
       </Helmet>
       {/*  */}
-      {/* <AyosPlatform /> */}
-      {/* <ConnectWithBestHome /> */}
-      {/* <CardSection /> */}
-      {/* <UnlockSection /> */}
-      {/* <FAQ /> */}
+      <AyosPlatform />
+      <ConnectWithBestHome />
+      <CardSection />
+      <UnlockSection />
+      <FAQ />
       <DownloadApp />
     </div>
   );
