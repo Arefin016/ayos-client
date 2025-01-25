@@ -3,33 +3,9 @@ import Banner from "@/components/Banner/Banner";
 import Container from "@/components/Container/Container";
 import apiClient from "@/utils/apiClient";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const UnlockSection = () => {
-  const buttonArr = [
-    {
-      id: 1,
-      name: "Advertising",
-      subHeading:
-        "For someone responsible for planning, executing, and optimizing advertising campaigns.For someone responsible for planning, executing, and optimizing advertising campaigns.",
-      videoUrl: "https://www.youtube.com/embed/LXb3EKWsInQ?si=n2j1FQTB1RAymVtw",
-    },
-    {
-      id: 2,
-      name: "Client",
-      subHeading:
-        "For someone responsible for planning, executing, and optimizing advertising campaigns.For someone responsible for planning, executing, and optimizing advertising campaigns.",
-      videoUrl: "https://www.youtube.com/embed/KvE92fCMbmc?si=ZO67XT4W3HE840-D",
-    },
-    {
-      id: 3,
-      name: "Contractor",
-      subHeading:
-        "For someone responsible for planning, executing, and optimizing advertising campaigns.For someone responsible for planning, executing, and optimizing advertising campaigns.",
-      videoUrl: "https://www.youtube.com/embed/uzLwg85XoBM?si=A0QpT-PmlXlp5h0l",
-    },
-  ];
-
   // Banner Data Fetch
   const unlockSectionData = async () => {
     try {
@@ -46,19 +22,25 @@ const UnlockSection = () => {
     queryFn: unlockSectionData,
   });
 
-  // console.log(data?.data);
+  // Initialize state variables
+  const [shownService, setshownService] = useState(null);
+  const [activeButton, setactiveButton] = useState(null);
 
-  const [activeButton, setactiveButton] = useState(data?.data[0].id);
-  const [shownService, setshownService] = useState(data?.data[0]);
+  // Update the state once data is fetched
+  useEffect(() => {
+    if (data?.data?.length > 0) {
+      setshownService(data.data[0]); // Set the first item as the default
+      setactiveButton(data.data[0].id); // Set the first button as active
+    }
+  }, [data]);
 
   const handleActiveService = (id) => {
     setactiveButton(id);
-    const selectedItem = data?.data.find((item) => item.id == id);
+    const selectedItem = data?.data.find((item) => item.id === id);
     if (selectedItem) {
       setshownService(selectedItem);
     }
   };
-  // console.log(shownService);
 
   return (
     <Container width="1560px">
@@ -69,7 +51,7 @@ const UnlockSection = () => {
             data-aos-delay=" 100"
             className="text-center text-[#172B4D] font-poppins text-[40px] font-semibold"
           >
-            Unlock the Best Servoce for <br /> Your Needs!
+            Unlock the Best Service for <br /> Your Needs!
           </h1>
 
           <div
@@ -81,7 +63,7 @@ const UnlockSection = () => {
               return (
                 <button
                   className={`${
-                    activeButton == item?.id
+                    activeButton === item?.id
                       ? "text-primaryColor font-poppins text-xl bg-[#083EC5] rounded-[13px] py-5 px-[50px] border border-[#083EC5] w-[235px]"
                       : "text-[#172B4D] text-xl font-poppins rounded-[13px] border border-[#083EC5] py-5 px-[50px] w-[235px]"
                   }`}
@@ -90,8 +72,7 @@ const UnlockSection = () => {
                   }}
                   key={item?.id}
                 >
-                  {" "}
-                  {item?.btn_title}{" "}
+                  {item?.btn_title}
                 </button>
               );
             })}
