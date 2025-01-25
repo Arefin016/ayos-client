@@ -1,18 +1,44 @@
 import React from "react";
-import device from "../../../assets/images/Device.png";
 import bucketPic from "../../../assets/images/bucket.png";
-import playStore from "../../../assets/images/playStorePic.png";
-import appStore from "../../../assets/images/appStorePic.png";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import Spinner from "@/components/Spinner/Spinner";
 
 const ConnectWithBestHome = () => {
+  const apiClient = axios.create({
+    baseURL: import.meta.env.VITE_SITE_URL,
+  });
+
+  const connectWithBestHome = async () => {
+    try {
+      const response = await apiClient.get("home-page/feature");
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching data:", err);
+      return null;
+    }
+  };
+
+  const { isLoading, data } = useQuery({
+    queryKey: ["connectWithHome"],
+    queryFn: connectWithBestHome,
+  });
+
+  // console.log(data?.data);
+  if (isLoading) return <Spinner />;
+
+  if (!data || !data?.data) {
+    return <div className="text-center my-36">No data found</div>;
+  }
+
   return (
     <section className="bg-[#FAFAFA] py-[98px] px-[233px] mb-[100px]">
       <div className="flex flex-row gap-[138px] items-center">
         <div data-aos="zoom-in">
           <img
             className="h-[858px] w-[411px] object-cover"
-            src={device}
+            src={data?.data.image}
             alt=""
           />
         </div>
@@ -21,10 +47,9 @@ const ConnectWithBestHome = () => {
         <div className="flex flex-col space-y-[60px] relative">
           <h2
             data-aos="fade-up"
-            className="text-[#172B4D] text-[40px] font-semibold font-poppins"
+            className="text-[#172B4D] text-[40px] font-semibold font-poppins w-[902px]"
           >
-            Connect with the Best Home Improvement <br /> Pros and Transform
-            Your Space
+            {data?.data.title}
           </h2>
           <div className="flex flex-col">
             <h1
@@ -32,8 +57,7 @@ const ConnectWithBestHome = () => {
               data-aos-delay="100"
               className="mb-8 text-[#172B4D] text-2xl font-medium"
             >
-              Save Time and Money with Ayos: Your Partner for Effortless <br />
-              Solutions
+              {data?.data?.sub_title}
             </h1>
             <p
               data-aos="fade-up"
@@ -55,15 +79,15 @@ const ConnectWithBestHome = () => {
             data-aos-delay="200"
             className="flex flex-row gap-8"
           >
-            <Link to={"https://play.google.com/store/apps?hl=en&pli=1"}>
-              <img src={playStore} alt="" />
+            <Link to={data?.data?.button_two_url}>
+              <img src={data?.data?.button_one_image} alt="" />
             </Link>
-            <Link to={"https://www.apple.com/app-store/"}>
-              <img src={appStore} alt="" />
+            <Link to={data?.data?.button_one_url}>
+              <img src={data?.data?.button_two_image} alt="" />
             </Link>
           </div>
           {/* This is the bucket section */}
-          <div className="absolute top-[446px] right-[-259px]">
+          <div className="absolute top-[400px] right-[-233px]">
             <img src={bucketPic} alt="" />
           </div>
         </div>

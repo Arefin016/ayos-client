@@ -21,6 +21,7 @@ const Home = () => {
       return response.data;
     } catch (err) {
       console.error("Error fetching data:", err);
+      return null;
     }
   };
 
@@ -29,7 +30,7 @@ const Home = () => {
     queryFn: bannerData,
   });
 
-  console.log(data?.data);
+  // console.log(data?.data);
 
   if (isLoading) return <Spinner />;
 
