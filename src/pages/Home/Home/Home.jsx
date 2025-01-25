@@ -6,31 +6,61 @@ import AyosPlatform from "../AyosPlatform/AyosPlatform";
 import CardSection from "../CardSection/CardSection";
 import UnlockSection from "../UnlockSection/UnlockSection";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import Spinner from "@/components/Spinner/Spinner";
 
 const Home = () => {
+  const apiClient = axios.create({
+    baseURL: import.meta.env.VITE_SITE_URL,
+  });
+
+  const bannerData = async () => {
+    try {
+      const response = await apiClient.get("/home-page/banner");
+      return response.data;
+    } catch (err) {
+      console.error("Error fetching data:", err);
+    }
+  };
+
+  const { isLoading, data } = useQuery({
+    queryKey: ["Data"],
+    queryFn: bannerData,
+  });
+
+  console.log(data?.data);
+
+  if (isLoading) return <Spinner />;
+
   return (
     <div>
       <Helmet>
         <title>Ayos || Home</title>
       </Helmet>
-      <Banner
-        title={
-          <>
-            Expert Assistance, Anytime, <br /> Anywhere Ayos
-          </>
-        }
-        subtitle={
-          <>
-            Connect with trusted professionals for all your home needs—cleaning,
-            repairs,
-            <br />
-            maintenance, and beyond. Post your job today and experience fast,
-            reliable service <br /> with a hassle-free process!
-          </>
-        }
-        backgroundImage="https://i.postimg.cc/MTvfGNm0/banner-Img.png"
-        gradient="linear-gradient(90deg, rgba(9, 25, 64, 0.80) -0.85%, rgba(23, 64, 166, 0.00) 99.73%)"
-      />
+      {data && data?.data ? (
+        <Banner
+          title={data?.data?.title}
+          subtitle={
+            <>
+              Connect with trusted professionals for all your home
+              needs—cleaning, repairs,
+              <br />
+              maintenance, and beyond. Post your job today and experience fast,
+              reliable service <br /> with a hassle-free process!
+            </>
+          }
+          backgroundImage={data?.data?.background_image}
+          gradient="linear-gradient(90deg, rgba(9, 25, 64, 0.80) -0.85%, rgba(23, 64, 166, 0.00) 99.73%)"
+          playStore={data?.data?.button_two_url}
+          appStore={data?.data?.button_one_url}
+          playStorePic={data?.data?.button_one_image}
+          appStorePic={data?.data?.button_two_image}
+        />
+      ) : (
+        <div className="text-center">No data found</div>
+      )}
+
       <AyosPlatform />
       <ConnectWithBestHome />
       <CardSection />

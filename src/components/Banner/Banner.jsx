@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
-import playStore from "../../assets/images/playStorePic.png";
-import appStore from "../../assets/images/appStorePic.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 // ..
 AOS.init();
 
-const Banner = ({ title, subtitle, backgroundImage, gradient }) => {
+const Banner = ({
+  title,
+  subtitle,
+  backgroundImage,
+  gradient,
+  playStore,
+  appStore,
+  playStorePic,
+  appStorePic,
+}) => {
   return (
     <section className="flex items-center justify-center pt-8">
       <div
@@ -23,14 +30,14 @@ const Banner = ({ title, subtitle, backgroundImage, gradient }) => {
             <h1
               data-aos="fade-up"
               data-aos-delay="100"
-              className="text-primaryColor font-poppins text-[70px] font-semibold"
+              className="text-primaryColor font-poppins text-[70px] font-semibold w-[1033px]"
             >
               {title}
             </h1>
             <p
               data-aos="fade-up"
               data-aos-delay="200"
-              className="text-primaryColor font-poppins text-[18px]"
+              className="text-primaryColor font-poppins text-[18px] w-[770px]"
             >
               {subtitle}
             </p>
@@ -40,11 +47,11 @@ const Banner = ({ title, subtitle, backgroundImage, gradient }) => {
               data-aos-delay="300"
               className="flex flex-row gap-8"
             >
-              <Link to={"https://play.google.com/store/apps?hl=en&pli=1"}>
-                <img src={playStore} alt="Play Store" />
+              <Link to={playStore}>
+                <img src={playStorePic} alt="Play Store" />
               </Link>
-              <Link to={"https://www.apple.com/app-store/"}>
-                <img src={appStore} alt="App Store" />
+              <Link to={appStore}>
+                <img src={appStorePic} alt="App Store" />
               </Link>
             </div>
           </div>

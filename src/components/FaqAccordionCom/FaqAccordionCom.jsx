@@ -23,8 +23,6 @@ const FaqAccordionCom = () => {
     queryFn: fetchFAQData,
   });
 
-  console.log(data?.data);
-
   if (isLoading) return <Spinner />;
 
   if (!data || !data) {

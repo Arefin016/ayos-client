@@ -24,11 +24,15 @@ const Card = ({ title, description, image, index }) => {
           </p>
           {/* Card Image */}
           <div className="pt-8">
-            <img
-              src={image}
-              alt={`${title}`}
+            <div
+              style={{
+                backgroundImage: `url(${image})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
               className="w-[475px] h-[355px] object-cover transition-transform ease-out duration-300 transform group-hover:scale-95 rounded-2xl"
-            />
+            ></div>
           </div>
         </div>
       </div>
