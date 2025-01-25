@@ -8,14 +8,18 @@ import axios from "axios";
 import Spinner from "@/components/Spinner/Spinner";
 
 const OurServices = () => {
+  const apiClient = axios.create({
+    baseURL: import.meta.env.VITE_SITE_URL,
+  });
+
+  const serviceData = async () => {
+    const response = await apiClient.get("/home-page/categories");
+    return response.data;
+  };
+
   const { isLoading, error, data } = useQuery({
-    queryKey: "serviceData",
-    queryFn: async () => {
-      const res = await axios.get(
-        "https://ayosph.com/api/home-page/categories"
-      );
-      return res?.data;
-    },
+    queryKey: ["serviceData"],
+    queryFn: serviceData,
   });
 
   if (isLoading) return <Spinner />;

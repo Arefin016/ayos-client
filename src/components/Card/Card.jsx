@@ -6,7 +6,7 @@ const Card = ({ title, description, image, index }) => {
     <section>
       <div
         data-aos="fade-up"
-        data-aos-delay={index * 100}
+        data-aos-delay={String(index * 100)}
         className="w-[507px] py-[10px] px-4 bg-[#F5F5F5] rounded-2xl hover:bg-[#E0E0E0] hover:shadow-custom_shadow ease-out duration-300 group"
       >
         {/* Card Header */}
