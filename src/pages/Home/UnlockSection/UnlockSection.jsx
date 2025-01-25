@@ -1,6 +1,8 @@
 "use client";
 import Banner from "@/components/Banner/Banner";
 import Container from "@/components/Container/Container";
+import apiClient from "@/utils/apiClient";
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
 const UnlockSection = () => {
@@ -28,12 +30,30 @@ const UnlockSection = () => {
     },
   ];
 
-  const [activeButton, setactiveButton] = useState(buttonArr[0].id);
-  const [shownService, setshownService] = useState(buttonArr[0]);
+  // Banner Data Fetch
+  const unlockSectionData = async () => {
+    try {
+      const response = await apiClient.get("/home-page/video-section");
+      return response.data;
+    } catch (err) {
+      console.error("Error fetching data:", err);
+      return null;
+    }
+  };
+
+  const { data } = useQuery({
+    queryKey: ["unlockSectionData"],
+    queryFn: unlockSectionData,
+  });
+
+  // console.log(data?.data);
+
+  const [activeButton, setactiveButton] = useState(data?.data[0].id);
+  const [shownService, setshownService] = useState(data?.data[0]);
 
   const handleActiveService = (id) => {
     setactiveButton(id);
-    const selectedItem = buttonArr.find((item) => item.id == id);
+    const selectedItem = data?.data.find((item) => item.id == id);
     if (selectedItem) {
       setshownService(selectedItem);
     }
@@ -57,11 +77,11 @@ const UnlockSection = () => {
             data-aos-delay=" 100"
             className="flex flex-row gap-x-[59px] justify-center mt-8"
           >
-            {buttonArr.map((item) => {
+            {data?.data.map((item) => {
               return (
                 <button
                   className={`${
-                    activeButton == item.id
+                    activeButton == item?.id
                       ? "text-primaryColor font-poppins text-xl bg-[#083EC5] rounded-[13px] py-5 px-[50px] border border-[#083EC5] w-[235px]"
                       : "text-[#172B4D] text-xl font-poppins rounded-[13px] border border-[#083EC5] py-5 px-[50px] w-[235px]"
                   }`}
@@ -71,7 +91,7 @@ const UnlockSection = () => {
                   key={item?.id}
                 >
                   {" "}
-                  {item?.name}{" "}
+                  {item?.btn_title}{" "}
                 </button>
               );
             })}
@@ -80,12 +100,12 @@ const UnlockSection = () => {
           <div>
             <section className="flex items-center justify-center pt-20">
               <div className="h-[820px] rounded-[48px] w-[1720px]">
-                {shownService?.videoUrl && (
+                {shownService?.video_url && (
                   <iframe
                     className="rounded-[48px]"
                     width="100%"
                     height="100%"
-                    src={shownService.videoUrl}
+                    src={shownService.video_url}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

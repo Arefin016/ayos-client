@@ -2,8 +2,28 @@ import Contractor from "@/components/Contractor/Contractor";
 import Customer from "@/components/Customer/Customer";
 import { useState } from "react";
 import ayosPlatformPic from "../../../assets/images/ayosPlatformPic.png";
+import apiClient from "@/utils/apiClient";
+import { useQuery } from "@tanstack/react-query";
 
 const AyosPlatform = () => {
+  // Plat form data
+  const platFormData = async () => {
+    try {
+      const response = await apiClient.get("/home-page/platform");
+      return response.data;
+    } catch (err) {
+      console.error("Error fetching data:", err);
+      return null;
+    }
+  };
+
+  const { data } = useQuery({
+    queryKey: "platFormData",
+    queryFn: platFormData,
+  });
+
+  console.log(data?.data?.platform_content);
+
   const [isCustomer, setisCustomer] = useState(true);
   return (
     <section className="flex flex-row justify-center items-center mt-20">
@@ -14,15 +34,14 @@ const AyosPlatform = () => {
             data-aos="fade-up"
             className="font-poppins text-[40px] text-[#172B4D] font-semibold"
           >
-            The Ayos Platform
+            {data?.data?.platform?.title}
           </h1>
           <p
             data-aos="fade-up"
             data-aos-delay="100"
             className="font-poppins text-[#6F767E] text-[18px] font-normal"
           >
-            Lorem Ipsum is simply dummy text of the printing and <br />{" "}
-            typesetting industry.
+            {data?.data?.platform?.description}
           </p>
         </div>
         {/* This is the customer and contractor tab */}
@@ -106,9 +125,13 @@ const AyosPlatform = () => {
           </button>
         </div>
         <div className="mt-12">
-          {isCustomer ? <Customer /> : <Contractor />}
+          {isCustomer ? (
+            <Customer content={data?.data?.platform_content} />
+          ) : (
+            <Contractor content={data?.data?.platform_content} />
+          )}
         </div>
-        <div className="absolute top-0 left-[-222px]">
+        <div className="absolute top-0 left-[-455px]">
           <img src={ayosPlatformPic} alt="" />
         </div>
       </div>

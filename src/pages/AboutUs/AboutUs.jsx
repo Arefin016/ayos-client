@@ -3,32 +3,48 @@ import DownloadApp from "../../components/DownloadApp/DownloadApp";
 import humanPic from "../../assets/images/aboutUsPic.png";
 import Container from "@/components/Container/Container";
 import { Helmet } from "react-helmet-async";
+import apiClient from "@/utils/apiClient";
+import { useQuery } from "@tanstack/react-query";
+import Spinner from "@/components/Spinner/Spinner";
 
 const AboutUs = () => {
+  const aboutUsData = async () => {
+    try {
+      const response = await apiClient.get("/about-page/banner");
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching data:", err);
+      return null;
+    }
+  };
+
+  const { isLoading, data } = useQuery({
+    queryKey: ["aboutUsBannerData"],
+    queryFn: aboutUsData,
+  });
+
+  console.log(data?.data);
+  if (isLoading) return <Spinner />;
+
   return (
     <div>
       <Helmet>
         <title>Ayos || About Us</title>
       </Helmet>
-      <Banner
-        title={
-          <>
-            Ayos: Effective. Reliable. Enab <br />
-            ling.
-          </>
-        }
-        subtitle={
-          <>
-            Connect with trusted professionals for all your home needs—cleaning,
-            repairs,
-            <br />
-            maintenance, and beyond. Post your job today and experience fast,
-            reliable service <br /> with a hassle-free process!
-          </>
-        }
-        backgroundImage="https://i.postimg.cc/05X80Z13/image.png"
-        gradient="linear-gradient(90deg, rgba(9, 25, 64, 0.80) -0.85%, rgba(23, 64, 166, 0.00) 99.73%)"
-      />
+      {data && data?.data ? (
+        <Banner
+          title={data?.data?.title}
+          subtitle={data?.data?.description}
+          backgroundImage="https://i.postimg.cc/05X80Z13/image.png"
+          gradient="linear-gradient(90deg, rgba(9, 25, 64, 0.80) -0.85%, rgba(23, 64, 166, 0.00) 99.73%)"
+          playStore={data?.data?.button_two_url}
+          appStore={data?.data?.button_one_url}
+          playStorePic={data?.data?.button_one_image}
+          appStorePic={data?.data?.button_two_image}
+        />
+      ) : (
+        <div className="text-center">No data found</div>
+      )}
       {/* This is the first section start */}
       <section className="my-[115px]">
         <div className="lg:px-[183px]">

@@ -30,8 +30,6 @@ const Home = () => {
     queryFn: bannerData,
   });
 
-  // console.log(data?.data);
-
   if (isLoading) return <Spinner />;
 
   return (
