@@ -8,22 +8,26 @@ import { useQuery } from "@tanstack/react-query";
 import Spinner from "../Spinner/Spinner";
 import axios from "axios";
 
+const apiClient = axios.create({
+  baseURL: import.meta.env.VITE_SITE_URL,
+});
+
 const FaqAccordionCom = () => {
-  const { isLoading, error, data } = useQuery({
+  const fetchFAQData = async () => {
+    const response = await apiClient.get("/home-page/faqs");
+    return response.data;
+  };
+
+  const { isLoading, data } = useQuery({
     queryKey: ["faqData"],
-    queryFn: async () => {
-      const res = await axios.get("https://ayosph.com/api/home-page/faqs");
-      return res.data;
-    },
+    queryFn: fetchFAQData,
   });
+
+  console.log(data?.data);
 
   if (isLoading) return <Spinner />;
 
-  if (error) {
-    return <div>An error has occurred: {error?.message}</div>;
-  }
-
-  if (!data || !data?.data) {
+  if (!data || !data) {
     return <div>No data found</div>;
   }
 

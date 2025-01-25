@@ -38,7 +38,7 @@ const UnlockSection = () => {
       setshownService(selectedItem);
     }
   };
-  console.log(shownService);
+  // console.log(shownService);
 
   return (
     <Container width="1560px">

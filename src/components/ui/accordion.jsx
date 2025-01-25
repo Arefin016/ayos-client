@@ -17,10 +17,6 @@ AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef(
   ({ className, children, ...props }, ref) => {
-    // const [isOpen, setIsOpen] = React.useState(false);
-    // const handleToggle = () => {
-    //   setIsOpen((prev) => !prev);
-    // };
     return (
       <AccordionPrimitive.Header className="flex">
         <AccordionPrimitive.Trigger

@@ -47,8 +47,6 @@ const SiteLogo = () => {
   );
 };
 
-//
-
 const UploadLogo = () => {
   return (
     <svg

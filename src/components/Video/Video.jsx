@@ -1,9 +1,6 @@
 const Video = () => {
   return (
-    <button
-      onClick={handleVideoPlay}
-      className="focus:outline-none" // Optional styling for accessibility
-    >
+    <button onClick={handleVideoPlay} className="focus:outline-none">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="144"
