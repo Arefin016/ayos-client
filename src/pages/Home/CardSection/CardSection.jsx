@@ -5,14 +5,18 @@ import axios from "axios";
 import Spinner from "@/components/Spinner/Spinner";
 
 const CardSection = () => {
+  const apiClient = axios.create({
+    baseURL: import.meta.env.VITE_SITE_URL,
+  });
+
+  const cardData = async () => {
+    const response = await apiClient.get("/categories");
+    return response.data;
+  };
+
   const { isLoading, error, data } = useQuery({
     queryKey: ["cardData"],
-    queryFn: async () => {
-      const res = await axios.get(
-        "https://ayosph.com/api/home-page/categories"
-      );
-      return res?.data;
-    },
+    queryFn: cardData,
   });
 
   if (isLoading) return <Spinner />;
