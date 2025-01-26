@@ -3,14 +3,17 @@ import apiClient from "@/utils/apiClient";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../Spinner/Spinner";
 import { Link } from "react-router-dom";
+import { Empty } from "antd";
 
 const DownloadApp = () => {
+  // This is the download app data fetching section
   const downloadApp = async () => {
     try {
       const response = await apiClient.get("home-page/app-download");
       return response.data;
-    } catch (error) {
-      console.error("Error fetching data:", error);
+    } catch (err) {
+      console.error("Error fetching data:", err);
+      return null;
     }
   };
 
@@ -22,7 +25,11 @@ const DownloadApp = () => {
   if (isLoading) return <Spinner />;
 
   if (!data || !data?.data) {
-    return <div className="text-center my-36">No data found</div>;
+    return (
+      <div className="my-36">
+        <Empty />
+      </div>
+    );
   }
 
   return (

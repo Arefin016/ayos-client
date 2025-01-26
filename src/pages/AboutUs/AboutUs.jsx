@@ -6,8 +6,10 @@ import { Helmet } from "react-helmet-async";
 import apiClient from "@/utils/apiClient";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "@/components/Spinner/Spinner";
+import { Empty } from "antd";
 
 const AboutUs = () => {
+  // This is the about us banner section fetch data
   const aboutUsData = async () => {
     try {
       const response = await apiClient.get("/about-page/banner");
@@ -23,7 +25,6 @@ const AboutUs = () => {
     queryFn: aboutUsData,
   });
 
-  console.log(data?.data);
   if (isLoading) return <Spinner />;
 
   return (
@@ -43,7 +44,7 @@ const AboutUs = () => {
           appStorePic={data?.data?.button_two_image}
         />
       ) : (
-        <div className="text-center">No data found</div>
+        <Empty />
       )}
       {/* This is the first section start */}
       <section className="my-[115px]">

@@ -4,9 +4,11 @@ import { useState } from "react";
 import ayosPlatformPic from "../../../assets/images/ayosPlatformPic.png";
 import apiClient from "@/utils/apiClient";
 import { useQuery } from "@tanstack/react-query";
+import { Empty } from "antd";
+import Spinner from "@/components/Spinner/Spinner";
 
 const AyosPlatform = () => {
-  // Plat form data
+  // Ayos Platform Data fetching
   const platFormData = async () => {
     try {
       const response = await apiClient.get("/home-page/platform");
@@ -17,14 +19,19 @@ const AyosPlatform = () => {
     }
   };
 
-  const { data } = useQuery({
-    queryKey: "platFormData",
+  const { isLoading, data } = useQuery({
+    queryKey: ["platFormData"],
     queryFn: platFormData,
   });
 
-  console.log(data?.data?.platform_content);
-
   const [isCustomer, setisCustomer] = useState(true);
+
+  if (isLoading) return <Spinner />;
+
+  if (!data || !data?.data) {
+    return <Empty className="my-36" />;
+  }
+
   return (
     <section className="flex flex-row justify-center items-center mt-20">
       <div className="relative">
@@ -39,7 +46,7 @@ const AyosPlatform = () => {
           <p
             data-aos="fade-up"
             data-aos-delay="100"
-            className="font-poppins text-[#6F767E] text-[18px] font-normal"
+            className="font-poppins text-[#6F767E] text-[18px] font-normal w-[501px]"
           >
             {data?.data?.platform?.description}
           </p>
@@ -131,7 +138,7 @@ const AyosPlatform = () => {
             <Contractor content={data?.data?.platform_content} />
           )}
         </div>
-        <div className="absolute top-0 left-[-455px]">
+        <div className="absolute top-0 left-[-220px]">
           <img src={ayosPlatformPic} alt="" />
         </div>
       </div>

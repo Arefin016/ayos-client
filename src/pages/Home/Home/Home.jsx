@@ -9,12 +9,10 @@ import { Helmet } from "react-helmet-async";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "@/components/Spinner/Spinner";
+import { Empty } from "antd";
+import apiClient from "@/utils/apiClient";
 
 const Home = () => {
-  const apiClient = axios.create({
-    baseURL: import.meta.env.VITE_SITE_URL,
-  });
-
   const bannerData = async () => {
     try {
       const response = await apiClient.get("/home-page/banner");
@@ -57,7 +55,7 @@ const Home = () => {
           appStorePic={data?.data?.button_two_image}
         />
       ) : (
-        <div className="text-center">No data found</div>
+        <Empty />
       )}
 
       <AyosPlatform />

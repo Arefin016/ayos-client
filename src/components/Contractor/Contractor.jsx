@@ -1,8 +1,6 @@
 import Container from "../Container/Container";
-import ayosPic from "../../assets/images/AyosPlatform.png";
 
 const Contractor = ({ content }) => {
-  console.log(content?.contractor?.thumbnail);
   return (
     <Container width="1461px">
       <section>
@@ -19,10 +17,10 @@ const Contractor = ({ content }) => {
                 data-aos="fade-up"
                 data-aos-delay={100 * (index + 1)}
               >
-                <h1 className="text-[#172B4D] font-poppins text-[32px] font-semibold mb-[18px]">
+                <h1 className="text-[#172B4D] w-[539px] font-poppins text-[32px] font-semibold mb-[18px]">
                   {item?.title}
                 </h1>
-                <p className="text-[#6F767E] font-poppins text-[18px] font-normal">
+                <p className="text-[#6F767E] font-poppins text-[18px] font-normal w-[501px]">
                   {item?.description}
                 </p>
               </div>

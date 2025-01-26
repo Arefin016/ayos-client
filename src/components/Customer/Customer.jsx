@@ -1,7 +1,6 @@
 import Container from "../Container/Container";
 
 const Customer = ({ content }) => {
-  console.log(content?.customer?.thumbnail);
   return (
     <Container width="1461px">
       <section>
