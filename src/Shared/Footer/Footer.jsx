@@ -4,6 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import apiClient from "@/utils/apiClient";
 import { useQuery } from "@tanstack/react-query";
+import { Empty } from "antd";
+import Spinner from "@/components/Spinner/Spinner";
 
 const Footer = () => {
   const footerFetchData = async () => {
@@ -16,14 +18,12 @@ const Footer = () => {
     }
   };
 
-  const { data: footerData } = useQuery({
+  const { data: footerData, isLoading: footerFetchLoading } = useQuery({
     queryKey: ["footerData"],
     queryFn: footerFetchData,
   });
 
-  console.log(footerData?.data);
-
-  //
+  // social fetch data
   const socialFetchData = async () => {
     try {
       const response = await apiClient.get("/contact-page/social-link");
@@ -34,12 +34,20 @@ const Footer = () => {
     }
   };
 
-  const { data: socialData } = useQuery({
+  const { data: socialData, isLoading: socialLoading } = useQuery({
     queryKey: ["socialData"],
     queryFn: socialFetchData,
   });
 
-  console.log(socialData?.data[0].image);
+  if (socialLoading || footerFetchLoading) return <Spinner />;
+
+  if (!socialData || !socialData?.data) {
+    return (
+      <div className="my-36">
+        <Empty />
+      </div>
+    );
+  }
 
   return (
     <Container width="1560px">

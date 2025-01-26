@@ -34,7 +34,7 @@ const AyosPlatform = () => {
 
   return (
     <section className="flex flex-row justify-center items-center mt-20">
-      <div className="relative">
+      <div className="relative w-[1460px]">
         {/* This is the title section */}
         <div className="flex flex-col items-center justify-center text-center space-y-8 mb-10">
           <h1

@@ -6,7 +6,6 @@ import AyosPlatform from "../AyosPlatform/AyosPlatform";
 import CardSection from "../CardSection/CardSection";
 import UnlockSection from "../UnlockSection/UnlockSection";
 import { Helmet } from "react-helmet-async";
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "@/components/Spinner/Spinner";
 import { Empty } from "antd";
