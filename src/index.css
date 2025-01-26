@@ -136,7 +136,25 @@
     @apply text-[#172B4D] font-poppins text-[40px] font-semibold;
   }
   .paragraph {
-    @apply text-[#172B4D] font-poppins text-xl text-left;
+    @apply text-[#172B4D] font-poppins text-xl text-left leading-[180%];
+  }
+
+  .user-descreption-wrapper strong {
+    @apply text-[#172B4D] font-poppins text-2xl font-semibold leading-[180%];
+  }
+
+  .user-descreption-wrapper h2 {
+    @apply text-[#172B4D] font-poppins text-xl font-normal leading-[180%];
+  }
+
+  .user-descreption-wrapper ul {
+    @apply flex flex-col gap-y-5 list-disc pl-5 my-5;
+  }
+  .user-descreption-wrapper li {
+    @apply text-[#172B4D] font-poppins text-xl font-normal leading-[180%];
+  }
+  .user-descreption-wrapper p {
+    @apply text-[#172B4D] font-poppins text-xl font-normal leading-[180%];
   }
 }
 

@@ -7,6 +7,7 @@ import apiClient from "@/utils/apiClient";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "@/components/Spinner/Spinner";
 import { Empty } from "antd";
+import parse from "html-react-parser";
 
 const AboutUs = () => {
   // This is the about us banner section fetch data
@@ -25,7 +26,57 @@ const AboutUs = () => {
     queryFn: aboutUsData,
   });
 
-  if (isLoading) return <Spinner />;
+  // about us paragraph data fatching
+  const paragraphData = async () => {
+    try {
+      const response = await apiClient.get("/about-page/about-us-content");
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching data:", err);
+      return null;
+    }
+  };
+
+  const { isLoading: paragraphLoading, data: paraData } = useQuery({
+    queryKey: ["paragraphData"],
+    queryFn: paragraphData,
+  });
+
+  // console.log(paraData?.data[0]);
+
+  const needToUnderstandData = async () => {
+    try {
+      const response = await apiClient.get("/about-page/need-to-understand");
+      return response.data;
+    } catch (error) {
+      console.error("Erro fetching data:", err);
+      return null;
+    }
+  };
+
+  const { data: needToUnderData } = useQuery({
+    queryKey: ["needToUnder"],
+    queryFn: needToUnderstandData,
+  });
+
+  console.log(needToUnderData, "i'm html data");
+
+  const parsedData =
+    typeof needToUnderData?.data?.description === "string"
+      ? needToUnderData?.data?.description
+      : JSON.stringify(needToUnderData?.data?.description, null, 2);
+
+  console.log(needToUnderData?.data?.title);
+
+  if (isLoading || paragraphLoading) return <Spinner />;
+
+  if (!paraData || !paraData?.data) {
+    return (
+      <div>
+        <Empty />
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -55,25 +106,8 @@ const AboutUs = () => {
             data-aos-delay="100"
             className="text-center space-y-[35px]"
           >
-            <h1 className="title">Who we are</h1>
-            <p className="paragraph">
-              Ayos is a revolutionary platform that redefines how homeowners,
-              property managers, and contractors connect and collaborate for
-              home services. From cleaning and repairs to major renovations,
-              Ayos effortlessly links homeowners with trusted, local
-              professionals who deliver quality results. For contractors,
-              especially small businesses and mom-and-pop operations from
-              underserved communities, Ayos provides a suite of powerful tools
-              to streamline business operations. Features like CRM, invoicing,
-              and project management empower contractors to manage their
-              workflows, enhance communication, and grow their businesses
-              efficiently. <br /> By bridging the gap between customers and
-              contractors, Ayos simplifies every step of the process—from
-              discovering reliable service providers to completing projects
-              seamlessly. Whether you're a homeowner looking for dependable help
-              or a contractor seeking to scale your business, Ayos is the
-              ultimate solution for thriving in the home services ecosystem.
-            </p>
+            <h1 className="title">{paraData?.data[0].title}</h1>
+            <p className="paragraph">{paraData?.data[0].description}</p>
           </div>
           {/* Second Div */}
           <div
@@ -81,18 +115,8 @@ const AboutUs = () => {
             data-aos-delay="200"
             className="text-center space-y-[35px] mt-[88px]"
           >
-            <h1 className="title">Why Choose Us</h1>
-            <p className="paragraph">
-              What truly distinguishes Ayos is our unwavering commitment to
-              transparency, trust, and fostering meaningful relationships.
-              Unlike traditional models that can often lead to misunderstandings
-              and disputes, our platform prioritizes open communication and
-              clear, mutually agreed-upon terms. We harness the power of
-              technology not just to optimize processes, but to create a vibrant
-              community where both parties can interact with confidence,
-              clarity, and mutual respect, ensuring every collaboration is
-              seamless and impactful.
-            </p>
+            <h1 className="title">{paraData?.data[1].title}</h1>
+            <p className="paragraph">{paraData?.data[1].description}</p>
           </div>
           {/* Third Div */}
           <div
@@ -100,18 +124,8 @@ const AboutUs = () => {
             data-aos-delay="300"
             className="text-center space-y-[35px] mt-[88px]"
           >
-            <h1 className="title">What Users Need to Understand</h1>
-            <p className="paragraph">
-              What truly distinguishes Ayos is our unwavering commitment to
-              transparency, trust, and fostering meaningful relationships.
-              Unlike traditional models that can often lead to misunderstandings
-              and disputes, our platform prioritizes open communication and
-              clear, mutually agreed-upon terms. We harness the power of
-              technology not just to optimize processes, but to create a vibrant
-              community where both parties can interact with confidence,
-              clarity, and mutual respect, ensuring every collaboration is
-              seamless and impactful.
-            </p>
+            <h1 className="title">{paraData?.data[2].title}</h1>
+            <p className="paragraph">{paraData?.data[2].description}</p>
           </div>
         </div>
       </section>
@@ -247,171 +261,12 @@ const AboutUs = () => {
       {/* This is the third section start */}
       <Container width="1560px">
         <section className="mt-[120px]">
-          <div>
-            <div className="text-center space-y-[35px]">
-              <h1 data-aos="fade-up" className="title">
-                What Users Need to Understand
-              </h1>
-              <p
-                data-aos="fade-up"
-                data-aos-delay="100"
-                className="paragraph leading-9"
-              >
-                At Ayos, we aim to revolutionize the way homeowners and
-                contractors connect, collaborate, and achieve success. Far
-                beyond a simple marketplace, Ayos is your ultimate tool for
-                empowerment and freedom. Whether you’re a homeowner seeking
-                exceptional services or a contractor pursuing fair
-                opportunities, our platform is purpose-built to meet your needs
-                and elevate your experience. We don’t just facilitate
-                connections—we provide an all-in-one solution complete with
-                project management features, secure payment channels, and a
-                robust feedback system to maintain the highest standards of
-                quality and trust. <br />
-                {/* Features */}
-                <div className="mt-10">
-                  <span className="text-[#172B4D] font-poppins text-2xl font-medium pt-2">
-                    Features
-                  </span>
-                  <ul
-                    data-aos="fade-up"
-                    className="space-y-3 mt-2 ml-3 leading-9 list-none"
-                  >
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Seamless Connections: An intuitive interface that
-                      effortlessly links homeowners with the ideal contractor
-                      for their project.
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Verified Contractor Profiles: Access detailed profiles
-                      with authentic reviews and ratings to make informed
-                      decisions.
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Competitive Bidding System: Ensures fair and transparent
-                      pricing for all projects.
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Comprehensive Project Management: Scheduling, invoicing,
-                      and organizational tools tailored for contractors.
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      In-App Messaging: A secure and efficient way to
-                      communicate directly within the platform.
-                    </li>
-                  </ul>
-                </div>
-                {/* Benefits for Homeowners */}
-                <div className="mt-10">
-                  <span
-                    data-aos="fade-up"
-                    className="text-[#172B4D] font-poppins text-2xl font-medium pt-2"
-                  >
-                    Benefits for Homeowners
-                  </span>
-                  <ul
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                    className="space-y-3 mt-2 ml-3 leading-9 list-none"
-                  >
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Curated Network of Experts: Gain access to a vetted
-                      community of top-rated contractors.
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Budget-Friendly Options: Benefit from competitive pricing
-                      tailored to your financial needs.
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Project Oversight: Stay informed and in control at every
-                      stage with powerful management tools.
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Effortless Communication: Maintain clear, open lines of
-                      dialogue with your contractor throughout the process.
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Peace of Mind: Trust that your project is in capable hands
-                      from start to finish.
-                    </li>
-                  </ul>
-                </div>
-                {/* Benefits for Contractors */}
-                <div className="mt-10">
-                  <span
-                    data-aos="fade-up"
-                    className="text-[#172B4D] font-poppins text-2xl font-medium pt-2"
-                  >
-                    Benefits for Contractors
-                  </span>
-                  <ul
-                    data-aos="fade-up"
-                    data-aos-delay="200"
-                    className="space-y-3 mt-2 ml-3 leading-9 list-none"
-                  >
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      New Business Opportunities: Easily connect with homeowners
-                      actively searching for your expertise.
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Fair Competition: The bidding system rewards quality and
-                      ensures equitable pricing.
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Streamlined Operations: Use built-in tools to simplify
-                      scheduling, invoicing, and overall project management.
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Enhanced Client Communication: Strengthen relationships
-                      through seamless in-app messaging.
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#172B4D]"></span>
-                      Increased Visibility: Boost your professional reach and
-                      attract more clients.
-                    </li>
-                  </ul>
-                </div>
-                {/* Why Ayos? */}
-                <div className="mt-10">
-                  <h1
-                    data-aos="fade-up"
-                    className="text-[#172B4D] font-poppins text-[32px] font-medium"
-                  >
-                    Why Ayos?
-                  </h1>
-                  <p
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                    className="mt-2 leading-9"
-                  >
-                    At Ayos, we are reshaping the traditional landscape of home
-                    improvement and construction services. Our platform is built
-                    on principles of fairness, efficiency, and inclusivity.
-                    Whether you’re looking to enhance your living space or grow
-                    your contracting business, Allbetter offers the tools,
-                    support, and trust you need to <br /> thrive. Our dedication
-                    to innovation and user success drives everything we do,
-                    making Allbetter a trusted partner in achieving your goals.
-                    Join us in transforming the way homeowners and contractors
-                    work together—experience the Allbetter difference today. 4o
-                  </p>
-                </div>
-              </p>
+          <div className="text-center space-y-[35px]">
+            <h1 data-aos="fade-up" className="title">
+              {needToUnderData?.data?.title}
+            </h1>
+            <div className="user-descreption-wrapper text-left mb-5">
+              {parse(parsedData)}
             </div>
           </div>
         </section>
