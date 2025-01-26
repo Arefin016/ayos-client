@@ -1,7 +1,6 @@
 import Container from "../../components/Container/Container";
-import footerLogo from "../../assets/images/logo.png";
 import { Link, NavLink } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 import apiClient from "@/utils/apiClient";
 import { useQuery } from "@tanstack/react-query";
 import { Empty } from "antd";

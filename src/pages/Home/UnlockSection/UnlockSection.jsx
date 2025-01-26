@@ -1,5 +1,4 @@
 "use client";
-import Banner from "@/components/Banner/Banner";
 import Container from "@/components/Container/Container";
 import apiClient from "@/utils/apiClient";
 import { useQuery } from "@tanstack/react-query";
@@ -29,8 +28,8 @@ const UnlockSection = () => {
   // Update the state once data is fetched
   useEffect(() => {
     if (data?.data?.length > 0) {
-      setshownService(data.data[0]); // Set the first item as the default
-      setactiveButton(data.data[0].id); // Set the first button as active
+      setshownService(data.data[0]);
+      setactiveButton(data.data[0].id);
     }
   }, [data]);
 
@@ -64,8 +63,8 @@ const UnlockSection = () => {
                 <button
                   className={`${
                     activeButton === item?.id
-                      ? "text-primaryColor font-poppins text-xl bg-[#083EC5] rounded-[13px] py-5 px-[50px] border border-[#083EC5] w-[235px]"
-                      : "text-[#172B4D] text-xl font-poppins rounded-[13px] border border-[#083EC5] py-5 px-[50px] w-[235px]"
+                      ? "text-primaryColor font-poppins text-xl bg-[#083EC5] rounded-[13px] py-5 px-[50px] border border-[#083EC5] w-[235px] capitalize"
+                      : "text-[#172B4D] text-xl font-poppins rounded-[13px] border border-[#083EC5] py-5 px-[50px] w-[235px] capitalize"
                   }`}
                   onClick={() => {
                     handleActiveService(item?.id);
@@ -80,7 +79,7 @@ const UnlockSection = () => {
           {/* This is the content */}
           <div>
             <section className="flex items-center justify-center pt-20">
-              <div className="h-[820px] rounded-[48px] w-[1720px]">
+              <div className="h-[820px] rounded-[48px] w-[1720px] overflow-hidden">
                 {shownService?.video_url && (
                   <iframe
                     className="rounded-[48px]"
