@@ -1,6 +1,10 @@
 import { useForm } from "react-hook-form";
 import contactUs from "../../assets/images/contactUsPic.png";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
+import apiClient from "@/utils/apiClient";
+import { useQuery } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
 const ContactUs = () => {
   const {
@@ -8,7 +12,47 @@ const ContactUs = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = async (data) => {
+    console.log("i'm workiung");
+
+    console.log(data);
+    try {
+      const response = await apiClient.post("/contact-page/send-message", data);
+      console.log(response.data, "i'm response data");
+
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: response.data.message,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
+      return response.data; // Optionally return for further processing
+    } catch (err) {
+      console.error("Error posting data:", err);
+      return null;
+    }
+  };
+
+  // get method
+  const contactUsFetchData = async () => {
+    try {
+      const response = await apiClient.get("/ayosph/system-info");
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching footer data", err);
+      return null;
+    }
+  };
+
+  const { data: contactUsData } = useQuery({
+    queryKey: ["footerData"],
+    queryFn: contactUsFetchData,
+  });
+
+  console.log(contactUsData?.data);
 
   return (
     <section className="">
@@ -22,14 +66,14 @@ const ContactUs = () => {
             data-aos="fade-up"
             className="text-[#172B4D] font-inter text-[28px] xs:text-[28px] sm:text-[30px] md:text-[35px] lg:text-[45.82px] xl:text-[45.82px] 2xl:text-[45.82px] 3xl:text-[45.82px] mt-2 lg:mt-0 font-medium"
           >
-            Ayos Service
+            {contactUsData?.data.system_name}
           </h1>
           <p
             data-aos="fade-up"
             data-aos-delay="100"
             className="text-[#5D6467] xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl lg:ml-0 ml-[15px] font-roboto mt-2 sm:mt-3 md:mt-3 lg:mt-[18px] xl:mt-[18px] 2xl:mt-[18px] 3xl:mt-[18px]"
           >
-            Our press release, coverage and press kit
+            {contactUsData?.data?.description}
           </p>
         </div>
         {/* This is the content */}
@@ -91,7 +135,7 @@ const ContactUs = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              <p>hello@flow.com</p>
+              <p>{contactUsData?.data.email}</p>
             </div>
 
             {/* Phone */}
@@ -115,7 +159,9 @@ const ContactUs = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              <p className="text-[#1D1F1E] text-[16px]">(239) 555-0108</p>
+              <p className="text-[#1D1F1E] text-[16px]">
+                {contactUsData?.data?.contact_number}
+              </p>
             </div>
           </div>
         </div>
@@ -191,8 +237,8 @@ const ContactUs = () => {
                 </label>
                 <input
                   type="number"
-                  name="number"
-                  {...register("number", { required: true })}
+                  name="phone"
+                  {...register("phone", { required: true })}
                   className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 h-12 xs:h-12 sm:h-12 md:h-12 lg:h-16 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="01XXXXXXXXX"
                 />
@@ -217,17 +263,8 @@ const ContactUs = () => {
                   name="message"
                   className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] h-[90px] xs:h-[90px] sm:h-[90px] md:h-[90px] lg:h-[118px] xl:h-[118px] 2xl:h-[118px] 3xl:h-[118px] text-[#D0D3D6] font-poppins text-[16px]"
                   placeholder="Write your message"
-                  {...register("firstName")}
+                  {...register("message")}
                 />
-
-                <p
-                  data-aos="fade-up"
-                  className="w-full lg:w-[505px] text-[#5D6A72] font-poppins text-[14px] text-left xs:text-left sm:text-left md:text-left lg:text-left xl:text-left 2xl:text-left 3xl:text-left"
-                >
-                  We want your input: questions, bug reports, complaints,
-                  praise, feature requests — every little bit helps. Let us know
-                  what we can do to improve Ayos.
-                </p>
               </div>
               <input
                 data-aos="fade-up"

@@ -2,8 +2,45 @@ import Container from "../../components/Container/Container";
 import footerLogo from "../../assets/images/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import apiClient from "@/utils/apiClient";
+import { useQuery } from "@tanstack/react-query";
 
 const Footer = () => {
+  const footerFetchData = async () => {
+    try {
+      const response = await apiClient.get("/ayosph/system-info");
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching footer data", err);
+      return null;
+    }
+  };
+
+  const { data: footerData } = useQuery({
+    queryKey: ["footerData"],
+    queryFn: footerFetchData,
+  });
+
+  console.log(footerData?.data);
+
+  //
+  const socialFetchData = async () => {
+    try {
+      const response = await apiClient.get("/contact-page/social-link");
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching footer data", err);
+      return null;
+    }
+  };
+
+  const { data: socialData } = useQuery({
+    queryKey: ["socialData"],
+    queryFn: socialFetchData,
+  });
+
+  console.log(socialData?.data);
+
   return (
     <Container width="1560px">
       <footer className="mb-[38px]">
@@ -12,7 +49,7 @@ const Footer = () => {
           <Link to={"/"}>
             <img
               className="w-[143px] h-10 mb-5 xs:mb-5 sm:mb-5 md:mb-5 lg:mb-0 xl:mb-0 2xl:mb-0"
-              src={footerLogo}
+              src={footerData?.data.logo}
               alt=""
             />
           </Link>
@@ -85,7 +122,7 @@ const Footer = () => {
         {/* This is the copyright section */}
         <div className="flex lg:flex-row flex-col justify-between navbarBottom font-inter mt-6 px-5 xs:px-5 sm:px-5 md:px-5 lg:px-5 xl:px-5 2xl:px-5 3xl:px-0">
           <h1 className="font-inter text-center">
-            © Copyright 2025, All Rights Reserved
+            {footerData?.data.copyright_text}
           </h1>
           <div className="flex lg:flex-row flex-col text-center xs:text-center sm:text-center md:text-center gap-0 xs:gap-0 sm:gap-0 md:gap-0 lg:gap-10 mt-5 xs:mt-5 sm:mt-5 md:mt-5 lg:mt-0 xl:mt-0 2xl:mt-0 3xl:mt-0">
             <p>Privacy Policy</p>

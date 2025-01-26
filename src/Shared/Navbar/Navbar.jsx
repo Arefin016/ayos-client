@@ -1,15 +1,37 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import Container from "../../components/Container/Container";
+import { useQuery } from "@tanstack/react-query";
 
 const Navbar = () => {
+  // get method
+  const navbarFetchData = async () => {
+    try {
+      const response = await apiClient.get("/ayosph/system-info");
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching footer data", err);
+      return null;
+    }
+  };
+
+  const { data: navbarData } = useQuery({
+    queryKey: ["footerData"],
+    queryFn: navbarFetchData,
+  });
+
+  console.log(navbarData?.data);
   return (
     <Container width="1720px">
       <section className="container-[1720px] mt-5 py-4">
         <div className="flex flex-row justify-between font-poppins items-center">
           {/* This is the logo Section */}
           <Link data-aos="fade-in" to={"/"}>
-            <img src={logo} alt="" />
+            <img
+              className="w-[143px] h-10"
+              src={navbarData?.data?.logo}
+              alt=""
+            />
           </Link>
           {/* This is the Navigation Section */}
           <nav>

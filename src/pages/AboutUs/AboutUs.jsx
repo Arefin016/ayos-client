@@ -59,14 +59,28 @@ const AboutUs = () => {
     queryFn: needToUnderstandData,
   });
 
-  console.log(needToUnderData, "i'm html data");
+  // This is the transform section
+  const transformData = async () => {
+    try {
+      const response = await apiClient.get("/about-page/transform");
+      return response.data;
+    } catch (error) {
+      console.error("Error fething data:", err);
+      return null;
+    }
+  };
+
+  const { data: transData } = useQuery({
+    queryKey: ["transformData"],
+    queryFn: transformData,
+  });
+
+  console.log(transData?.data);
 
   const parsedData =
     typeof needToUnderData?.data?.description === "string"
       ? needToUnderData?.data?.description
-      : JSON.stringify(needToUnderData?.data?.description, null, 2);
-
-  console.log(needToUnderData?.data?.title);
+      : String(needToUnderData?.data?.description);
 
   if (isLoading || paragraphLoading) return <Spinner />;
 
@@ -135,7 +149,11 @@ const AboutUs = () => {
         <div className="flex lg:flex-row flex-col gap-10 items-center">
           {/* This is the image section */}
           <div data-aos="zoom-in">
-            <img src={humanPic} alt="" />
+            <img
+              className="w-[719px] h-[883px] object-cover"
+              src={humanPic}
+              alt=""
+            />
           </div>
           {/* This is the content section */}
           <div>
@@ -144,113 +162,30 @@ const AboutUs = () => {
                 data-aos="fade-up"
                 className="text-[#172B4D] font-poppins text-[40px] font-semibold"
               >
-                Transform your home and Customer
+                {transData?.data?.transform?.title}
               </h1>
               <p
                 data-aos="fade-up"
                 data-aos-delay="100"
-                className="text-[#172B4D] font-poppins text-xl font-medium"
+                className="text-[#172B4D] font-poppins text-xl font-medium w-[902px]"
               >
-                Uncover the best characteristics that establish Ayos as the premier home enhancement 
-                <br />
-                option.
+                {transData?.data?.transform?.description}
               </p>
             </div>
 
-            <div
-              data-aos="fade-up"
-              data-aos-delay="100"
-              className="flex lg:flex-row flex-col gap-[81px]"
-            >
-              {/* This is the left side content */}
-              <div className="space-y-[27px]">
-                {/* Seamless navigation */}
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                  className="space-y-4 w-[390px]"
-                >
-                  <h1 className="aboutTitle">Seamless Navigation</h1>
-                  <p className="aboutParagraph">
-                    Our intuitive interface ensures you can find the right
-                    contractor swiftly and effortlessly, making job management a
-                    breeze with just a few clicks.
-                  </p>
-                </div>
-                {/* Think Slow, Act Fast */}
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                  className="space-y-4 w-[399px]"
-                >
-                  <h1 className="aboutTitle">Think Slow, Act Fast.</h1>
-                  <p className="aboutParagraph">
-                    <>
-                      Effortful, controlled, and data-driven decisions are{" "}
-                      <br />
-                      better than a quick decision and sloppy execution.
-                    </>
-                  </p>
-                </div>
-                {/* Simple Job Scheduling */}
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  className="space-y-4 w-[399px]"
-                >
-                  <h1 className="aboutTitle">Simple Job Scheduling</h1>
-                  <p className="aboutParagraph">
-                    Effortful, controlled, and data-driven decisions are <br />
-                    better than a quick decision and sloppy execution.
-                  </p>
-                </div>
-              </div>
-              {/* This is the right side content */}
-              <div className="space-y-[55px]">
-                {/* Streamlined Communication */}
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                  className="space-y-4 w-[395px]"
-                >
-                  <h1 className="aboutTitle">Streamlined Communication</h1>
-                  <p className="aboutParagraph">
-                    <>
-                      Nothing at Pathao is someone else’s problem. We <br /> all
-                      work together on a shared mission.
-                    </>
-                  </p>
-                </div>
-                {/* Verified and Reliable Contractors */}
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                  className="space-y-4 w-[401px]"
-                >
-                  <h1 className="aboutTitle">
-                    Verified and Reliable Contractors
-                  </h1>
-                  <p className="aboutParagraph">
-                    <>
-                      Pathao exists to serve. Everything we do <br /> impacts{" "}
-                      <br />
-                      thousands of people.
-                    </>
-                  </p>
-                </div>
-                {/* 24/7 Customer Support */}
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  className="space-y-4 w-[395px]"
-                >
-                  <h1 className="aboutTitle">24/7 Customer Support</h1>
-                  <p className="aboutParagraph">
-                    Our intuitive interface ensures you can find the right
-                    contractor swiftly and effortlessly, making job management a
-                    breeze with just a few clicks.
-                  </p>
-                </div>
+            <div data-aos="fade-up" data-aos-delay="100" className="gap-[81px]">
+              <div className="grid grid-cols-2">
+                {transData?.data?.content?.slice(0, 6).map((item, index) => (
+                  <div
+                    key={index}
+                    data-aos="fade-up"
+                    data-aos-delay={100 * (index + 1)}
+                    className="w-[400px]"
+                  >
+                    <h1 className="aboutTitle mt-[27px]">{item?.title}</h1>
+                    <p className="aboutParagraph mt-4">{item?.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
