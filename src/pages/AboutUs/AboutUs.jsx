@@ -59,7 +59,7 @@ const AboutUs = () => {
     queryFn: needToUnderstandData,
   });
 
-  // This is the transform section
+  // This is the transform section start
   const transformData = async () => {
     try {
       const response = await apiClient.get("/about-page/transform");
