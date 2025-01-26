@@ -14,24 +14,37 @@ const ContactUs = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log("i'm workiung");
+    console.log("I'm working");
 
     console.log(data);
     try {
       const response = await apiClient.post("/contact-page/send-message", data);
-      console.log(response.data, "i'm response data");
+      console.log(response.data, "I'm response data");
 
       Swal.fire({
         position: "top-end",
         icon: "success",
-        title: response.data.message,
+        title: response.data.message, // Display success message from response
         showConfirmButton: false,
         timer: 1500,
       });
 
-      return response.data; // Optionally return for further processing
+      return response.data; // Return response data after success
     } catch (err) {
       console.error("Error posting data:", err);
+
+      // Check if error response exists and provide a fallback message
+      const errorMessage =
+        err.response?.data?.message ||
+        "Something went wrong. Please try again.";
+
+      // Show error toast with fallback message if response message is not available
+      Swal.fire({
+        icon: "error",
+        title: "Submission Failed",
+        text: errorMessage,
+      });
+
       return null;
     }
   };

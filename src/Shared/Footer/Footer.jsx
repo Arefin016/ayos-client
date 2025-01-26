@@ -39,7 +39,7 @@ const Footer = () => {
     queryFn: socialFetchData,
   });
 
-  console.log(socialData?.data);
+  console.log(socialData?.data[0].image);
 
   return (
     <Container width="1560px">
@@ -98,20 +98,30 @@ const Footer = () => {
               <FaTwitter />
             </a>
             <a
-              href="https://facebook.com/"
+              href={socialData?.data[1]?.url || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-600 transition-colors duration-300"
+              className="hover:text-blue-600 transition-colors duration-300 h-[19px] w-[19px]"
             >
-              <FaFacebookF />
+              <img
+                src={
+                  socialData?.data[1]?.image || "path/to/placeholder-image.png"
+                }
+                alt="Social icon"
+              />
             </a>
             <a
-              href="https://www.instagram.com/"
+              href={socialData?.data[0]?.url || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-pink-500 transition-colors duration-300"
+              className="hover:text-blue-600 transition-colors duration-300 h-[19px] w-[19px]"
             >
-              <FaInstagram />
+              <img
+                src={
+                  socialData?.data[0]?.image || "path/to/placeholder-image.png"
+                }
+                alt="Social icon"
+              />
             </a>
           </div>
         </div>
