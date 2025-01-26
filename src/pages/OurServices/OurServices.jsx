@@ -6,39 +6,58 @@ import { Helmet } from "react-helmet-async";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "@/components/Spinner/Spinner";
 import apiClient from "@/utils/apiClient";
+import { Empty } from "antd";
 
 const OurServices = () => {
-  // Service Data Fetch
-  const serviceData = async () => {
-    const response = await apiClient.get("/home-page/categories");
-    return response.data;
-  };
-
-  const { isLoading: isServiceLoading, data: serviceResponse } = useQuery({
-    queryKey: ["serviceData"],
-    queryFn: serviceData,
-  });
-
   // Banner Data Fetch
-  const bannerData = async () => {
+  const fetchBannerData = async () => {
     try {
       const response = await apiClient.get("/about-page/banner");
       return response.data;
     } catch (err) {
-      console.error("Error fetching data:", err);
+      console.error("Error fetching banner data:", err);
       return null;
     }
   };
 
   const { isLoading: isBannerLoading, data: bannerResponse } = useQuery({
     queryKey: ["bannerData"],
-    queryFn: bannerData,
+    queryFn: fetchBannerData,
   });
 
-  if (isServiceLoading || isBannerLoading) return <Spinner />;
+  // Service Data Fetch
+  const fetchServiceData = async () => {
+    try {
+      const response = await apiClient.get("/home-page/categories");
+      return response.data;
+    } catch (err) {
+      console.error("Error fetching service data:", err);
+      return null;
+    }
+  };
 
-  if (!serviceResponse?.data) {
-    return <div className="text-center">No data found</div>;
+  const {
+    isLoading: isServiceLoading,
+    isError: isServiceError,
+    data: serviceResponse,
+  } = useQuery({
+    queryKey: ["serviceData"],
+    queryFn: fetchServiceData,
+  });
+
+  // Handle services data safely
+  const services = serviceResponse?.data || [];
+
+  // Loading state
+  if (isBannerLoading || isServiceLoading) return <Spinner />;
+
+  // Error or no data state
+  if (isServiceError || !services.length) {
+    return (
+      <div className="text-center my-36">
+        <Empty description="No services available at the moment." />
+      </div>
+    );
   }
 
   return (
@@ -46,22 +65,24 @@ const OurServices = () => {
       <Helmet>
         <title>Ayos || Our Services</title>
       </Helmet>
-      {}
-      {bannerResponse && bannerResponse?.data ? (
+      {/* Banner Section */}
+      {bannerResponse?.data ? (
         <Banner
-          title={bannerResponse?.data?.title}
-          subtitle={bannerResponse?.data?.description}
+          title={bannerResponse.data.title}
+          subtitle={bannerResponse.data.description}
           backgroundImage="https://i.postimg.cc/054swQp1/Rectangle-9.png"
           gradient="linear-gradient(0deg, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.38) 100%)"
-          playStore={bannerResponse?.data?.button_two_url}
-          appStore={bannerResponse?.data?.button_one_url}
-          playStorePic={bannerResponse?.data?.button_one_image}
-          appStorePic={bannerResponse?.data?.button_two_image}
+          playStore={bannerResponse.data.button_two_url}
+          appStore={bannerResponse.data.button_one_url}
+          playStorePic={bannerResponse.data.button_one_image}
+          appStorePic={bannerResponse.data.button_two_image}
         />
       ) : (
-        <div className="text-center">No data found</div>
+        <div className="text-center">
+          <Empty description="No banner data available." />
+        </div>
       )}
-      {/* This is the services section start */}
+      {/* Services Section */}
       <Container width="1561px">
         <div className="mt-[93px]">
           <div className="flex flex-col space-y-8 justify-center text-center">
@@ -82,20 +103,18 @@ const OurServices = () => {
           </div>
           {/* Card Section */}
           <div className="flex lg:flex-wrap lg:flex-row flex-col gap-5 pt-[107px] justify-center text-center items-center">
-            {serviceResponse?.data.map((card, index) => (
+            {services.map((card, index) => (
               <Card
                 key={index}
                 title={card?.title}
                 description={card?.description}
-                icon={card.icon}
+                icon={card?.icon}
                 image={card?.thumbnail}
               />
             ))}
           </div>
         </div>
       </Container>
-      {/* This is the services section end */}
-      {/*  */}
       <DownloadApp />
     </div>
   );
