@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import contactUs from "../../assets/images/contactUsPic.png";
 import { Helmet } from "react-helmet-async";
-import axios from "axios";
 import apiClient from "@/utils/apiClient";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
@@ -9,6 +8,7 @@ import Swal from "sweetalert2";
 const ContactUs = () => {
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -22,14 +22,14 @@ const ContactUs = () => {
       console.log(response.data, "I'm response data");
 
       Swal.fire({
-        position: "top-end",
         icon: "success",
-        title: response.data.message, // Display success message from response
+        title: response.data.message,
         showConfirmButton: false,
         timer: 1500,
       });
+      reset();
 
-      return response.data; // Return response data after success
+      return response.data;
     } catch (err) {
       console.error("Error posting data:", err);
 
@@ -206,7 +206,7 @@ const ContactUs = () => {
                   type="name"
                   name="name"
                   {...register("name", { required: true })}
-                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4  h-12 xs:h-12 sm:h-12 md:h-12 lg:h-16 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
+                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4  h-12 xs:h-12 sm:h-12 md:h-12 lg:h-16 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] text-[black] font-poppins text-[16px]"
                   placeholder="Enter your name"
                 />
                 {errors.name && (
@@ -232,7 +232,7 @@ const ContactUs = () => {
                   type="email"
                   name="email"
                   {...register("email", { required: true })}
-                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 h-12 xs:h-12 sm:h-12 md:h-12 lg:h-16 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
+                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 h-12 xs:h-12 sm:h-12 md:h-12 lg:h-16 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] text-[black] font-poppins text-[16px]"
                   placeholder="Enter your email address"
                 />
                 {errors.email && (
@@ -252,7 +252,7 @@ const ContactUs = () => {
                   type="number"
                   name="phone"
                   {...register("phone", { required: true })}
-                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 h-12 xs:h-12 sm:h-12 md:h-12 lg:h-16 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] text-[#D0D3D6] font-poppins text-[16px]"
+                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 h-12 xs:h-12 sm:h-12 md:h-12 lg:h-16 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] text-[black] font-poppins text-[16px]"
                   placeholder="01XXXXXXXXX"
                 />
                 {errors.number && (
@@ -274,7 +274,7 @@ const ContactUs = () => {
                 <textarea
                   data-aos="fade-up"
                   name="message"
-                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] h-[90px] xs:h-[90px] sm:h-[90px] md:h-[90px] lg:h-[118px] xl:h-[118px] 2xl:h-[118px] 3xl:h-[118px] text-[#D0D3D6] font-poppins text-[16px]"
+                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] h-[90px] xs:h-[90px] sm:h-[90px] md:h-[90px] lg:h-[118px] xl:h-[118px] 2xl:h-[118px] 3xl:h-[118px] text-[black] font-poppins text-[16px]"
                   placeholder="Write your message"
                   {...register("message")}
                 />
