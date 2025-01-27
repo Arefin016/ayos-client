@@ -156,6 +156,19 @@
   .user-descreption-wrapper p {
     @apply text-[#172B4D] font-poppins text-[14px] font-normal leading-[180%];
   }
+
+  .dynamic-page-wrapper h2 {
+    @apply text-[black] text-2xl font-semibold my-5;
+  }
+  .dynamic-page-wrapper p {
+    @apply text-[#172B4D] text-[16px] my-5;
+  }
+  .dynamic-page-wrapper ul {
+    @apply flex flex-col gap-y-5 list-disc pl-5 my-5;
+  }
+  .dynamic-page-wrapper li {
+    @apply text-[#172B4D] font-poppins text-xl font-normal leading-[180%];
+  }
 }
 
 @layer base {

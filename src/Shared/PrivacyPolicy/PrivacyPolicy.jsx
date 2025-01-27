@@ -32,8 +32,11 @@ const PrivacyPolicy = () => {
       : String(data?.data?.page_content);
 
   return (
-    <section className="text-center my-10">
-      <div className="user-descreption-wrapper text-left px-[200px]">
+    <section className="text-center mt-10 mb-[70px] h-auto">
+      <h1 className="text-center text-5xl font-semibold">
+        {data?.data?.page_title}
+      </h1>
+      <div className="dynamic-page-wrapper text-left px-[200px]">
         {parse(parsedData)}
       </div>
     </section>
