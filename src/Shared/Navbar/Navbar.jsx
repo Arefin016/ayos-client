@@ -120,7 +120,7 @@ const Navbar = () => {
 
         {/* Mobile Menu: when isMenuOpen is true, show the menu */}
         {isMenuOpen && (
-          <div className="md:hidden flex flex-col items-center space-y-4 mt-4">
+          <div className="xl:hidden flex flex-col items-center space-y-4 mt-4">
             <NavLink
               to="/"
               className="navClass hover:text-[#083EC5]"
