@@ -77,25 +77,25 @@ const UnlockSection = () => {
             })}
           </div>
           {/* This is the content */}
-          <div>
-            <section className="flex items-center justify-center pt-20">
-              <div className="h-[820px] rounded-[48px] w-[1720px] overflow-hidden">
-                {shownService?.video_url && (
-                  <iframe
-                    className="rounded-[48px]"
-                    width="100%"
-                    height="100%"
-                    src={shownService.video_url}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  ></iframe>
-                )}
-              </div>
-            </section>
-          </div>
+          <section className="flex items-center justify-center pt-20">
+            <div
+              className="relative w-full max-w-[1560px] rounded-[48px] overflow-hidden"
+              style={{ paddingTop: "56.25%" }}
+            >
+              {shownService?.video_url && (
+                <video
+                  className="absolute top-0 left-0 w-full h-full rounded-[48px]"
+                  src={shownService?.video_url}
+                  controls
+                  title="Promotional Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></video>
+              )}
+            </div>
+          </section>
         </div>
       </section>
     </Container>
