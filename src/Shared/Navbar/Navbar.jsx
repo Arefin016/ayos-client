@@ -20,13 +20,13 @@ const Navbar = () => {
     queryFn: navbarFetchData,
   });
 
-  console.log(navbarData?.data);
+  // console.log(navbarData?.data);
   return (
     <Container width="1720px">
       <section className="container-[1720px] mt-5 py-4">
         <div className="flex flex-row justify-between font-poppins items-center">
           {/* This is the logo Section */}
-          <Link data-aos="fade-in" to={"/"}>
+          <Link to={"/"}>
             <img
               className="w-[143px] h-10"
               src={navbarData?.data?.logo}

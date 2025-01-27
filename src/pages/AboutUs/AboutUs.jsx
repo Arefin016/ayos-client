@@ -1,6 +1,5 @@
 import Banner from "@/components/Banner/Banner";
 import DownloadApp from "../../components/DownloadApp/DownloadApp";
-import humanPic from "../../assets/images/aboutUsPic.png";
 import Container from "@/components/Container/Container";
 import { Helmet } from "react-helmet-async";
 import apiClient from "@/utils/apiClient";
@@ -150,8 +149,8 @@ const AboutUs = () => {
           {/* This is the image section */}
           <div data-aos="zoom-in">
             <img
-              className="w-[719px] h-[883px] object-cover"
-              src={humanPic}
+              className="w-[719px] h-[875px] object-contain"
+              src={transData?.data?.transform?.image}
               alt=""
             />
           </div>

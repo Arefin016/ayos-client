@@ -12,7 +12,7 @@ const OurServices = () => {
   // Banner Data Fetch
   const fetchBannerData = async () => {
     try {
-      const response = await apiClient.get("/about-page/banner");
+      const response = await apiClient.get("/service-page/banner");
       return response.data;
     } catch (err) {
       console.error("Error fetching banner data:", err);
@@ -59,6 +59,7 @@ const OurServices = () => {
       </div>
     );
   }
+  console.log(bannerResponse?.data?.background_image);
 
   return (
     <div>
@@ -68,14 +69,14 @@ const OurServices = () => {
       {/* Banner Section */}
       {bannerResponse?.data ? (
         <Banner
-          title={bannerResponse.data.title}
-          subtitle={bannerResponse.data.description}
-          backgroundImage="https://i.postimg.cc/054swQp1/Rectangle-9.png"
+          title={bannerResponse?.data.title}
+          subtitle={bannerResponse?.data.description}
+          backgroundImage={bannerResponse?.data?.background_image}
           gradient="linear-gradient(0deg, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.38) 100%)"
-          playStore={bannerResponse.data.button_two_url}
-          appStore={bannerResponse.data.button_one_url}
-          playStorePic={bannerResponse.data.button_one_image}
-          appStorePic={bannerResponse.data.button_two_image}
+          playStore={bannerResponse?.data.button_two_url}
+          appStore={bannerResponse?.data.button_one_url}
+          playStorePic={bannerResponse?.data.button_one_image}
+          appStorePic={bannerResponse?.data.button_two_image}
         />
       ) : (
         <div className="text-center">

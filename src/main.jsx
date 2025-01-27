@@ -8,11 +8,13 @@ import { HelmetProvider } from "react-helmet-async";
 import AosProvider from "./Provider/AosProvider/AosProvider";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Preloader from "./components/Preloader/Preloader";
 
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <Preloader />
     <QueryClientProvider client={queryClient}>
       <AosProvider>
         <HelmetProvider>
