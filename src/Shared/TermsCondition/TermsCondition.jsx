@@ -34,7 +34,7 @@ const TermsCondition = () => {
       : String(data?.data?.page_content);
 
   return (
-    <section className="text-center mt-10 mb-[70px] h-auto">
+    <section className="text-center mt-16 mb-[70px] h-auto">
       <h1 className="text-center text-5xl font-semibold">
         {data?.data?.page_title}
       </h1>
