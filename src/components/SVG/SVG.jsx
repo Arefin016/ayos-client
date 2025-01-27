@@ -51,8 +51,7 @@ const UploadLogo = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="141"
-      height="140"
+      className="w-[70px] xs:w-[80px] sm:w-[100px] md:w-[120px] lg:w-[140px] xl:w-[140px] 2xl:w-[140px] 3xl:w-[140px] h-[70px] xs:h-[80px] sm:h-[100px] md:h-[120px] lg:h-[140px] xl:h-[140px] 2xl:h-[140px] 3xl:h-[140px]"
       viewBox="0 0 141 140"
       fill="none"
     >

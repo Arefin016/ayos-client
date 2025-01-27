@@ -1,4 +1,3 @@
-"use client";
 import Container from "@/components/Container/Container";
 import apiClient from "@/utils/apiClient";
 import { useQuery } from "@tanstack/react-query";
