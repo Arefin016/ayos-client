@@ -14,14 +14,14 @@ const SignUp = () => {
         <title>Ayos || Sign Up</title>
       </Helmet>
       <section className="mt-[81px] mb-[74px]">
-        <div className="flex flex-col xs:flex-col md:flex-col lg:flex-col xl:flex-col 2xl:flex-row 3xl:flex-row gap-10 xs:gap-10 sm:gap-10 md:gap-16 lg:gap-20 xl:gap-24 2xl:gap-2 3xl:gap-2">
+        <div className="flex flex-col xs:flex-col md:flex-col lg:flex-col xl:flex-col 2xl:flex-col 3xl:flex-row gap-10 xs:gap-10 sm:gap-10 md:gap-16 lg:gap-20 xl:gap-24 2xl:gap-6 3xl:gap-2 px-6 items-center">
           {/* This is the first div */}
           <img
             data-aos="zoom-in-right"
             data-aos-delay="100"
             src={signUpPic}
             alt=""
-            className="w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[50%] 3xl:w-[50%] 4xl:w-[1127px] h-auto xs:h-auto sm:h-auto md:h-auto lg:h-auto xl:h-[619px] 2xl:h-[619px] 3xl:h-auto "
+            className="w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[800px] 3xl:w-[50%] 4xl:w-[1127px] h-auto xs:h-auto sm:h-auto md:h-auto lg:h-auto xl:h-[619px] 2xl:h-auto 3xl:h-auto"
           />
 
           {/* This is the second div */}
@@ -37,9 +37,7 @@ const SignUp = () => {
                 Download the app
               </p>
             </div>
-
             <UploadLogo />
-
             <div className="flex flex-col gap-y-[26px]">
               <div className="flex flex-col xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-2 xs:gap-x-[60px] sm:gap-x-[60px] md:gap-x-[60px] lg:gap-x-[60px] xl:gap-x-[60px] 2xl:gap-x-[60px] 3xl:gap-x-[60px] justify-center items-center">
                 <Link to={"https://play.google.com/store/apps?hl=en&zxpli=1"}>
