@@ -97,17 +97,12 @@ const Footer = () => {
           {/* This is the social icons section */}
           <div className="flex flex-row gap-5 xs:gap-5 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-[34px] 2xl:gap-[34px] mt-6 xs:mt-6 sm:mt-6 md:mt-6 lg:mt-0 xl:mt-0 2xl:mt-0 3xl:mt-0">
             <a
-              href={socialData?.data[0]?.url || "#"}
+              href="https://twitter.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-600 transition-colors duration-300 h-[19px] w-[19px]"
+              className="hover:text-blue-500 transition-colors duration-300 h-[19px] w-[19px]"
             >
-              <img
-                src={
-                  socialData?.data[0]?.image || "path/to/placeholder-image.png"
-                }
-                alt="Social icon"
-              />
+              <FaTwitter />
             </a>
             <a
               href={socialData?.data[1]?.url || "#"}
