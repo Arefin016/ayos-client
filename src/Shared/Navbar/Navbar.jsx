@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <Container width="1720px">
-      <section className="w-full mt-5 py-4 px-5 xs:px-5 sm:px-5 md:px-5 lg:px-5 xl:px-5 2xl:px-0">
+      <section className="w-full mt-5 px-5 xs:px-5 sm:px-5 md:px-5 lg:px-5 xl:px-5 2xl:px-0">
         <div className="flex flex-row justify-between font-poppins items-center navbar">
           {/* Logo Section */}
           <Link to={"/"}>
