@@ -5,6 +5,8 @@ import AboutUs from "../pages/AboutUs/AboutUs";
 import OurServices from "../pages/OurServices/OurServices";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import SignUp from "../pages/SignUp/SignUp";
+import TermsCondition from "@/Shared/TermsCondition/TermsCondition";
+import PrivacyPolicy from "@/Shared/PrivacyPolicy/PrivacyPolicy";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ export const router = createBrowserRouter([
       {
         path: "/signUp",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/terms-conditions",
+        element: <TermsCondition />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
       },
     ],
   },

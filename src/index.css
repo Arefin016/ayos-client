@@ -154,7 +154,7 @@
     @apply text-[#172B4D] font-poppins text-xl font-normal leading-[180%];
   }
   .user-descreption-wrapper p {
-    @apply text-[#172B4D] font-poppins text-xl font-normal leading-[180%];
+    @apply text-[#172B4D] font-poppins text-[14px] font-normal leading-[180%];
   }
 }
 

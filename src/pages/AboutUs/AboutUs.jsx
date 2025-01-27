@@ -15,7 +15,7 @@ const AboutUs = () => {
       const response = await apiClient.get("/about-page/banner");
       return response.data;
     } catch (error) {
-      console.error("Error fetching data:", err);
+      console.error("Error fetching data:", error);
       return null;
     }
   };
@@ -73,8 +73,6 @@ const AboutUs = () => {
     queryKey: ["transformData"],
     queryFn: transformData,
   });
-
-  console.log(transData?.data);
 
   const parsedData =
     typeof needToUnderData?.data?.description === "string"

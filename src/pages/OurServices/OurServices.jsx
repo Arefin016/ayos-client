@@ -59,7 +59,6 @@ const OurServices = () => {
       </div>
     );
   }
-  console.log(bannerResponse?.data?.background_image);
 
   return (
     <div>
@@ -103,7 +102,7 @@ const OurServices = () => {
             </p>
           </div>
           {/* Card Section */}
-          <div className="flex lg:flex-wrap lg:flex-row flex-col gap-5 pt-[107px] justify-center text-center items-center">
+          <div className="flex lg:flex-wrap lg:flex-row flex-col xs:flex-col sm:flex-col gap-5 pt-[107px] justify-center text-center items-center">
             {services.map((card, index) => (
               <Card
                 key={index}
