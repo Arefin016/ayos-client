@@ -34,7 +34,7 @@ const ConnectWithBestHome = () => {
 
   return (
     <section className="bg-[#FAFAFA] py-[98px] px-[233px] mb-[100px]">
-      <div className="flex flex-row gap-[138px] items-center">
+      <div className="flex flex-row gap-[100px] items-center w-[1437px]">
         <div data-aos="zoom-in">
           <img
             className="h-[858px] w-[411px] object-cover"
@@ -87,7 +87,7 @@ const ConnectWithBestHome = () => {
             </Link>
           </div>
           {/* This is the bucket section */}
-          <div className="absolute top-[397px] right-[-233px]">
+          <div className="absolute top-[422px] right-[-255px]">
             <img src={bucketPic} alt="" />
           </div>
         </div>
