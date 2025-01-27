@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
     }
   };
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["privacyFetchData"],
     queryFn: privacyFetchData,
   });
