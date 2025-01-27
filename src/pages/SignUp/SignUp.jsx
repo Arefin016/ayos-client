@@ -28,10 +28,10 @@ const SignUp = () => {
           <div
             data-aos="zoom-in-left"
             data-aos-delay="100"
-            className="w-full xs:w-full sm:w-full md:w-full lg:w-[603px] xl:w-[603px] 2xl:w-[603px] 3xl:w-[603px] h-auto py-5 xs:py-4 sm:py-4 md:py-4 lg:py-[35px] xl:py-[35px] 2xl:py-[35px] 3xl:py-[35px] px-4 xs:px-4 sm:px-4 md:px-4 lg:px-[52px] xl:px-[52px] 2xl:px-[52px] 3xl:px-[52px] bg-white_transparent rounded-3xl shadow-[0px_0px_6px_0px_rgba(0,0,0,0.25)] flex flex-col gap-y-5 xs:gap-y-5 sm:gap-y-5 md:gap-y-8 lg:gap-y-[74px] xl:gap-y-[74px] 2xl:gap-y-[74px] 3xl:gap-y-[74px] items-center"
+            className="w-[280px] mx-auto xs:w-full sm:w-full md:w-full lg:w-[603px] xl:w-[603px] 2xl:w-[603px] 3xl:w-[603px] h-auto py-5 xs:py-4 sm:py-4 md:py-4 lg:py-[35px] xl:py-[35px] 2xl:py-[35px] 3xl:py-[35px] px-4 xs:px-4 sm:px-4 md:px-4 lg:px-[52px] xl:px-[52px] 2xl:px-[52px] 3xl:px-[52px] bg-white_transparent rounded-3xl shadow-[0px_0px_6px_0px_rgba(0,0,0,0.25)] flex flex-col gap-y-5 xs:gap-y-5 sm:gap-y-5 md:gap-y-8 lg:gap-y-[74px] xl:gap-y-[74px] 2xl:gap-y-[74px] 3xl:gap-y-[74px] items-center"
           >
             {/* This is the logo section start */}
-            <div className="flex flex-col gap-y-[26px] items-center">
+            <div className="flex flex-col gap-y-2 xs:gap-y-2 sm:gap-y-[10px] md:gap-y-[26px] lg:gap-y-[26px] xl:gap-y-[26px] 2xl:gap-y-[26px] 3xl:gap-y-[26px] items-center">
               <SiteLogo></SiteLogo>
               <p className="font-jakarta text-2xl font-bold">
                 Download the app

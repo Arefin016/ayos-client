@@ -57,12 +57,12 @@ const Home = () => {
         <Empty />
       )}
 
-      {/* <AyosPlatform /> */}
-      {/* <ConnectWithBestHome /> */}
-      {/* <CardSection /> */}
-      {/* <UnlockSection /> */}
-      {/* <FAQ /> */}
-      {/* <DownloadApp /> */}
+      <AyosPlatform />
+      <ConnectWithBestHome />
+      <CardSection />
+      <UnlockSection />
+      <FAQ />
+      <DownloadApp />
     </div>
   );
 };

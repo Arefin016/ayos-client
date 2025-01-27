@@ -94,7 +94,7 @@ const ConnectWithBestHome = () => {
           </div>
 
           {/* This is the bucket section */}
-          <div className="absolute top-[422px] right-[-255px] xs:top-[300px] sm:top-[350px] md:top-[400px] lg:top-[422px] xl:top-[422px] 2xl:top-[400px]  xs:right-[-150px] sm:right-[-200px] md:right-[-250px] lg:right-[-255px] xl:right-[-255px] 2xl:right-[-255px] 3xl:right-[-255px]">
+          <div className="absolute top-[422px] right-[-255px] xs:top-[300px] sm:top-[350px] md:top-[400px] lg:top-[422px] xl:top-[422px] 2xl:top-[408px]  xs:right-[-150px] sm:right-[-200px] md:right-[-250px] lg:right-[-255px] xl:right-[-255px] 2xl:right-[-255px] 3xl:right-[-255px]">
             <img
               className="w-[200px] xs:w-[150px] sm:w-[175px] md:w-[200px] lg:w-[250px] xl:w-[300px] 2xl:w-[300px] 3xl:w-[300px]"
               src={bucketPic}
