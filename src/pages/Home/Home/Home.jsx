@@ -34,7 +34,7 @@ const Home = () => {
       <Helmet>
         <title>Ayos || Home</title>
       </Helmet>
-      {data && data?.data ? (
+      {/* {data && data?.data ? (
         <Banner
           title={data?.data?.title}
           subtitle={
@@ -55,14 +55,14 @@ const Home = () => {
         />
       ) : (
         <Empty />
-      )}
+      )} */}
 
-      <AyosPlatform />
-      <ConnectWithBestHome />
+      {/* <AyosPlatform />
+      <ConnectWithBestHome /> */}
       <CardSection />
-      <UnlockSection />
+      {/* <UnlockSection />
       <FAQ />
-      <DownloadApp />
+      <DownloadApp /> */}
     </div>
   );
 };

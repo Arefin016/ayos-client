@@ -7,7 +7,7 @@ const Card = ({ title, description, image, index }) => {
       <div
         data-aos="fade-up"
         data-aos-delay={String(index * 100)}
-        className="w-[300px] xs:w-[320px] sm:w-[440px] md:w-[507px] lg:w-[507px] xl:w-[507px] 2xl:w-[507px] 3xl:w-[507px] h-auto xs:h-auto sm:h-[420px] md:h-[545px] lg:h-[545px] xl:h-[545px] 2xl:h-[545px] 3xl:h-[545px] py-[10px] px-4 bg-[#F5F5F5] rounded-2xl hover:bg-[#E0E0E0] hover:shadow-custom_shadow ease-out duration-300 group"
+        className="w-[300px] xs:w-[320px] sm:w-[440px] md:w-[507px] lg:w-[507px] xl:w-[407px] 2xl:w-[507px] 3xl:w-[470px] 4xl:w-[507px] h-auto xs:h-auto sm:h-[420px] md:h-[545px] lg:h-[545px] xl:h-[545px] 2xl:h-[545px] 3xl:h-[545px] py-[10px] px-4 bg-[#F5F5F5] rounded-2xl hover:bg-[#E0E0E0] hover:shadow-custom_shadow ease-out duration-300 group"
       >
         {/* Card Header */}
         <div>
@@ -32,7 +32,7 @@ const Card = ({ title, description, image, index }) => {
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
               }}
-              className="w-[270px] xs:w-[300px] sm:w-[410px] md:w-[475px] lg:w-[475px] xl:w-[475px] 2xl:w-[475px] 3xl:w-[475px] h-[250px] xs:h-[280px] sm:h-[260px] md:h-[355px] lg:h-[355px] xl:h-[355px] 2xl:h-[355px] 3xl:h-[355px] object-cover transition-transform ease-out duration-300 transform group-hover:scale-95 rounded-2xl"
+              className="w-[270px] xs:w-[300px] sm:w-[410px] md:w-[475px] lg:w-[475px] xl:w-[380px] 2xl:w-[475px] 3xl:w-[440px] 4xl:w-[475px] h-[250px] xs:h-[280px] sm:h-[260px] md:h-[355px] lg:h-[355px] xl:h-[355px] 2xl:h-[355px] 3xl:h-[355px] object-cover transition-transform ease-out duration-300 transform group-hover:scale-95 rounded-2xl"
             ></div>
           </div>
         </div>
