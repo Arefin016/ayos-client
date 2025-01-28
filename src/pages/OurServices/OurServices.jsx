@@ -66,7 +66,7 @@ const OurServices = () => {
         <title>Ayos || Our Services</title>
       </Helmet>
       {/* Banner Section */}
-      {bannerResponse?.data ? (
+      {/* {bannerResponse?.data ? (
         <Banner
           title={bannerResponse?.data.title}
           subtitle={bannerResponse?.data.description}
@@ -81,14 +81,14 @@ const OurServices = () => {
         <div className="text-center">
           <Empty description="No banner data available." />
         </div>
-      )}
+      )} */}
       {/* Services Section */}
-      <Container width="1561px">
-        <div className="mt-7 xs:mt-7 sm:mt-7 md:mt-7 lg:mt-8 xl:mt-[93px] 2xl:mt-[93px] 3xl:mt-[93px]">
+      {/* <Container width="1561px"> */}
+      {/* <div className="mt-7 xs:mt-7 sm:mt-7 md:mt-7 lg:mt-8 xl:mt-[93px] 2xl:mt-[93px] 3xl:mt-[93px]">
           <div className="flex flex-col space-y-8 justify-center text-center items-center">
             <h1
               data-aos="fade-up"
-              className="text-[#172B4D] font-poppins text-[20px] xs:text-[20px] sm:text-[20px] md:text-[20px] lg:text-[30px] xl:text-[40px] 2xl:text-[40px] 3xl:text-[40px] font-semibold"
+              className="text-[#172B4D] font-poppins text-[24px] xs:text-[24px] sm:text-[28px] md:text-[30px] lg:text-[33px] xl:text-[35px] 2xl:text-[40px] 3xl:text-[40px] font-semibold"
             >
               Best Contractors service for Your <br /> Needs!
             </h1>
@@ -101,20 +101,20 @@ const OurServices = () => {
               insights. Track your progress, stay consistent
             </p>
           </div>
-          {/* Card Section */}
-          <div className="flex lg:flex-wrap lg:flex-row flex-col xs:flex-col sm:flex-col gap-5 pt-[107px] justify-center text-center items-center mx-auto">
-            {services?.map((card, index) => (
-              <Card
-                key={index}
-                title={card?.title}
-                description={card?.description}
-                icon={card?.icon}
-                image={card?.thumbnail}
-              />
-            ))}
-          </div>
-        </div>
-      </Container>
+          {/* Card Section  */}
+      {/* <div className="flex lg:flex-wrap lg:flex-row flex-col xs:flex-col sm:flex-col gap-5 pt-8 xs:pt-10 sm:pt-10 md:pt-10 lg:pt-[70px] xl:pt-[107px] 2xl:pt-[107px] 3xl:pt-[107px] justify-center text-center items-center mx-auto">
+        {services?.map((card, index) => (
+          <Card
+            key={index}
+            title={card?.title}
+            description={card?.description}
+            icon={card?.icon}
+            image={card?.thumbnail}
+          />
+        ))}
+      </div> */}
+      {/* </div> */}
+      {/* </Container> */}
       <DownloadApp />
     </div>
   );

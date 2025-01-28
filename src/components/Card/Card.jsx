@@ -12,7 +12,7 @@ const Card = ({ title, description, image, index }) => {
         {/* Card Header */}
         <div>
           <div className="flex flex-row justify-between items-center py-4">
-            <h1 className="text-[#41405D] font-poppins font-semibold text-[24px] sm:text-[28px] md:text-[30px] lg:text-[33px] xl:text-[35px] 2xl:text-[40px]">
+            <h1 className="text-[#41405D] font-poppins font-semibold text-[24px] xs:text-[24px] sm:text-[28px] md:text-[30px] lg:text-[33px] xl:text-[35px] 2xl:text-[40px]">
               {title}
             </h1>
 
