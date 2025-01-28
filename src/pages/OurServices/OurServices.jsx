@@ -103,7 +103,7 @@ const OurServices = () => {
           </div>
           {/* Card Section */}
           <div className="flex lg:flex-wrap lg:flex-row flex-col xs:flex-col sm:flex-col gap-5 pt-[107px] justify-center text-center items-center mx-auto">
-            {services.map((card, index) => (
+            {services?.map((card, index) => (
               <Card
                 key={index}
                 title={card?.title}
