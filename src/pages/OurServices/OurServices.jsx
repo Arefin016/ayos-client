@@ -66,7 +66,7 @@ const OurServices = () => {
         <title>Ayos || Our Services</title>
       </Helmet>
       {/* Banner Section */}
-      {/* {bannerResponse?.data ? (
+      {bannerResponse?.data ? (
         <Banner
           title={bannerResponse?.data.title}
           subtitle={bannerResponse?.data.description}
@@ -81,7 +81,7 @@ const OurServices = () => {
         <div className="text-center">
           <Empty description="No banner data available." />
         </div>
-      )} */}
+      )}
       {/* Services Section */}
       <Container width="1561px">
         <div className="mt-7 xs:mt-7 sm:mt-7 md:mt-7 lg:mt-8 xl:mt-[93px] 2xl:mt-[93px] 3xl:mt-[93px]">

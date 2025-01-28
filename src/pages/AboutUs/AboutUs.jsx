@@ -201,14 +201,14 @@ const AboutUs = () => {
             <h1 data-aos="fade-up" className="title">
               {needToUnderData?.data?.title}
             </h1>
-            <div className="user-descreption-wrapper w-[300px] xs:w-[340px] sm:w-[460px] md:w-[560px] lg:w-[740px] xl:w-[970px] 2xl:w-[1160px] 3xl:w-[1460px] 4xl:w-[1560px] text-left mb-5">
+            <div className="user-descreption-wrapper w-[300px] xs:w-[380px] sm:w-[460px] md:w-[560px] lg:w-[740px] xl:w-[970px] 2xl:w-[1160px] 3xl:w-[1460px] 4xl:w-[1560px] text-left mb-5">
               {parse(parsedData)}
             </div>
           </div>
         </section>
       </Container>
       {/* This is the third section end */}
-      {/* <DownloadApp /> */}
+      <DownloadApp />
     </div>
   );
 };
