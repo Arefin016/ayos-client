@@ -127,16 +127,16 @@
     @apply text-[#52525B]  text-sm font-normal leading-[26px];
   }
   .aboutTitle {
-    @apply text-secondaryColor font-poppins text-2xl font-medium;
+    @apply text-secondaryColor font-poppins text-xl xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-2xl 2xl:text-2xl 3xl:text-2xl font-medium;
   }
   .aboutParagraph {
-    @apply text-paragraphColor font-poppins text-[18px];
+    @apply text-paragraphColor font-poppins text-[14px] xs:text-[14px] sm:text-[14px] md:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[18px] 3xl:text-[18px];
   }
   .title {
-    @apply text-[#172B4D] font-poppins text-[40px] font-semibold;
+    @apply text-[#172B4D] font-poppins text-[28px] xs:text-[28px] sm:text-[28px] md:text-[30px] lg:text-[30px] xl:text-[40px] 2xl:text-[40px] 3xl:text-[40px] font-semibold;
   }
   .paragraph {
-    @apply text-[#172B4D] font-poppins text-xl text-left leading-[180%];
+    @apply text-[#172B4D] font-poppins text-[14px] xs:text-[14px] sm:text-[14px] md:text-[14px] lg:text-[16px] xl:text-xl 2xl:text-xl 3xl:text-xl text-left leading-[180%];
   }
 
   .user-descreption-wrapper strong {
@@ -144,14 +144,14 @@
   }
 
   .user-descreption-wrapper h2 {
-    @apply text-[#172B4D] font-poppins text-xl font-normal leading-[180%];
+    @apply text-[#172B4D] font-poppins text-[14px] xs:text-[14px] sm:text-[14px] md:text-[14px] lg:text-[16px] xl:text-xl 2xl:text-xl 3xl:text-xl font-normal leading-[180%];
   }
 
   .user-descreption-wrapper ul {
     @apply flex flex-col gap-y-5 list-disc pl-5 my-5;
   }
   .user-descreption-wrapper li {
-    @apply text-[#172B4D] font-poppins text-xl font-normal leading-[180%];
+    @apply text-[#172B4D] font-poppins text-[14px] xs:text-[14px] sm:text-[14px] md:text-[14px] lg:text-[16px] xl:text-xl 2xl:text-xl 3xl:text-xl font-normal leading-[180%];
   }
   .user-descreption-wrapper p {
     @apply text-[#172B4D] font-poppins text-[14px] font-normal leading-[180%];

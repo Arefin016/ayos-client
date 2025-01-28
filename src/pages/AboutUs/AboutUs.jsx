@@ -142,29 +142,29 @@ const AboutUs = () => {
       </section>
       {/* This is the first section end */}
       {/* This is the second section start*/}
-      <section className="bg-[#EEF3FF] px-0 xs:px-[79px] sm:px-[79px] md:px-[79px] lg:px-[79px] xl:px-[79px] 2xl:px-[79px] 3xl:px-[79px]">
-        <div className="flex lg:flex-row flex-col gap-10 items-center">
+      <section className="bg-[#EEF3FF] px-0 xs:px-0 sm:px-0 md:px-0 lg:px-0 xl:px-[79px] 2xl:px-[79px] 3xl:px-[79px]">
+        <div className="flex flex-col xs:flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-col 2xl:flex-col 3xl:flex-row gap-4 xs:gap-4 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-10 2xl:gap-10 3xl:gap-10 items-center">
           {/* This is the image section */}
           <div data-aos="zoom-in">
             <img
-              className="w-[719px] xs:w-[719px] sm:w-[719px] md:w-[719px] lg:w-[719px] xl:w-[719px] 2xl:w-[719px] 3xl:w-[719px] h-[875px] xs:h-[875px] sm:h-[875px] md:h-[875px] lg:h-[875px] xl:h-[875px] 2xl:h-[875px] 3xl:h-[875px] object-contain"
+              className="w-[300px] xs:w-[340px] sm:w-[460px] md:w-[560px] lg:w-[719px] xl:w-[719px] 2xl:w-[719px] 3xl:w-[719px] h-[300px] xs:h-[340px] sm:h-[460px] md:h-[560px] lg:h-[875px] xl:h-[875px] 2xl:h-[875px] 3xl:h-[875px] object-contain"
               src={transData?.data?.transform?.image}
               alt=""
             />
           </div>
           {/* This is the content section */}
           <div>
-            <div className="space-y-[31px] mb-12">
+            <div className="space-y-[31px] mb-12 px-5 xs:px-5 sm:px-5 md:px-5 lg:px-5 xl:px-5 2xl:px-0 3xl:px-0">
               <h1
                 data-aos="fade-up"
-                className="text-[#172B4D] font-poppins text-[40px] font-semibold"
+                className="text-[#172B4D] font-poppins text-[28px] xs:text-[28px] sm:text-[30px] md:text-[30px] lg:text-[30px] xl:text-[40px] 2xl:text-[40px] 3xl:text-[40px] font-semibold"
               >
                 {transData?.data?.transform?.title}
               </h1>
               <p
                 data-aos="fade-up"
                 data-aos-delay="100"
-                className="text-[#172B4D] font-poppins text-xl font-medium w-full xs:w-[902px] sm:w-[902px] md:w-[902px] lg:w-[902px] xl:w-[902px] 2xl:w-[902px] 3xl:w-[902px]"
+                className="text-[#172B4D] font-poppins text-xl font-medium w-[300px] xs:w-[340px] sm:w-[460px] md:w-[560px] lg:w-[760px] xl:w-[902px] 2xl:w-[902px] 3xl:w-[902px]"
               >
                 {transData?.data?.transform?.description}
               </p>
@@ -177,10 +177,14 @@ const AboutUs = () => {
                     key={index}
                     data-aos="fade-up"
                     data-aos-delay={100 * (index + 1)}
-                    className="w-full xs:w-[400px] sm:w-[400px] md:w-[400px] lg:w-[400px] xl:w-[400px] 2xl:w-[400px] 3xl:w-[400px]"
+                    className="w-full xs:w-[400px] sm:w-[400px] md:w-[400px] lg:w-[400px] xl:w-[400px] 2xl:w-[400px] 3xl:w-[400px] px-5 xs:px-5 sm:px-5 md:px-5 lg:px-0 xl:px-5 2xl:px-0 3xl:px-0"
                   >
-                    <h1 className="aboutTitle mt-[27px]">{item?.title}</h1>
-                    <p className="aboutParagraph mt-4">{item?.description}</p>
+                    <h1 className="aboutTitle mt-[27px] w-[300px] xs:w-[340px] sm:w-[340px] md:w-[340px] lg:w-[340px] xl:w-[340px] 2xl:w-[340px] 3xl:w-[340px]">
+                      {item?.title}
+                    </h1>
+                    <p className="aboutParagraph mt-4 w-[300px] xs:w-[340px] sm:w-[340px] md:w-[340px] lg:w-[340px] xl:w-[340px] 2xl:w-[340px] 3xl:w-[340px]">
+                      {item?.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -193,18 +197,18 @@ const AboutUs = () => {
       {/* This is the third section start */}
       <Container width="1560px">
         <section className="mt-10 xs:mt-10 sm:mt-10 md:mt-14 lg:mt-[80px] xl:mt-[100px] 2xl:mt-[120px] 3xl:mt-[120px]">
-          <div className="text-center space-y-[35px] px-3 xs:px-3 sm:px-3 md:px-3 lg:px-3 xl:px-0 2xl:px-0 3xl:px-0">
+          <div className="text-center space-y-[35px] px-3 xs:px-3 sm:px-3 md:px-3 lg:px-3 xl:px-5 2xl:px-5 3xl:px-5 4xl:px-0">
             <h1 data-aos="fade-up" className="title">
               {needToUnderData?.data?.title}
             </h1>
-            <div className="user-descreption-wrapper text-left mb-5">
+            <div className="user-descreption-wrapper w-[300px] xs:w-[340px] sm:w-[460px] md:w-[560px] lg:w-[740px] xl:w-[970px] 2xl:w-[1160px] 3xl:w-[1460px] 4xl:w-[1560px] text-left mb-5">
               {parse(parsedData)}
             </div>
           </div>
         </section>
       </Container>
       {/* This is the third section end */}
-      <DownloadApp />
+      {/* <DownloadApp /> */}
     </div>
   );
 };

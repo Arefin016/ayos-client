@@ -38,7 +38,7 @@ const Banner = ({
             <p
               data-aos="fade-up"
               data-aos-delay="200"
-              className="text-primaryColor font-poppins text-[16px] xs:text-[18px] sm:text-[18px] md:text-[18px] lg:text-[18px] w-[270px] xs:w-[350px] sm:w-[460px] md:w-[540px] lg:w-[750px] xl:w-[770px] 2xl:w-[770px] 3xl:w-[770px]"
+              className="text-primaryColor font-poppins text-[16px] xs:text-[18px] sm:text-[18px] md:text-[18px] lg:text-[18px] w-[270px] xs:w-[300px] sm:w-[460px] md:w-[540px] lg:w-[750px] xl:w-[770px] 2xl:w-[770px] 3xl:w-[770px]"
             >
               {subtitle}
             </p>
@@ -46,7 +46,7 @@ const Banner = ({
             <div
               data-aos="fade-up"
               data-aos-delay="300"
-              className="flex flex-col xs:flex-col sm:flex-col md:flex-row lg:flex-row gap-2 xs:gap-3 sm:gap-3 md:gap-4 lg:gap-4 xl:gap-5 2xl:gap-8 3xl:gap-8 items-center"
+              className="flex flex-col xs:flex-col sm:flex-col md:flex-row lg:flex-row gap-2 xs:gap-3 sm:gap-3 md:gap-4 lg:gap-4 xl:gap-5 2xl:gap-8 3xl:gap-8 items-center pb-10 xs:pb-10 sm:pb-10 md:pb-10 lg:pb-10 xl:pb-10 2xl:pb-0 3xl:pb-10"
             >
               <Link to={playStore}>
                 <img
