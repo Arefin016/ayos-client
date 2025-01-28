@@ -83,8 +83,8 @@ const OurServices = () => {
         </div>
       )} */}
       {/* Services Section */}
-      {/* <Container width="1561px"> */}
-      {/* <div className="mt-7 xs:mt-7 sm:mt-7 md:mt-7 lg:mt-8 xl:mt-[93px] 2xl:mt-[93px] 3xl:mt-[93px]">
+      <Container width="1561px">
+        <div className="mt-7 xs:mt-7 sm:mt-7 md:mt-7 lg:mt-8 xl:mt-[93px] 2xl:mt-[93px] 3xl:mt-[93px]">
           <div className="flex flex-col space-y-8 justify-center text-center items-center">
             <h1
               data-aos="fade-up"
@@ -102,19 +102,19 @@ const OurServices = () => {
             </p>
           </div>
           {/* Card Section  */}
-      {/* <div className="flex lg:flex-wrap lg:flex-row flex-col xs:flex-col sm:flex-col gap-5 pt-8 xs:pt-10 sm:pt-10 md:pt-10 lg:pt-[70px] xl:pt-[107px] 2xl:pt-[107px] 3xl:pt-[107px] justify-center text-center items-center mx-auto">
-        {services?.map((card, index) => (
-          <Card
-            key={index}
-            title={card?.title}
-            description={card?.description}
-            icon={card?.icon}
-            image={card?.thumbnail}
-          />
-        ))}
-      </div> */}
-      {/* </div> */}
-      {/* </Container> */}
+          <div className="flex lg:flex-wrap lg:flex-row flex-col xs:flex-col sm:flex-col gap-5 pt-8 xs:pt-10 sm:pt-10 md:pt-10 lg:pt-[70px] xl:pt-[107px] 2xl:pt-[107px] 3xl:pt-[107px] justify-center text-center items-center mx-auto">
+            {services?.map((card, index) => (
+              <Card
+                key={index}
+                title={card?.title}
+                description={card?.description}
+                icon={card?.icon}
+                image={card?.thumbnail}
+              />
+            ))}
+          </div>
+        </div>
+      </Container>
       <DownloadApp />
     </div>
   );
