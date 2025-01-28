@@ -1,5 +1,4 @@
 import Banner from "@/components/Banner/Banner";
-import DownloadApp from "../../components/DownloadApp/DownloadApp";
 import Container from "@/components/Container/Container";
 import { Helmet } from "react-helmet-async";
 import apiClient from "@/utils/apiClient";
@@ -7,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import Spinner from "@/components/Spinner/Spinner";
 import { Empty } from "antd";
 import parse from "html-react-parser";
+import DownloadApp from "@/components/DownloadApp/DownloadApp";
 
 const AboutUs = () => {
   // This is the about us banner section fetch data
@@ -109,8 +109,8 @@ const AboutUs = () => {
         <Empty />
       )}
       {/* This is the first section start */}
-      <section className="my-9 xs:my-[115px] sm:my-[115px] md:my-[115px] lg:my-[115px] xl:my-[115px] 2xl:my-[115px] 3xl:">
-        <div className="lg:px-[183px]">
+      <section className="my-9 xs:my-9 sm:my-9 md:my-10 lg:my-10 xl:my-[115px] 2xl:my-[115px] 3xl:">
+        <div className="px-3 xs:px-3 sm:px-3 md:px-3 lg:px-3 xl:px-24 2xl:px-[183px] 3xl:px-[183px]">
           {/* First Div */}
           <div
             data-aos="fade-up"
@@ -124,7 +124,7 @@ const AboutUs = () => {
           <div
             data-aos="fade-up"
             data-aos-delay="200"
-            className="text-center space-y-[35px] mt-[88px]"
+            className="text-center space-y-[35px] mt-8 xs:mt-8 sm:mt-8 md:mt-8 lg:mt-[88px] xl:mt-[88px] 2xl:mt-[88px] 3xl:mt-[88px]"
           >
             <h1 className="title">{paraData?.data[1].title}</h1>
             <p className="paragraph">{paraData?.data[1].description}</p>
@@ -133,7 +133,7 @@ const AboutUs = () => {
           <div
             data-aos="fade-up"
             data-aos-delay="300"
-            className="text-center space-y-[35px] mt-[88px]"
+            className="text-center space-y-[35px] mt-8 xs:mt-8 sm:mt-8 md:mt-8 lg:mt-[88px] xl:mt-[88px] 2xl:mt-[88px] 3xl:mt-[88px]"
           >
             <h1 className="title">{paraData?.data[2].title}</h1>
             <p className="paragraph">{paraData?.data[2].description}</p>
@@ -192,8 +192,8 @@ const AboutUs = () => {
 
       {/* This is the third section start */}
       <Container width="1560px">
-        <section className="mt-[120px]">
-          <div className="text-center space-y-[35px]">
+        <section className="mt-10 xs:mt-10 sm:mt-10 md:mt-14 lg:mt-[80px] xl:mt-[100px] 2xl:mt-[120px] 3xl:mt-[120px]">
+          <div className="text-center space-y-[35px] px-3 xs:px-3 sm:px-3 md:px-3 lg:px-3 xl:px-0 2xl:px-0 3xl:px-0">
             <h1 data-aos="fade-up" className="title">
               {needToUnderData?.data?.title}
             </h1>
@@ -204,7 +204,7 @@ const AboutUs = () => {
         </section>
       </Container>
       {/* This is the third section end */}
-      {/* <DownloadApp /> */}
+      <DownloadApp />
     </div>
   );
 };
