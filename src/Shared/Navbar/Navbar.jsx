@@ -2,8 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import Container from "../../components/Container/Container";
 import { useQuery } from "@tanstack/react-query";
 import apiClient from "@/utils/apiClient";
-import { useState } from "react";
-import { Button, Drawer } from "antd";
+import { useEffect, useState } from "react";
+import { Drawer } from "antd";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = () => {
@@ -32,6 +32,17 @@ const Navbar = () => {
   const onClose = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <Container width="1720px">
@@ -123,7 +134,7 @@ const Navbar = () => {
                       ? "navClassActive"
                       : "navClass hover:text-[#083EC5]"
                   }
-                  onClick={onClose} 
+                  onClick={onClose}
                 >
                   Home
                 </NavLink>
