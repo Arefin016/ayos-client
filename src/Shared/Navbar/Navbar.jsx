@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import apiClient from "@/utils/apiClient";
 import { useState } from "react";
 import { Button, Drawer } from "antd";
-import { FaBars } from "react-icons/fa";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = () => {
   // Fetch navbar data
@@ -47,7 +47,7 @@ const Navbar = () => {
           </Link>
 
           {/* Navigation Section */}
-          <nav className="flex-grow hidden md:flex justify-center">
+          <nav className="flex-grow hidden xl:flex justify-center">
             <ul className="flex xl:space-x-10 2xl:space-x-20">
               <li data-aos="fade-in" data-aos-delay="100">
                 <NavLink
@@ -101,22 +101,20 @@ const Navbar = () => {
           </nav>
 
           {/* Hamburger button for mobile */}
-          <Button
-            type="primary"
+          <RxHamburgerMenu
+            size={24}
+            className="xl:hidden cursor-pointer"
             onClick={showDrawer}
-            className="md:hidden" // Hide on desktop
-          >
-            <FaBars size={24} /> {/* React Icon Hamburger */}
-          </Button>
+          />
 
           {/* Drawer (Mobile Only) */}
           <Drawer
-            title="Basic Drawer"
+            title="Ayos"
             onClose={onClose}
             open={open}
             className="md:hidden"
           >
-            <ul className="space-y-4">
+            <ul className="space-y-4 flex flex-col items-center justify-center mt-14">
               <li data-aos="fade-in" data-aos-delay="100">
                 <NavLink
                   to="/"
@@ -125,6 +123,7 @@ const Navbar = () => {
                       ? "navClassActive"
                       : "navClass hover:text-[#083EC5]"
                   }
+                  onClick={onClose} 
                 >
                   Home
                 </NavLink>
@@ -137,6 +136,7 @@ const Navbar = () => {
                       ? "navClassActive"
                       : "navClass hover:text-[#083EC5]"
                   }
+                  onClick={onClose}
                 >
                   About Us
                 </NavLink>
@@ -149,6 +149,7 @@ const Navbar = () => {
                       ? "navClassActive"
                       : "navClass hover:text-[#083EC5]"
                   }
+                  onClick={onClose}
                 >
                   Our Services
                 </NavLink>
@@ -161,11 +162,12 @@ const Navbar = () => {
                       ? "navClassActive"
                       : "navClass hover:text-[#083EC5]"
                   }
+                  onClick={onClose}
                 >
                   Contact Us
                 </NavLink>
               </li>
-              {/* Add the Get to App button in Drawer for mobile */}
+              {/* Get to App button */}
               <li data-aos="fade-in" data-aos-delay="500">
                 <Link
                   to="/signUp"
@@ -173,7 +175,10 @@ const Navbar = () => {
                   data-aos-delay="300"
                   className="xl:flex 2xl:flex 3xl:flex"
                 >
-                  <button className="text-xl border-[2px] border-solid border-transparent bg-button text-[#FFF] px-[35px] py-[11px] rounded-[26px] hover:bg-transparent hover:border-button hover:text-button ease-in-out duration-150">
+                  <button
+                    onClick={onClose} // সাইনআপ ক্লিক করলেও Drawer বন্ধ হবে
+                    className="text-base border-[2px] border-solid border-transparent bg-button text-[#FFF] px-6 py-2 rounded-[26px] hover:bg-transparent hover:border-button hover:text-button ease-in-out duration-150"
+                  >
                     Get to app
                   </button>
                 </Link>
@@ -186,7 +191,7 @@ const Navbar = () => {
             to="/signUp"
             data-aos="fade-in"
             data-aos-delay="300"
-            className="hidden lg:flex"
+            className="hidden xl:flex"
           >
             <button className="text-xl border-[2px] border-solid border-transparent bg-button text-[#FFF] px-[35px] py-[11px] rounded-[26px] hover:bg-transparent hover:border-button hover:text-button ease-in-out duration-150">
               Get to app
