@@ -1,15 +1,18 @@
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import contactUs from "../../assets/images/contactUsPic.png";
 import { Helmet } from "react-helmet-async";
 import apiClient from "@/utils/apiClient";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const ContactUs = () => {
   const {
     register,
     reset,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm();
 
@@ -242,22 +245,36 @@ const ContactUs = () => {
                 )}
 
                 {/* Mobile Number Field */}
+
                 <label
                   data-aos="fade-up"
-                  className="flex gap-1 items-center text-[#152934] font-roboto font-medium mb-4"
+                  className="flex gap-1 items-center text-[#152934] font-roboto font-medium"
                 >
                   Mobile Number
                 </label>
-                <input
-                  type="number"
+
+                {/* React Hook Form + Phone Input */}
+                <Controller
                   name="phone"
-                  {...register("phone", { required: true })}
-                  className="border border-[#D0D3D6] rounded-[37px] py-5 px-4 h-12 xs:h-12 sm:h-12 md:h-12 lg:h-16 w-full xs:w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-[642px] 3xl:w-[642px] text-[black] font-poppins text-[16px]"
-                  placeholder="01XXXXXXXXX"
+                  control={control}
+                  rules={{ required: "Number is required" }}
+                  render={({ field: { onChange, value } }) => (
+                    <PhoneInput
+                      country={"bd"}
+                      value={value}
+                      placeholder="Enter phone number"
+                      onChange={onChange}
+                      inputClass="md:text-base text-[14px]"
+                      containerClass={`flex font-poppins gap-2 items-center py-[13px] p-1 border-[1px] w-full rounded-[12px] phone_input_container_profile_edit  ${
+                        errors.phone ? "border-red-500" : "border-[#D8D8D]"
+                      } `}
+                    />
+                  )}
                 />
-                {errors.number && (
+
+                {errors.phone && (
                   <span className="text-red-600 font-semibold">
-                    Number is required
+                    {errors.phone.message}
                   </span>
                 )}
 

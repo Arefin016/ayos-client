@@ -169,6 +169,7 @@
   .dynamic-page-wrapper li {
     @apply text-[#172B4D] font-poppins text-xl font-normal leading-[180%];
   }
+  /* Custom styles for the react-tel-input container */
 }
 
 @layer base {
@@ -193,4 +194,38 @@
     @apply block;
   }
   /* custom faq icon:end */
+}
+
+/* This is the react phone input */
+.react-tel-input {
+  border-radius: 37px;
+}
+
+.react-tel-input .flag-dropdown {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  border: none !important;
+  background: transparent !important;
+  border-radius: 3px 0 0 3px;
+}
+.react-tel-input .form-control {
+  position: relative;
+  font-size: 16px !important;
+  letter-spacing: 0.01rem;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-left: 48px;
+  margin-left: 0;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 10px;
+  line-height: 25px;
+  height: 35px;
+  width: 100% !important;
+  outline: none;
+}
+.react-tel-input .selected-flag {
+  background: transparent;
 }
